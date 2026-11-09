@@ -50,9 +50,6 @@ export function MailtoForm({ fields, subject, submitLabel, intro }: Props) {
     setSent(true);
   }
 
-  const input =
-    "mt-1.5 w-full rounded-xl border border-cream-400 bg-white px-3.5 py-3 text-base text-espresso-900 placeholder:text-espresso-500 focus:border-forest-700 focus:outline-none";
-
   return (
     <form
       action={`mailto:${site.email}`}
@@ -67,7 +64,7 @@ export function MailtoForm({ fields, subject, submitLabel, intro }: Props) {
         const label = (
           <>
             {f.label}
-            {f.required && <span className="text-berry-600"> *</span>}
+            {f.required && <span className="text-muted"> *</span>}
           </>
         );
         if (f.type === "checkboxes") {
@@ -78,9 +75,9 @@ export function MailtoForm({ fields, subject, submitLabel, intro }: Props) {
                 {f.options?.map((o) => (
                   <label
                     key={o}
-                    className="flex cursor-pointer items-center gap-2 rounded-full border border-cream-400 bg-white px-3 py-2 has-[:checked]:border-forest-800 has-[:checked]:bg-forest-50"
+                    className="flex h-10 cursor-pointer items-center gap-2 rounded-full bg-canvas px-4 font-semibold transition-colors has-[:checked]:bg-ink has-[:checked]:text-canvas"
                   >
-                    <input type="checkbox" name={f.name} value={o} className="size-4 accent-forest-800" />
+                    <input type="checkbox" name={f.name} value={o} className="sr-only" />
                     {o}
                   </label>
                 ))}
@@ -92,11 +89,11 @@ export function MailtoForm({ fields, subject, submitLabel, intro }: Props) {
           <label key={f.name} htmlFor={id} className={f.full || f.type === "textarea" ? "text-sm sm:col-span-2" : "text-sm"}>
             <span className="font-semibold">{label}</span>
             {f.type === "textarea" ? (
-              <textarea id={id} name={f.name} required={f.required} rows={5} placeholder={f.placeholder} className={input} />
+              <textarea id={id} name={f.name} required={f.required} rows={5} placeholder={f.placeholder} className="field mt-1.5 bg-canvas" />
             ) : f.type === "select" ? (
-              <select id={id} name={f.name} required={f.required} defaultValue="" className={input}>
+              <select id={id} name={f.name} required={f.required} defaultValue="" className="field mt-1.5 h-12 bg-canvas">
                 <option value="" disabled>
-                  Välj…
+                  Välj
                 </option>
                 {f.options?.map((o) => (
                   <option key={o}>{o}</option>
@@ -110,29 +107,27 @@ export function MailtoForm({ fields, subject, submitLabel, intro }: Props) {
                 required={f.required}
                 placeholder={f.placeholder}
                 autoComplete={f.autoComplete}
-                className={input}
+                className="field mt-1.5 h-12 bg-canvas"
               />
             )}
           </label>
         );
       })}
-      <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center">
+      <div className="flex flex-col gap-3 pt-2 sm:col-span-2 sm:flex-row sm:items-center">
         <button type="submit" className="btn btn-primary">
           <Send className="size-4" /> {submitLabel}
         </button>
-        <p className="text-xs text-espresso-600">
-          Ditt e-postprogram öppnas med meddelandet ifyllt – du skickar det själv till {site.email}.
-        </p>
+        <p className="text-xs text-muted">Ditt e-postprogram öppnas med meddelandet ifyllt till {site.email}.</p>
       </div>
       {sent && (
-        <div role="status" className="flex gap-3 rounded-2xl border border-forest-200 bg-forest-50 p-4 text-sm sm:col-span-2">
-          <CheckCircle2 className="size-5 shrink-0 text-forest-700" aria-hidden />
+        <div role="status" className="flex gap-3 rounded-[16px] bg-canvas p-4 text-sm sm:col-span-2">
+          <CheckCircle2 className="size-5 shrink-0 text-accent" aria-hidden />
           <p>
-            Tack! Om e-postprogrammet inte öppnades kan du mejla oss direkt på{" "}
+            Meddelandet ligger i ditt e-postprogram. Öppnades det inte? Mejla{" "}
             <a href={`mailto:${site.email}`} className="font-semibold underline">
               {site.email}
             </a>{" "}
-            eller ringa{" "}
+            eller ring{" "}
             <a href={site.phoneHref} className="font-semibold underline">
               {site.phone}
             </a>

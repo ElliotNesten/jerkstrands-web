@@ -15,15 +15,9 @@ function Links({ active }: { active?: string | null }) {
             <Link
               href={item.href}
               aria-current={isActive ? "page" : undefined}
-              className={cn(
-                "relative rounded-full px-3.5 py-2 text-[0.95rem] font-medium transition-colors",
-                isActive ? "text-forest-800" : "text-espresso-800 hover:text-forest-700",
-              )}
+              className="rounded-full px-3 py-2 text-[0.9375rem] font-semibold text-ink"
             >
-              {item.label}
-              {isActive && (
-                <span className="absolute inset-x-3.5 -bottom-0.5 h-px bg-gold-500" aria-hidden />
-              )}
+              <span className={cn("link-draw", isActive && "bg-[length:100%_1.5px]")}>{item.label}</span>
             </Link>
           </li>
         );

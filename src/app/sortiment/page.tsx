@@ -6,9 +6,9 @@ import { ProductCard, toSummary } from "@/components/product-card";
 import { products } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "Sortiment & produktkatalog",
+  title: "Sortiment och produktkatalog",
   description:
-    "Hela Jerkstrands sortiment med artikelnummer, EAN, ingredienser och allergener. Sök, filtrera och skriv ut hylletiketter direkt.",
+    "Jerkstrands sortiment med artikelnummer, EAN, ingredienser och allergener. Sök, filtrera och skriv ut hylletiketter.",
   alternates: { canonical: "/sortiment" },
 };
 
@@ -18,18 +18,11 @@ export default function SortimentPage() {
   return (
     <>
       <PageHero
-        compact
         crumbs={[{ label: "Sortiment" }]}
-        eyebrow="Produktkatalog"
-        title="Sortiment"
-        intro={
-          <p>
-            Sök bland {products.length} artiklar på namn, artikelnummer eller EAN. Varje produkt har fullständig
-            ingrediensförteckning, allergener och näringsvärden – och hylletiketter du skriver ut direkt.
-          </p>
-        }
+        title="Sortiment."
+        muted={`${products.length} artiklar med EAN, ingredienser och allergener.`}
       />
-      <section className="container-site py-8 sm:py-10">
+      <section className="wrap pb-24">
         <Suspense fallback={<CatalogFallback />}>
           <Catalog products={items} />
         </Suspense>
@@ -42,9 +35,8 @@ export default function SortimentPage() {
 function CatalogFallback() {
   return (
     <div>
-      <div className="h-14 w-full rounded-full border border-cream-400 bg-cream-50 shadow-soft" aria-hidden />
-      <p className="mt-8 text-sm text-espresso-700">{products.length} artiklar</p>
-      <ul className="mt-6 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 xl:grid-cols-4">
+      <div className="h-14 w-full rounded-full bg-field" aria-hidden />
+      <ul className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-3 xl:grid-cols-4">
         {items.map((p) => (
           <li key={p.slug}>
             <ProductCard product={p} showLabelButton={false} />

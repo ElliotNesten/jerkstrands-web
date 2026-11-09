@@ -1,21 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Fraunces } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { LabelQueuePanel } from "@/components/labels/label-queue-panel";
 import { site } from "@/lib/site";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["SOFT", "WONK", "opsz"],
   display: "swap",
 });
 
@@ -47,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1b4231",
+  themeColor: "#ffffff",
 };
 
 const organizationJsonLd = {
@@ -73,7 +66,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="sv" className={`${dmSans.variable} ${fraunces.variable} h-full antialiased`}>
+    <html lang="sv" className={`${hanken.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <script
           type="application/ld+json"
@@ -81,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
         <a
           href="#innehall"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-forest-800 focus:px-4 focus:py-2 focus:text-cream-50"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-canvas"
         >
           Hoppa till innehållet
         </a>

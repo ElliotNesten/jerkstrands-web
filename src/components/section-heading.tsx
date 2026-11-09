@@ -2,41 +2,32 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 interface Props {
-  eyebrow?: string;
   title: ReactNode;
+  /** Grå andra mening efter rubriken (Mobbin-stil) */
+  muted?: ReactNode;
   intro?: ReactNode;
-  align?: "left" | "center";
   tone?: "dark" | "light";
   className?: string;
   as?: "h1" | "h2";
+  id?: string;
 }
 
-export function SectionHeading({ eyebrow, title, intro, align = "left", tone = "dark", className, as = "h2" }: Props) {
+/** Rubrik på vänsterlinjen: tung rubrik, ev. grå andra mening, kort ingress. */
+export function SectionHeading({ title, muted, intro, tone = "dark", className, as = "h2", id }: Props) {
   const Heading = as;
   return (
-    <div className={cn(align === "center" && "mx-auto text-center", "max-w-2xl", className)}>
-      {eyebrow && (
-        <p className={cn("eyebrow", tone === "light" && "eyebrow-light", align === "center" && "justify-center")}>
-          {eyebrow}
-        </p>
-      )}
-      <Heading
-        className={cn(
-          "mt-3 text-[2rem] leading-[1.08] sm:text-[2.6rem]",
-          tone === "light" ? "text-cream-50" : "text-espresso-900",
-        )}
-      >
+    <div className={cn("max-w-3xl", className)}>
+      <Heading id={id} className={cn(as === "h1" ? "t-h1" : "t-h2", tone === "light" ? "text-canvas" : "text-ink")}>
         {title}
+        {muted && (
+          <>
+            {" "}
+            <span className={tone === "light" ? "text-white/45" : "text-faint"}>{muted}</span>
+          </>
+        )}
       </Heading>
       {intro && (
-        <div
-          className={cn(
-            "mt-4 text-base leading-relaxed sm:text-lg",
-            tone === "light" ? "text-cream-200" : "text-espresso-700",
-          )}
-        >
-          {intro}
-        </div>
+        <div className={cn("t-lead mt-5 max-w-2xl", tone === "light" ? "text-white/70" : "text-muted")}>{intro}</div>
       )}
     </div>
   );

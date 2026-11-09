@@ -1,49 +1,31 @@
-import { Egg, HandHeart, ListChecks, Recycle, Timer, Wheat } from "lucide-react";
-
-/** Kvalitetslöften – används på startsidan och kvalitetssidan. */
-export const qualityPillars = [
-  {
-    icon: HandHeart,
-    title: "Hantverk sedan 1930",
-    text: "Våra bagare och konditorer bakar i vårt eget bageri i Göteborg – med recept och tekniker som förfinats i generationer.",
-  },
-  {
-    icon: Timer,
-    title: "Tid, surdeg & långa jäsningar",
-    text: "Kalljästa surdegsbröd och långa jäsningar ger mild syra, rund smak, saftigt inkråm och en frasig skorpa.",
-  },
-  {
-    icon: Egg,
-    title: "Utvalda råvaror",
-    text: "Vi bakar med de finaste råvarorna – smör, grädde, färska bär och svenska ägg i våra tårtor och bakverk.",
-  },
-  {
-    icon: ListChecks,
-    title: "Tydlig produktinformation",
-    text: "Ingredienser, allergener, näringsvärden och EAN för varje artikel – alltid uppdaterat här på webben.",
-  },
-] as const;
-
-/** Fördjupning på kvalitetssidan. */
+/** Kvalitetssidan: fyra avsnitt, vart och ett med sitt eget foto. */
 export const qualityDetails = [
   {
-    icon: Wheat,
-    title: "Bröd med tid och tålamod",
-    text: "Våra surdegsfrallor och levainbröd jäser länge och svalt. Den långa jäsningen ger brödet en mild syra, en rund smak och en härlig seghet i varje tugga – ett hantverksbröd som lyfter allt från frukostmackan till den lyxiga smörgåsen.",
+    title: "Bröd som får jäsa länge.",
+    text: "Våra surdegsfrallor och levainbröd jäser länge och svalt. Det ger brödet mild syra, rund smak och en seghet i varje tugga, från frukostmackan till smörgåsbordet.",
+    image: "/images/site/ragbrod.jpg",
+    alt: "Rågbröd knutet med snöre",
+    position: "50% 55%",
   },
   {
-    icon: HandHeart,
-    title: "Konditorns öga för detaljer",
-    text: "Med öga för detaljer skapar våra konditorer en färgglad palett av delikata bakelser, kakor, tårtor och ätbara konstverk. Len choklad, vispad grädde, färska bär och läcker marsipan – klassiker som väcker minnen.",
+    title: "Tårtor och bakelser från konditoriet.",
+    text: "Våra konditorer bakar bakelser, kakor och tårtor med len choklad, vispad grädde, färska bär och marsipan. Tårtbottnarna bakas med svenska ägg.",
+    image: "/images/site/jordgubbstarta.jpg",
+    alt: "Jordgubbstårta på grön marmor",
+    position: "50% 55%",
   },
   {
-    icon: Recycle,
-    title: "Smarta storlekar, mindre svinn",
-    text: "Tillsammans med några av Sveriges ledande hotell- och restauranggrupper har vi utvecklat behovsanpassade bröd och bakverk i mindre portionsstorlekar – som minimerar svinn och maximerar lönsamhet.",
+    title: "Storlekar som minskar svinnet.",
+    text: "Tillsammans med några av Sveriges ledande hotell- och restauranggrupper har vi tagit fram bröd och bakverk i mindre portionsstorlekar, så att mindre blir över.",
+    image: "/images/site/frallor-korg.jpg",
+    alt: "Frallor i en trådkorg",
+    position: "50% 50%",
   },
   {
-    icon: ListChecks,
-    title: "Märkning du kan lita på",
-    text: "Varje artikel har artikelnummer, EAN, fullständig ingrediensförteckning med allergener markerade, information om spår av allergener och näringsdeklaration per 100 gram. Laktosfria varianter finns för flera av våra tårtor.",
+    title: "Märkning för varje artikel.",
+    text: "Varje artikel har artikelnummer, EAN, fullständig ingrediensförteckning, spår av allergener och näringsvärde per 100 gram. Flera tårtor finns även laktosfria.",
+    image: "/images/site/hylletikett-exempel.png",
+    alt: "Hylletikett med pris, EAN-streckkod och QR-kod",
+    contain: true,
   },
 ] as const;

@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# designverktyg (installeras med scripts/install-design-skills.sh)
+/.claude/skills/design-taste-frontend/
+/.taste-skill/

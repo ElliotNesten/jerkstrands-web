@@ -1,58 +1,43 @@
 @import "tailwindcss";
 
+/* Skanna inte designverktygen eller kontrollernas arbetsmappar */
+@source not "../../.claude";
+@source not "../../.taste-skill";
+
 /* ------------------------------------------------------------------
    Jerkstrands – designsystem
-   Varmt gräddvitt, espresso-brun text, djupgrönt (förpackningarna)
-   och guld (logotypen).
+   Visuellt språk: Mobbin-analys (DESIGN.md) – vit galleriyta, nästan svart
+   bläck, en stege av ljusa neutraltoner i stället för skuggor, pillerformade
+   kontroller och 24px kort. Färgen kommer från bilderna på bröd och bakverk.
+   En enda accent: Jerkstrands förpackningsgröna, för kommersiella signaler.
+   Struktur och rörelse: tasteskill (en sektion per skärm, hover-lager, inträde).
 ------------------------------------------------------------------- */
 
 @theme {
-  --color-cream-50: #fffcf7;
-  --color-cream-100: #faf5ec;
-  --color-cream-200: #f3eadb;
-  --color-cream-300: #e7d9c3;
-  --color-cream-400: #d8c4a5;
+  --color-ink: #141414;
+  --color-ink-soft: #262626;
+  --color-muted: #707070;
+  --color-faint: #adadad;
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #f3f3f3;
+  --color-field: #f0f0f0;
+  --color-hairline-soft: #f0f0f0;
+  --color-hairline: #e0e0e0;
+  --color-accent: #48725f;
+  --color-accent-soft: #e8efeb;
+  --color-overlay: rgb(115 115 115 / 0.56);
 
-  --color-espresso-950: #1d1611;
-  --color-espresso-900: #2a2019;
-  --color-espresso-800: #3d3027;
-  --color-espresso-700: #54453a;
-  --color-espresso-600: #6e5e52;
-  --color-espresso-500: #8a7a6d;
+  --font-sans: var(--font-hanken), -apple-system, "Helvetica Neue", Arial, sans-serif;
 
-  --color-forest-950: #0e241b;
-  --color-forest-900: #143224;
-  --color-forest-800: #1b4231;
-  --color-forest-700: #24553f;
-  --color-forest-600: #2f6b50;
-  --color-forest-200: #c9dccf;
-  --color-forest-100: #e4eee7;
-  --color-forest-50: #f1f6f2;
+  --radius-tile: 16px;
+  --radius-card: 24px;
 
-  --color-gold-700: #8a6418;
-  --color-gold-600: #a67c26;
-  --color-gold-500: #c19a45;
-  --color-gold-400: #d6b670;
-  --color-gold-300: #e7d19f;
-  --color-gold-100: #f7eed8;
+  --animate-enter: enter 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 
-  --color-berry-700: #7f2b22;
-  --color-berry-600: #9b3a2c;
-  --color-berry-100: #f6e3df;
-
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
-
-  --shadow-soft: 0 1px 2px rgb(42 32 25 / 0.04), 0 8px 24px -12px rgb(42 32 25 / 0.18);
-  --shadow-lift: 0 2px 4px rgb(42 32 25 / 0.05), 0 22px 48px -20px rgb(42 32 25 / 0.35);
-
-  --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-
-  @keyframes fade-up {
+  @keyframes enter {
     from {
       opacity: 0;
-      transform: translateY(14px);
+      transform: translateY(18px);
     }
     to {
       opacity: 1;
@@ -63,200 +48,342 @@
 
 :root {
   color-scheme: light;
+  --nav-h: 72px;
+  --padt: 120px;
+  --padb: 80px;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --padt: 96px;
+    --padb: 56px;
+  }
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 96px;
 }
 
 body {
-  background: var(--color-cream-100);
-  color: var(--color-espresso-900);
+  background: var(--color-canvas);
+  color: var(--color-ink);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01";
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.38;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--color-gold-300);
-  color: var(--color-espresso-950);
+  background: var(--color-ink);
+  color: var(--color-canvas);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold-600);
+  outline: 2px solid var(--color-ink);
   outline-offset: 3px;
-  border-radius: 6px;
 }
 
 @layer base {
   h1,
   h2,
   h3,
-  .font-display {
-    font-family: var(--font-serif);
-    font-variation-settings: "SOFT" 60, "WONK" 0;
-    letter-spacing: -0.015em;
+  h4 {
+    font-weight: 650;
+    letter-spacing: 0;
     text-wrap: balance;
   }
-
   p {
     text-wrap: pretty;
+  }
+  strong,
+  b {
+    font-weight: 650;
   }
 }
 
 @layer components {
-  .container-site {
+  /* En .wrap för hela sidan: samma vänster- och högerkant hela vägen ner. */
+  .wrap {
     margin-inline: auto;
-    width: 100%;
-    max-width: 82rem;
-    padding-inline: 1rem;
+    width: min(100% - 48px, 1280px);
   }
-  @media (min-width: 640px) {
-    .container-site {
-      padding-inline: 1.5rem;
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .wrap {
+      width: min(100% - 96px, 1280px);
     }
   }
   @media (min-width: 1024px) {
-    .container-site {
-      padding-inline: 2.5rem;
+    .wrap {
+      width: min(100% - 160px, 1280px);
     }
   }
 
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-gold-700);
+  /* En sektion per skärm: rubriken överst, toppjusterad. */
+  .screen {
+    min-height: 100svh;
+    padding-top: var(--padt);
+    padding-bottom: var(--padb);
   }
-  .eyebrow::before {
-    content: "";
-    width: 1.75rem;
-    height: 1px;
-    background: currentColor;
-    opacity: 0.7;
-  }
-  .eyebrow-light {
-    color: var(--color-gold-300);
+  .screen-2 {
+    min-height: 200svh;
   }
 
+  /* Typskala (Mobbin): 650 rubriker, 300 ingress, 450 brödtext */
+  .t-display {
+    font-size: clamp(2.6rem, 6.4vw, 5rem);
+    line-height: 1;
+    font-weight: 650;
+  }
+  .t-h1 {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    line-height: 1.02;
+    font-weight: 650;
+  }
+  .t-h2 {
+    font-size: clamp(2rem, 3.6vw, 2.75rem);
+    line-height: 1.1;
+    font-weight: 650;
+  }
+  .t-h3 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    line-height: 1.13;
+    font-weight: 650;
+  }
+  .t-h4 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 650;
+  }
+  .t-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  .t-lead {
+    font-size: clamp(1.125rem, 1.6vw, 1.25rem);
+    line-height: 1.38;
+    font-weight: 300;
+  }
+  .t-label {
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  /* Knappar – stadium-piller. De kliver vid hover och trycks vid klick. */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 999px;
-    padding: 0.8rem 1.4rem;
+    height: 48px;
+    padding: 0 1.25rem;
+    border-radius: 9999px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease,
-      border-color 0.2s ease,
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
     white-space: nowrap;
+    transition:
+      transform 0.18s cubic-bezier(0.2, 0.7, 0.2, 1),
+      background-color 0.18s ease,
+      color 0.18s ease,
+      border-color 0.18s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
   }
   .btn:active {
-    transform: translateY(1px);
+    transform: translateY(0) scale(0.97);
   }
   .btn-primary {
-    background: var(--color-forest-800);
-    color: var(--color-cream-50);
-    box-shadow: 0 10px 24px -14px rgb(20 50 36 / 0.9);
+    background: var(--color-ink);
+    color: var(--color-canvas);
   }
   .btn-primary:hover {
-    background: var(--color-forest-700);
-  }
-  .btn-gold {
-    background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-600));
-    color: var(--color-espresso-950);
-    box-shadow: 0 10px 24px -14px rgb(138 100 24 / 0.9);
-  }
-  .btn-gold:hover {
-    background: linear-gradient(135deg, var(--color-gold-300), var(--color-gold-500));
+    background: var(--color-ink-soft);
   }
   .btn-outline {
-    border: 1px solid var(--color-espresso-900);
-    color: var(--color-espresso-900);
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    border: 1px solid var(--color-hairline);
   }
   .btn-outline:hover {
-    background: var(--color-espresso-900);
-    color: var(--color-cream-50);
+    border-color: var(--color-ink);
   }
-  .btn-outline-light {
-    border: 1px solid rgb(255 252 247 / 0.45);
-    color: var(--color-cream-50);
+  .btn-soft {
+    background: var(--color-canvas-soft);
+    color: var(--color-ink);
   }
-  .btn-outline-light:hover {
-    background: var(--color-cream-50);
-    color: var(--color-forest-900);
+  .btn-soft:hover {
+    background: var(--color-hairline);
   }
-  .btn-ghost {
-    color: var(--color-espresso-900);
-    padding-inline: 0.25rem;
+  .btn-inverse {
+    background: var(--color-canvas);
+    color: var(--color-ink);
   }
-  .btn-ghost:hover {
-    color: var(--color-forest-700);
+  .btn-inverse-outline {
+    border: 1px solid rgb(255 255 255 / 0.28);
+    color: var(--color-canvas);
+  }
+  .btn-inverse-outline:hover {
+    border-color: var(--color-canvas);
   }
   .btn-sm {
-    padding: 0.55rem 0.95rem;
-    font-size: 0.85rem;
+    height: 40px;
+    padding: 0 1rem;
+    font-size: 0.9375rem;
+  }
+  .btn-lg {
+    height: 56px;
+    padding: 0 1.75rem;
+    font-size: 1.0625rem;
   }
 
-  .link-underline {
+  /* Länk med understrykning som ritas fram */
+  .link-draw {
     background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 1px;
+    background-size: 0% 1.5px;
     background-position: 0 100%;
     background-repeat: no-repeat;
-    transition: background-size 0.25s ease;
+    transition: background-size 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
-  .link-underline:hover {
-    background-size: 100% 1px;
-  }
-
-  .card {
-    background: var(--color-cream-50);
-    border: 1px solid rgb(216 196 165 / 0.45);
-    border-radius: 1.5rem;
+  .link-draw:hover {
+    background-size: 100% 1.5px;
   }
 
-  .paper-texture {
-    background-color: var(--color-cream-100);
-    background-image:
-      radial-gradient(circle at 15% 20%, rgb(255 255 255 / 0.7), transparent 45%),
-      radial-gradient(circle at 85% 0%, rgb(231 209 159 / 0.25), transparent 40%);
+  /* Ytor: fyllnadsskillnad i stället för skuggor */
+  .tile {
+    background: var(--color-canvas-soft);
+    border-radius: var(--radius-card);
+  }
+  .card-line {
+    background: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--radius-card);
   }
 
-  .product-stage {
-    background:
-      radial-gradient(ellipse 70% 55% at 50% 58%, rgb(255 255 255 / 0.95), transparent 70%),
-      linear-gradient(180deg, var(--color-cream-200), var(--color-cream-100));
+  /* Länkat kort: lyfter 2px, bilden zoomar 1.03 i sin ram */
+  .lift {
+    transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .lift:hover {
+    transform: translateY(-2px);
+  }
+  .zoom-img {
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .lift:hover .zoom-img,
+  .zoom-parent:hover .zoom-img {
+    transform: scale(1.03);
   }
 
-  .gold-rule {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-gold-500), transparent);
+  /* Formulärfält: fylld, utan ram i vila, ring i bläck vid fokus */
+  .field {
+    width: 100%;
+    background: var(--color-field);
+    color: var(--color-ink);
+    border-radius: var(--radius-tile);
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+  .field::placeholder {
+    color: var(--color-faint);
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-ink);
   }
 
-  .prose-jerk p + p {
-    margin-top: 1rem;
+  .badge-overlay {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background: var(--color-overlay);
+    color: #fff;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+  }
+  .badge-accent {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* Heroets inträde – en gång vid laddning */
+  [data-enter] > * {
+    animation: var(--animate-enter);
+  }
+  [data-enter] > *:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+  [data-enter] > *:nth-child(3) {
+    animation-delay: 0.16s;
+  }
+  [data-enter] > *:nth-child(4) {
+    animation-delay: 0.24s;
+  }
+
+  .muted {
+    color: var(--color-muted);
+  }
+
+  /* Moment: photo-chapters – n skärmar levande, stilla vid reducerad rörelse */
+  .chapters {
+    height: calc(var(--n, 4) * 100svh);
+  }
+  .chapters-static {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce), (max-height: 599px) {
+    .chapters {
+      height: auto;
+    }
+    .chapters-live {
+      display: none;
+    }
+    .chapters-static {
+      display: block;
+    }
+  }
+
+  /* Moment: word-highlight – ord i halvt bläck tänds när de passerar mitten */
+  .wh-word {
+    color: rgb(20 20 20 / 0.28);
+    transition: color 0.35s ease;
+  }
+  .wh-word[data-lit] {
+    color: var(--color-ink);
+  }
+  .wh-word[data-lit][data-accent] {
+    color: var(--color-accent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wh-word {
+      color: var(--color-ink);
+    }
+    .wh-word[data-accent] {
+      color: var(--color-accent);
+    }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     transition-duration: 0.01ms !important;
   }
 }

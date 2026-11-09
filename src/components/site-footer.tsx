@@ -1,138 +1,127 @@
 import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { InstagramIcon, Ornament } from "@/components/icons";
+import { InstagramIcon } from "@/components/icons";
 import { categories } from "@/lib/catalog";
 import { site } from "@/lib/site";
 
+/**
+ * Avslutning + sidfot i en sektion: rad 1 är avslutningen med huvudhandlingen,
+ * rad 2 länkarna och den juridiska raden. Bläckfärgat band med rundade övre hörn.
+ */
 export function SiteFooter() {
   const shopCategories = categories.filter((c) => c.segment === "butik").slice(0, 6);
   return (
-    <footer className="relative overflow-hidden bg-forest-950 text-cream-200">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-screen"
-        style={{ backgroundImage: "url(/images/site/marmor.jpg)", backgroundSize: "cover" }}
-        aria-hidden
-      />
-      <div className="container-site relative pt-16 pb-10">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
-          <div className="max-w-sm">
-            <Logo variant="dark-bg" className="w-[220px]" />
-            <p className="mt-6 text-sm leading-relaxed text-cream-300">
-              Konditori och bageri i Göteborg sedan {site.founded}. Vi bakar med kärlek, tradition och de finaste
-              råvarorna – för butiker, caféer, hotell och restauranger.
+    <footer id="kontakt-info" className="mt-0 rounded-t-[24px] bg-ink text-canvas">
+      <div className="wrap pt-20 pb-10 sm:pt-28">
+        {/* Rad 1 – avslutningen */}
+        <div className="grid gap-y-10 border-b border-white/10 pb-16 lg:grid-cols-12 lg:items-end lg:gap-x-6">
+          <div className="lg:col-span-7">
+            <h2 className="t-display">Sälj Jerkstrands i din butik.</h2>
+            <p className="t-lead mt-6 max-w-xl text-white/70">
+              Berätta om din butik, ditt café eller ditt hotell. Vi föreslår sortiment och leveransdagar.
             </p>
-            <a
-              href={site.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold-300 hover:text-gold-100"
-            >
-              <InstagramIcon className="size-5" /> {site.instagramHandle}
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:col-span-5 lg:col-start-8 lg:justify-end">
+            <Link href="/aterforsaljare#bli-aterforsaljare" className="btn btn-inverse btn-lg">
+              Bli återförsäljare <ArrowRight className="size-5" />
+            </Link>
+            <a href={site.phoneHref} className="btn btn-inverse-outline btn-lg">
+              Ring {site.phone}
             </a>
-          </div>
-
-          <div>
-            <h2 className="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase">Sortiment</h2>
-            <ul className="mt-5 space-y-2.5 text-sm">
-              {shopCategories.map((c) => (
-                <li key={c.id}>
-                  <Link href={`/sortiment?kategori=${c.id}`} className="link-underline hover:text-cream-50">
-                    {c.name}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/sortiment?kanal=hotell-restaurang" className="link-underline hover:text-cream-50">
-                  Hotell & restaurang
-                </Link>
-              </li>
-              <li>
-                <Link href="/sortiment" className="font-semibold text-cream-50 link-underline">
-                  Hela sortimentet →
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase">
-              För företag
-            </h2>
-            <ul className="mt-5 space-y-2.5 text-sm">
-              <li>
-                <Link href="/aterforsaljare#bli-aterforsaljare" className="link-underline hover:text-cream-50">
-                  Bli återförsäljare
-                </Link>
-              </li>
-              <li>
-                <a
-                  href={site.orderPortalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 link-underline hover:text-cream-50"
-                >
-                  Butiksorder (PCS) <ArrowUpRight className="size-3.5" aria-hidden />
-                </a>
-              </li>
-              <li>
-                <Link href="/sortiment" className="link-underline hover:text-cream-50">
-                  Hylletiketter
-                </Link>
-              </li>
-              <li>
-                <Link href="/aterforsaljare#material" className="link-underline hover:text-cream-50">
-                  Sortiment & tårtpärm (PDF)
-                </Link>
-              </li>
-              <li>
-                <Link href="/kvalitet" className="link-underline hover:text-cream-50">
-                  Kvalitet
-                </Link>
-              </li>
-              <li>
-                <Link href="/om-oss" className="link-underline hover:text-cream-50">
-                  Om oss
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="font-sans text-xs font-semibold tracking-[0.18em] text-gold-400 uppercase">Kontakt</h2>
-            <ul className="mt-5 space-y-4 text-sm">
-              <li className="flex gap-3">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-gold-400" aria-hidden />
-                <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cream-50">
-                  {site.address.street}
-                  <br />
-                  {site.address.postalCode} {site.address.city}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <Phone className="mt-0.5 size-4 shrink-0 text-gold-400" aria-hidden />
-                <a href={site.phoneHref} className="hover:text-cream-50">
-                  {site.phone}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <Mail className="mt-0.5 size-4 shrink-0 text-gold-400" aria-hidden />
-                <a href={`mailto:${site.email}`} className="hover:text-cream-50">
-                  {site.email}
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
 
-        <Ornament className="mx-auto mt-14 w-40 text-gold-600/60" />
-        <div className="mt-6 flex flex-col items-center justify-between gap-3 text-xs text-cream-400 sm:flex-row">
-          <p>
-            © {site.legalName} · Göteborg sedan {site.founded}
-          </p>
-          <p>Nybakat varje dag – med kärlek till hantverket.</p>
+        {/* Rad 2 – länkar */}
+        <div className="grid gap-x-6 gap-y-12 pt-14 md:grid-cols-2 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <Logo variant="dark-bg" className="w-[220px]" />
+            <p className="mt-6 max-w-xs text-sm text-white/55">
+              Konditori och bageri i Göteborg sedan {site.founded}.
+            </p>
+          </div>
+
+          <FooterColumn title="Sortiment" className="lg:col-span-3">
+            {shopCategories.map((c) => (
+              <FooterLink key={c.id} href={`/sortiment?kategori=${c.id}`}>
+                {c.name}
+              </FooterLink>
+            ))}
+            <FooterLink href="/sortiment?kanal=hotell-restaurang">Hotell & restaurang</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="För företag" className="lg:col-span-2">
+            <FooterLink href="/aterforsaljare">Återförsäljare</FooterLink>
+            <FooterLink href="/aterforsaljare#material">Sortimentsblad (PDF)</FooterLink>
+            <FooterLink href="/sortiment">Hylletiketter</FooterLink>
+            <FooterLink href="/kvalitet">Kvalitet</FooterLink>
+            <FooterLink href="/om-oss">Om oss</FooterLink>
+            <li>
+              <a
+                href={site.orderPortalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-white/55 hover:text-white"
+              >
+                <span className="link-draw">Butiksorder (PCS)</span> <ArrowUpRight className="size-3.5" aria-hidden />
+              </a>
+            </li>
+          </FooterColumn>
+
+          <FooterColumn title="Kontakt" className="lg:col-span-3">
+            <li className="text-white/55">
+              <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <span className="link-draw">{site.address.street}</span>
+                <br />
+                {site.address.postalCode} {site.address.city}
+              </a>
+            </li>
+            <FooterLink href={site.phoneHref}>{site.phone}</FooterLink>
+            <FooterLink href={`mailto:${site.email}`}>{site.email}</FooterLink>
+            <li>
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/55 hover:text-white"
+              >
+                <InstagramIcon className="size-4" /> <span className="link-draw">{site.instagramHandle}</span>
+              </a>
+            </li>
+          </FooterColumn>
+        </div>
+
+        <div className="mt-16 flex flex-col justify-between gap-2 text-[0.8125rem] text-white/40 sm:flex-row">
+          <p>© {site.legalName}</p>
+          <p>Allt bakas i vårt bageri på Slakthusgatan i Göteborg.</p>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterColumn({ title, className, children }: { title: string; className?: string; children: React.ReactNode }) {
+  return (
+    <div className={className}>
+      <h2 className="text-[0.8125rem] font-semibold text-white/40">{title}</h2>
+      <ul className="mt-4 space-y-2.5 text-[0.9375rem]">{children}</ul>
+    </div>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const external = href.startsWith("tel:") || href.startsWith("mailto:");
+  return (
+    <li>
+      {external ? (
+        <a href={href} className="text-white/55 hover:text-white">
+          <span className="link-draw">{children}</span>
+        </a>
+      ) : (
+        <Link href={href} className="text-white/55 hover:text-white">
+          <span className="link-draw">{children}</span>
+        </Link>
+      )}
+    </li>
   );
 }

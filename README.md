@@ -8,7 +8,7 @@ senare byggas ut med inloggning och beställning direkt på sidan.
 
 | Sida | Beskrivning |
 | --- | --- |
-| `/` | Startsida: hero, **återförsäljarsektion högt upp**, sortimentskategorier med sök, säsong (jul), kvalitet, utvalda produkter, om oss |
+| `/` | Startsida: hero, **återförsäljare på skärm två**, sortimentet med sök, kvalitet som fotokapitel, säsong (jul), om oss, hylletiketter, frågor |
 | `/sortiment` | Produktkatalog med sök (namn, artikelnummer, EAN), filter (kanal, kategori, egenskaper, allergener), rutnät/lista och delbara filterlänkar |
 | `/sortiment/[produkt]` | Produktsida: bild, säljtext, art.nr, EAN-streckkod, varianter, ingredienser, allergener, näringsvärde och **hylletikett** |
 | `/aterforsaljare` | För butik, café och hotell/restaurang, säljstöd, material (PDF), intresseanmälan och vanliga frågor |
@@ -27,6 +27,29 @@ vikt/art.nr/jämförpris, QR-kod till produktsidan och EAN-13. Produkter kan sam
 Alla adresser från den tidigare webbplatsen (t.ex. `/barkis`, `/julsortiment`) omdirigeras permanent
 till de nya sidorna – så att QR-koder på redan utskrivna etiketter fortsätter fungera.
 Listan finns i `data/source/omdirigeringar.json`.
+
+## Design
+
+- **Visuellt språk:** [`DESIGN.md`](DESIGN.md) – Mobbin-analysen från
+  [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) / getdesign.md: vit galleriyta,
+  nästan svart bläck, ljusgrå toner i stället för skuggor, pillerformade kontroller, 24 px kort och tunga
+  rubriker (Hanken Grotesk 650/450/300). Accentfärgen är Jerkstrands förpackningsgröna `#48725F`.
+- **Struktur och arbetssätt:** [Taste Skill](https://github.com/Leonxlnx/taste-skill) – hero ensam på
+  första skärmen, en sektion per skärm, foton som bär sidan, hover-lager och två "moments"
+  (`photo-chapters` och `word-highlight`). Copy och layout kontrolleras med skillens skript.
+
+Installera Taste Skill för Claude Code (läggs i `.claude/skills/`, ignoreras av git):
+
+```bash
+bash scripts/install-design-skills.sh
+```
+
+Kör kontrollerna mot en körande sajt (`npm run build && npm run start`):
+
+```bash
+node .claude/skills/design-taste-frontend/scripts/copy-lint.mjs sida.html --kind product
+CHROME_PATH=/sökväg/till/chrome node .claude/skills/design-taste-frontend/assets/layout/check.mjs --url http://localhost:3000/ --profile /tmp/taste-check
+```
 
 ## Kom igång
 
@@ -58,7 +81,7 @@ Allergener läses ut automatiskt från ingrediensförteckningen (ord skrivna med
 - Säsongskampanj på startsidan: `src/lib/season.ts` (sätt till `null` för att dölja)
 - Kategorier: `src/lib/catalog.ts`
 - Kvalitetstexter: `src/lib/quality.ts`
-- Färger och typografi: `src/app/globals.css`
+- Färger och typografi: `src/app/globals.css` (följer `DESIGN.md`)
 
 ## Struktur
 

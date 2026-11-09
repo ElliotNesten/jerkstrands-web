@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Designverktyg och deras arbetsmappar
+    ".claude/**",
+    ".taste-skill/**",
   ]),
 ]);
 

@@ -9,33 +9,32 @@ interface Crumb {
 }
 
 interface Props {
-  eyebrow?: string;
   title: ReactNode;
+  muted?: ReactNode;
   intro?: ReactNode;
   crumbs?: Crumb[];
   children?: ReactNode;
   className?: string;
-  compact?: boolean;
 }
 
 export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
   return (
     <nav aria-label="Brödsmulor">
-      <ol className="flex flex-wrap items-center gap-1 text-sm text-espresso-600">
+      <ol className="flex flex-wrap items-center gap-1 text-sm text-muted">
         <li>
-          <Link href="/" className="hover:text-forest-700">
+          <Link href="/" className="link-draw hover:text-ink">
             Start
           </Link>
         </li>
         {crumbs.map((c) => (
           <li key={c.label} className="flex items-center gap-1">
-            <ChevronRight className="size-3.5 text-espresso-500" aria-hidden />
+            <ChevronRight className="size-3.5 text-faint" aria-hidden />
             {c.href ? (
-              <Link href={c.href} className="hover:text-forest-700">
+              <Link href={c.href} className="link-draw hover:text-ink">
                 {c.label}
               </Link>
             ) : (
-              <span aria-current="page" className="text-espresso-900">
+              <span aria-current="page" className="text-ink">
                 {c.label}
               </span>
             )}
@@ -46,18 +45,22 @@ export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
   );
 }
 
-export function PageHero({ eyebrow, title, intro, crumbs, children, className, compact }: Props) {
+/** Sidhuvud för undersidor: brödsmulor, tung h1 med punkt, grå andra mening, ingress. */
+export function PageHero({ title, muted, intro, crumbs, children, className }: Props) {
   return (
-    <section className={cn("paper-texture border-b border-cream-300/70", className)}>
-      <div className={cn("container-site", compact ? "py-7 sm:py-9" : "py-10 sm:py-14")}>
+    <section className={cn("pt-28 pb-12 sm:pt-32 sm:pb-16", className)}>
+      <div className="wrap" data-enter>
         {crumbs && <Breadcrumbs crumbs={crumbs} />}
-        <div className={cn("max-w-3xl", compact ? "mt-4" : "mt-6")}>
-          {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-          <h1 className={cn("mt-3 leading-[1.05]", compact ? "text-4xl sm:text-5xl" : "text-4xl sm:text-5xl lg:text-6xl")}>{title}</h1>
-          {intro && (
-            <div className={cn("leading-relaxed text-espresso-700", compact ? "mt-3 text-base sm:text-lg" : "mt-5 text-lg")}>{intro}</div>
+        <h1 className="t-display mt-8 max-w-5xl">
+          {title}
+          {muted && (
+            <>
+              {" "}
+              <span className="text-faint">{muted}</span>
+            </>
           )}
-        </div>
+        </h1>
+        {intro && <div className="t-lead mt-6 max-w-2xl text-muted">{intro}</div>}
         {children}
       </div>
     </section>
