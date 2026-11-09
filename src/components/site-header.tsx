@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 /** Svävande menyrad (pill) – lossad från sidans kant, centrerad på .wrap. */
 export function SiteHeader() {
   return (
-    <header className="nav fixed inset-x-0 top-0 z-50 pt-3 sm:pt-4">
+    <header className="nav fixed inset-x-0 top-0 z-50 pt-4 sm:pt-6">
       <a
         href="#innehall"
         className="skip-link sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-canvas"

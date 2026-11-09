@@ -62,7 +62,7 @@ export function SiteFooter() {
                 href={site.orderPortalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-canvas/75 hover:text-canvas"
+                className="inline-flex min-h-11 items-center gap-1 text-canvas/75 hover:text-canvas sm:min-h-0"
               >
                 <span className="link-draw">Butiksorder (PCS)</span> <ArrowUpRight className="size-3.5" aria-hidden />
               </a>
@@ -71,7 +71,7 @@ export function SiteFooter() {
 
           <FooterColumn title="Kontakt" className="lg:col-span-3">
             <li className="text-canvas/75">
-              <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-canvas">
+              <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-canvas sm:py-0">
                 <span className="link-draw">{site.address.street}</span>
                 <br />
                 {site.address.postalCode} {site.address.city}
@@ -84,7 +84,7 @@ export function SiteFooter() {
                 href={site.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-canvas/75 hover:text-canvas"
+                className="inline-flex min-h-11 items-center gap-2 text-canvas/75 hover:text-canvas sm:min-h-0"
               >
                 <span className="link-draw">{site.instagramHandle}</span> <InstagramIcon className="size-4" />
               </a>
@@ -106,7 +106,7 @@ function FooterColumn({ title, className, children }: { title: string; className
   return (
     <nav aria-label={title} className={className}>
       <p className="text-[0.8125rem] font-semibold text-canvas/65">{title}</p>
-      <ul className="mt-4 space-y-2.5 text-[0.9375rem]">{children}</ul>
+      <ul className="mt-2 text-[0.9375rem] sm:mt-4 sm:space-y-2.5">{children}</ul>
     </nav>
   );
 }
@@ -116,11 +116,11 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   return (
     <li>
       {external ? (
-        <a href={href} className="text-canvas/75 hover:text-canvas">
+        <a href={href} className="inline-flex min-h-11 items-center text-canvas/75 hover:text-canvas sm:min-h-0">
           <span className="link-draw">{children}</span>
         </a>
       ) : (
-        <Link href={href} className="text-canvas/75 hover:text-canvas">
+        <Link href={href} className="inline-flex min-h-11 items-center text-canvas/75 hover:text-canvas sm:min-h-0">
           <span className="link-draw">{children}</span>
         </Link>
       )}

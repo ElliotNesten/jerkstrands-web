@@ -76,7 +76,7 @@
   --padb: 80px;
 
   /* Tokens som designverktygets moment (public/assets/moments) läser */
-  --nav: 68px;
+  --nav: 72px;
   --bg: var(--color-canvas);
   --surface: var(--color-canvas-soft);
   --ink: var(--color-ink);
@@ -110,7 +110,7 @@
   :root {
     --gut: 32px;
     --band-m: 12px;
-    --nav: 76px;
+    --nav: 84px;
   }
 }
 @media (min-width: 1024px) {
@@ -126,7 +126,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 104px;
 }
 
 body {
@@ -307,6 +307,13 @@ body {
     padding: 0 1.75rem;
     font-size: 1.0625rem;
   }
+  /* Telefon: smalare knappar så att två får plats på en rad */
+  @media (max-width: 639px) {
+    .btn {
+      padding: 0 1rem;
+      font-size: 0.9375rem;
+    }
+  }
 
   /* Länk med understrykning som ritas fram */
   .link-draw {
@@ -412,6 +419,31 @@ body {
   .band {
     border-radius: var(--radius-card);
     margin-inline: var(--band-m);
+  }
+  /* Heroet: sektionen är exakt en skärm, och färgen ligger som ett bakgrundslager med
+     samma luft mot skärmens över- och underkant som mot sidorna (--band-m) – ett kort
+     i första skärmen på alla skärmar. Färgen sätts med --hero-bg. */
+  .band-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 100svh;
+    padding-top: calc(92px + var(--band-m));
+    padding-bottom: calc(24px + var(--band-m));
+  }
+  .band-hero::before {
+    content: "";
+    position: absolute;
+    inset: var(--band-m);
+    z-index: -1;
+    border-radius: var(--radius-card);
+    background: var(--hero-bg, var(--color-butter));
+  }
+  @media (min-width: 640px) {
+    .band-hero {
+      height: 100svh;
+      min-height: 640px;
+      padding-top: calc(120px + var(--band-m));
+    }
   }
 }
 
