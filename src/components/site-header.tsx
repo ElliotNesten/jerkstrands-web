@@ -9,9 +9,15 @@ import { site } from "@/lib/site";
 /** Svävande menyrad (pill) – lossad från sidans kant, centrerad på .wrap. */
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 pt-3 sm:pt-4">
+    <header className="nav fixed inset-x-0 top-0 z-50 pt-3 sm:pt-4">
+      <a
+        href="#innehall"
+        className="skip-link sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-canvas"
+      >
+        Hoppa till innehållet
+      </a>
       <div className="wrap">
-        <div className="flex h-14 items-center justify-between gap-4 rounded-full bg-canvas-soft/95 pr-2 pl-5 backdrop-blur-md sm:h-[60px] sm:pl-6">
+        <div className="relative isolate flex h-14 items-center justify-between gap-4 rounded-full bg-canvas-soft/95 pr-2 pl-5 backdrop-blur-md sm:h-[60px] sm:pl-6 lg:bg-transparent lg:px-0 lg:backdrop-blur-none lg:before:absolute lg:before:inset-y-0 lg:before:-right-2 lg:before:-left-6 lg:before:-z-10 lg:before:rounded-full lg:before:bg-canvas-soft/95 lg:before:backdrop-blur-md">
           <Logo priority className="w-[118px] sm:w-[136px]" />
 
           <nav aria-label="Huvudmeny" className="hidden lg:block">

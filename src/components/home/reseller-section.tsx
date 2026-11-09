@@ -69,7 +69,7 @@ export function ResellerSection() {
                     style={{ objectPosition: s.position }}
                   />
                 </div>
-                <h3 className="t-h4 mt-5">{s.title}</h3>
+                <h3 className="t-title mt-5">{s.title}</h3>
                 <p className="mt-2 text-muted">{s.text}</p>
                 <span className="mt-4 inline-flex items-center gap-1.5 font-semibold">
                   <span className="link-draw">{s.cta}</span>

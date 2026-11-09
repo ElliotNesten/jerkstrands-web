@@ -6,16 +6,16 @@ import { categories } from "@/lib/catalog";
 import { site } from "@/lib/site";
 
 /**
- * Avslutning + sidfot i en sektion: rad 1 är avslutningen med huvudhandlingen,
- * rad 2 länkarna och den juridiska raden. Bläckfärgat band med rundade övre hörn.
+ * Avslutning + sidfot i en sektion (footer.closing): .wrap har exakt två barn – avslutningen med
+ * huvudhandlingen, sedan länkarna med den juridiska raden. Espressofärgat band, en skärm hög.
  */
 export function SiteFooter() {
   const shopCategories = categories.filter((c) => c.segment === "butik").slice(0, 6);
   return (
-    <footer id="kontakt-info" className="mt-0 rounded-t-[24px] bg-ink text-canvas">
-      <div className="wrap pt-20 pb-10 sm:pt-28">
+    <footer id="kontakt-info" className="closing flex min-h-[100svh] flex-col rounded-t-[24px] bg-ink text-canvas">
+      <div className="wrap flex flex-1 flex-col justify-between gap-12 pt-20 pb-20">
         {/* Rad 1 – avslutningen */}
-        <div className="grid gap-y-10 border-b border-canvas/15 pb-16 lg:grid-cols-12 lg:items-end lg:gap-x-6">
+        <div className="grid gap-y-10 border-b border-canvas/15 pb-12 lg:grid-cols-12 lg:items-end lg:gap-x-6">
           <div className="lg:col-span-7">
             <h2 className="t-display">Sälj Jerkstrands i din butik.</h2>
             <p className="t-lead mt-6 max-w-xl text-canvas/75">
@@ -23,17 +23,18 @@ export function SiteFooter() {
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:col-span-5 lg:col-start-8 lg:justify-end">
-            <Link href="/aterforsaljare#bli-aterforsaljare" className="btn btn-inverse btn-lg">
-              Bli återförsäljare <ArrowRight className="size-5" />
+            <Link href="/aterforsaljare#bli-aterforsaljare" className="btn btn-primary">
+              Bli återförsäljare <ArrowRight className="size-4" />
             </Link>
-            <a href={site.phoneHref} className="btn btn-inverse-outline btn-lg">
+            <a href={site.phoneHref} className="btn btn-inverse-outline">
               Ring {site.phone}
             </a>
           </div>
         </div>
 
-        {/* Rad 2 – länkar */}
-        <div className="grid gap-x-6 gap-y-12 pt-14 md:grid-cols-2 lg:grid-cols-12">
+        {/* Rad 2 – länkar och den juridiska raden */}
+        <div>
+        <div className="grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo variant="dark-bg" className="w-[220px]" />
             <p className="mt-6 max-w-xs text-sm text-canvas/75">
@@ -85,15 +86,16 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-canvas/75 hover:text-canvas"
               >
-                <InstagramIcon className="size-4" /> <span className="link-draw">{site.instagramHandle}</span>
+                <span className="link-draw">{site.instagramHandle}</span> <InstagramIcon className="size-4" />
               </a>
             </li>
           </FooterColumn>
         </div>
 
-        <div className="mt-16 flex flex-col justify-between gap-2 text-[0.8125rem] text-canvas/65 sm:flex-row">
+        <div className="mt-12 flex flex-col justify-between gap-2 text-[0.8125rem] text-canvas/65 sm:flex-row">
           <p>© {site.legalName}</p>
           <p>Allt bakas i vårt bageri på Slakthusgatan i Göteborg.</p>
+        </div>
         </div>
       </div>
     </footer>
@@ -102,10 +104,10 @@ export function SiteFooter() {
 
 function FooterColumn({ title, className, children }: { title: string; className?: string; children: React.ReactNode }) {
   return (
-    <div className={className}>
-      <h2 className="text-[0.8125rem] font-semibold text-canvas/65">{title}</h2>
+    <nav aria-label={title} className={className}>
+      <p className="text-[0.8125rem] font-semibold text-canvas/65">{title}</p>
       <ul className="mt-4 space-y-2.5 text-[0.9375rem]">{children}</ul>
-    </div>
+    </nav>
   );
 }
 

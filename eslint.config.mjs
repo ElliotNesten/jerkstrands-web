@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Designverktyg och deras arbetsmappar
     ".claude/**",
     ".taste-skill/**",
+    // Designverktygets kitfiler (moment) kopieras orörda
+    "public/assets/**",
   ]),
 ]);
 

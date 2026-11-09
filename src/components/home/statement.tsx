@@ -1,63 +1,27 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface Props {
+  /** Påståendet; ord inom **dubbla stjärnor** tänds i accentfärgen */
   text: string;
-  /** Ord (exakt som i texten) som tänds i accentfärgen */
-  accent?: string[];
   link?: { href: string; label: string };
 }
 
 /**
- * Moment "word-highlight" (tasteskill): ett påstående i halvt bläck som tänds ord för ord
- * när det passerar skärmens mitt, och släcks igen på väg upp.
+ * Moment "word-highlight" (tasteskill, assets/moments/word-highlight): påståendet tänds ord för ord
+ * när det passerar skärmens mitt. Kitets moment.js sköter rörelsen; utan skript står allt i bläck.
  */
-export function Statement({ text, accent = [], link }: Props) {
-  const ref = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const words = Array.from(el.querySelectorAll<HTMLSpanElement>(".wh-word"));
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const line = window.innerHeight * 0.6;
-      for (const w of words) {
-        const top = w.getBoundingClientRect().top;
-        if (top < line) w.setAttribute("data-lit", "");
-        else w.removeAttribute("data-lit");
-      }
-    };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, []);
-
-  const words = text.split(" ");
+export function Statement({ text, link }: Props) {
+  const parts = text.split(/\*\*(.+?)\*\*/);
   return (
-    <section aria-label="Om Jerkstrands" data-moment="word-highlight" className="screen band flex items-start bg-apricot">
+    <section
+      aria-label="Om Jerkstrands"
+      data-moment="word-highlight"
+      className="statement screen band bg-apricot"
+      style={{ ["--bg" as string]: "var(--color-apricot)", ["--t-h2" as string]: "clamp(2.25rem, 5.4vw, 4.75rem)" }}
+    >
       <div className="wrap">
-        <h2 ref={ref} className="max-w-7xl text-[clamp(2.1rem,5.2vw,4.5rem)] leading-[1.06] font-[650]">
-          {words.map((w, i) => (
-            <span key={i}>
-              <span className="wh-word" data-accent={accent.includes(w.replace(/[.,]/g, "")) ? "" : undefined}>
-                {w}
-              </span>{" "}
-            </span>
-          ))}
-        </h2>
+        <p className="mo-wh__text">{parts.map((p, i) => (i % 2 ? <strong key={i}>{p}</strong> : p))}</p>
         {link && (
           <Link href={link.href} className="btn btn-outline mt-12">
             {link.label} <ArrowRight className="size-4" />

@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+import { preloadModule } from "react-dom";
+import { ArrowRight } from "lucide-react";
 import { Hero } from "@/components/home/hero";
 import { ResellerSection } from "@/components/home/reseller-section";
 import { RangeSection } from "@/components/home/range-section";
@@ -8,17 +11,23 @@ import { Statement } from "@/components/home/statement";
 import { LabelsSection } from "@/components/home/labels-section";
 import { FaqList } from "@/components/faq-list";
 import { SectionHeading } from "@/components/section-heading";
+import { Moments } from "@/components/moments";
 
 /*
   Sidplan (tasteskill) – typ: product (grossistbageri), site-kind: other.
-  Utseende: Mobbin DESIGN.md – vit galleriyta, bläck, ljusgrå toner, piller, inga skuggor;
-  accent = Jerkstrands förpackningsgröna. Moment: photo-chapters + word-highlight.
+  Utseende: Mobbin DESIGN.md (piller, 24px kort, inga skuggor) i en varm bageripalett: grädde,
+  espresso, terrakotta och en pastell per sektion. Moment: photo-chapters + word-highlight, monterade
+  av kitets moments.js (public/assets/moments).
   1 hero (produkten stort) · 2 återförsäljare · 3 sortimentet · 4–7 kvalitet (photo-chapters)
   · säsong (ljusgrå mark) · påstående (word-highlight) · hylletiketter · frågor · avslutning + sidfot.
 */
 export default function Home() {
+  for (const m of ["moments.js", "lib.js", "photo-chapters/moment.js", "word-highlight/moment.js"]) {
+    preloadModule(`/assets/moments/${m}`);
+  }
   return (
     <>
+      <Moments />
       <Hero />
       <ResellerSection />
       <RangeSection />
@@ -60,31 +69,33 @@ export default function Home() {
       />
       <SeasonSection />
       <Statement
-        text="Sedan 1930 har göteborgarna firat med Jerkstrands tårtor. I dag bakar vi samma klassiker för butiker, caféer och hotell, i vårt eget bageri på Slakthusgatan."
-        accent={["1930"]}
+        text="Sedan **1930** har göteborgarna firat med Jerkstrands tårtor. I dag bakar vi samma klassiker för butiker, caféer och hotell, i vårt eget bageri på Slakthusgatan."
         link={{ href: "/om-oss", label: "Läs vår historia" }}
       />
       <LabelsSection />
       <section aria-labelledby="fragor-rubrik" className="screen">
         <div className="wrap grid gap-y-10 lg:grid-cols-12 lg:gap-x-6">
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-7">
             <SectionHeading
               id="fragor-rubrik"
               title="Frågor från återförsäljare."
-              intro="Saknas svaret? Ring oss på 031-84 08 85."
+              intro="Saknas svaret? Hör av dig till bageriet, vi svarar på vardagar."
             />
-            <div className="relative mt-8 aspect-[3/2] overflow-hidden rounded-[24px]">
-              <Image
-                src="/images/site/kakor-pase.jpg"
-                alt="Småkakor i Jerkstrands påse på en marmorskiva"
-                fill
-                sizes="(min-width: 1024px) 38vw, 92vw"
-                className="object-cover"
-              />
+            <div className="mt-8">
+              <FaqList />
             </div>
+            <Link href="/kontakt" className="btn btn-outline mt-8">
+              Kontakta bageriet <ArrowRight className="size-4" />
+            </Link>
           </div>
-          <div className="lg:col-span-7">
-            <FaqList />
+          <div className="relative aspect-[3/2] overflow-hidden rounded-[24px] lg:col-span-5 lg:col-start-8 lg:aspect-auto">
+            <Image
+              src="/images/site/kakor-pase.jpg"
+              alt="Småkakor i Jerkstrands påse på en marmorskiva"
+              fill
+              sizes="(min-width: 1024px) 50vw, 92vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>

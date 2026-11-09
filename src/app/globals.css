@@ -74,6 +74,30 @@
   --nav-h: 72px;
   --padt: 120px;
   --padb: 80px;
+
+  /* Tokens som designverktygets moment (public/assets/moments) läser */
+  --nav: 68px;
+  --bg: var(--color-canvas);
+  --surface: var(--color-canvas-soft);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --accent: var(--color-berry);
+  --line: var(--color-hairline);
+  --font-text: var(--font-figtree), -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --display-weight: 650;
+  --display-tracking: -0.025em;
+  --t-small: 0.875rem;
+  --t-lead: clamp(1.125rem, 1.6vw, 1.25rem);
+  --t-h3: clamp(1.5rem, 2.4vw, 2rem);
+  --t-h2: clamp(2rem, 3.6vw, 2.75rem);
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --r-md: 20px;
+  --r-lg: 24px;
 }
 
 @media (max-width: 639px) {
@@ -86,11 +110,17 @@
   :root {
     --gut: 32px;
     --band-m: 12px;
+    --nav: 76px;
   }
 }
 @media (min-width: 1024px) {
   :root {
     --gut: 48px;
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --gut: 64px;
   }
 }
 
@@ -383,45 +413,12 @@ body {
     border-radius: var(--radius-card);
     margin-inline: var(--band-m);
   }
+}
 
-  /* Moment: photo-chapters – n skärmar levande, stilla vid reducerad rörelse */
-  .chapters {
-    height: calc(var(--n, 4) * 100svh);
-  }
-  .chapters-static {
-    display: none;
-  }
-  @media (prefers-reduced-motion: reduce), (max-height: 599px) {
-    .chapters {
-      height: auto;
-    }
-    .chapters-live {
-      display: none;
-    }
-    .chapters-static {
-      display: block;
-    }
-  }
-
-  /* Moment: word-highlight – ord i halvt bläck tänds när de passerar mitten */
-  .wh-word {
-    color: rgb(43 26 16 / 0.6);
-    transition: color 0.35s ease;
-  }
-  .wh-word[data-lit] {
-    color: var(--color-ink);
-  }
-  .wh-word[data-lit][data-accent] {
-    color: var(--color-berry);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .wh-word {
-      color: var(--color-ink);
-    }
-    .wh-word[data-accent] {
-      color: var(--color-berry);
-    }
-  }
+/* word-highlight: påståendet får hela radbredden (kitets eget tak är 960px) */
+[data-moment="word-highlight"] .mo-wh__text {
+  max-width: 1240px;
+  line-height: 1.06;
 }
 
 @media (prefers-reduced-motion: reduce) {

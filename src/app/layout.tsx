@@ -79,12 +79,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <a
-          href="#innehall"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-canvas"
-        >
-          Hoppa till innehållet
-        </a>
         <SiteHeader />
         <main id="innehall" className="flex-1">
           {children}
