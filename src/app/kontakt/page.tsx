@@ -37,7 +37,7 @@ export default function KontaktPage() {
 
   return (
     <>
-      <PageHero crumbs={[{ label: "Kontakt" }]} title="Kontakt." muted="Ring, mejla eller skriv till bageriet." />
+      <PageHero tone="vanilla" crumbs={[{ label: "Kontakt" }]} title="Kontakt." muted="Ring, mejla eller skriv till bageriet." />
 
       <section className="pb-24">
         <div className="wrap grid gap-10 lg:grid-cols-12 lg:gap-6">
@@ -59,11 +59,11 @@ export default function KontaktPage() {
                 </div>
               ))}
             </dl>
-            <p className="mt-6 rounded-[16px] bg-canvas-soft p-5 text-[0.9375rem]">
+            <p className="mt-6 rounded-[16px] bg-apricot p-5 text-[0.9375rem]">
               Kunder beställer i orderportalen PCS före kl. {site.orderCutoff} för leverans nästa dag.
             </p>
           </div>
-          <div className="tile p-6 sm:p-8 lg:col-span-7">
+          <div className="rounded-[24px] bg-butter p-6 sm:p-8 lg:col-span-7">
             <h2 className="t-h3">Skriv till oss.</h2>
             <p className="mt-2 mb-6 text-muted">Vi svarar på vardagar.</p>
             <MailtoForm fields={fields} subject="{arende} – {namn}" submitLabel="Skicka meddelandet" />

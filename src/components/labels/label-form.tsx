@@ -46,7 +46,7 @@ export function LabelForm({ product, variants }: Props) {
   }
 
   return (
-    <div className="tile p-6 sm:p-7">
+    <div className="rounded-[24px] bg-butter p-6 sm:p-7">
       <h2 className="t-h4">Hylletikett.</h2>
       <p className="mt-1 text-sm text-muted">150 mm bred med EAN-streckkod, QR-kod och jämförpris.</p>
 
@@ -117,7 +117,7 @@ export function LabelForm({ product, variants }: Props) {
         </button>
       </div>
       {message && (
-        <p className="mt-3 text-sm text-accent" role="status">
+        <p className="mt-3 text-sm font-semibold text-accent-deep" role="status">
           {message}
         </p>
       )}

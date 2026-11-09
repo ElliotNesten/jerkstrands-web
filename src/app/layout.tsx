@@ -1,13 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { LabelQueuePanel } from "@/components/labels/label-queue-panel";
 import { site } from "@/lib/site";
 
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
+  axes: ["opsz", "wdth"],
+  display: "swap",
+});
+
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
   display: "swap",
 });
@@ -40,7 +47,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#fff8ef",
 };
 
 const organizationJsonLd = {
@@ -66,7 +73,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="sv" className={`${hanken.variable} h-full antialiased`}>
+    <html lang="sv" className={`${bricolage.variable} ${figtree.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <script
           type="application/ld+json"

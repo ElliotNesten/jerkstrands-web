@@ -8,10 +8,12 @@ import { Breadcrumbs } from "@/components/page-hero";
 import { EanBarcode } from "@/components/ean-barcode";
 import { LabelForm } from "@/components/labels/label-form";
 import { ProductCard, labelProduct, toSummary } from "@/components/product-card";
+import { toneBg } from "@/lib/tones";
 import {
   allergenLabels,
   formatNumber,
   formatWeight,
+  categoryTone,
   getCategory,
   getProduct,
   products,
@@ -87,7 +89,7 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
           />
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:gap-6">
             <div className="lg:sticky lg:top-28 lg:col-span-6 lg:self-start">
-              <div className="tile relative aspect-square overflow-hidden">
+              <div className={`relative aspect-square overflow-hidden rounded-[24px] ${toneBg[categoryTone(product.categories[0])]}`}>
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -115,7 +117,7 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
                 </Link>
               )}
               <h1 className="t-h1 mt-3">{product.name}.</h1>
-              <p className="t-lead mt-3 text-muted">
+              <p className="t-lead mt-3 text-ink-soft">
                 Art.nr {product.articleNo}
                 {weight && <> · {weight}</>}
               </p>
@@ -165,7 +167,7 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
       {product.hasProductData && (
         <section className="pb-20">
           <div className="wrap grid items-start gap-6 lg:grid-cols-12">
-            <div className="tile p-6 sm:p-8 lg:col-span-7">
+            <div className="rounded-[24px] bg-vanilla p-6 sm:p-8 lg:col-span-7">
               <h2 className="t-h3">Ingredienser.</h2>
               {product.ingredientsShort && (
                 <p className="mt-4 text-[1.0625rem]">
@@ -183,7 +185,7 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
             </div>
 
             <div className="flex flex-col gap-6 lg:col-span-5">
-              <div className="tile p-6 sm:p-8">
+              <div className="rounded-[24px] bg-peach p-6 sm:p-8">
                 <h2 className="t-h3">Allergener.</h2>
                 <h3 className="mt-4 text-[0.8125rem] font-semibold text-muted">Innehåller</h3>
                 {product.allergens.length ? (
@@ -206,7 +208,7 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
               </div>
 
               {product.nutrition && (
-                <div className="tile p-6 sm:p-8">
+                <div className="rounded-[24px] bg-sage p-6 sm:p-8">
                   <h2 className="t-h3">Näringsvärde.</h2>
                   <p className="mt-1 text-sm text-muted">Per 100 g</p>
                   <table className="mt-4 w-full text-sm">

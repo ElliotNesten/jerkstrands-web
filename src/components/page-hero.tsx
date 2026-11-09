@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { toneBg, type Tone } from "@/lib/tones";
 
 interface Crumb {
   href?: string;
@@ -15,6 +16,8 @@ interface Props {
   crumbs?: Crumb[];
   children?: ReactNode;
   className?: string;
+  /** Färgband bakom sidhuvudet */
+  tone?: Tone;
 }
 
 export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
@@ -46,9 +49,9 @@ export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
 }
 
 /** Sidhuvud för undersidor: brödsmulor, tung h1 med punkt, grå andra mening, ingress. */
-export function PageHero({ title, muted, intro, crumbs, children, className }: Props) {
+export function PageHero({ title, muted, intro, crumbs, children, className, tone }: Props) {
   return (
-    <section className={cn("pt-28 pb-12 sm:pt-32 sm:pb-16", className)}>
+    <section className={cn(tone ? cn("band mb-12 pt-28 pb-14 sm:mb-16 sm:pt-32 sm:pb-20", toneBg[tone]) : "pt-28 pb-12 sm:pt-32 sm:pb-16", className)}>
       <div className="wrap" data-enter>
         {crumbs && <Breadcrumbs crumbs={crumbs} />}
         <h1 className="t-display mt-8 max-w-5xl">
@@ -56,11 +59,11 @@ export function PageHero({ title, muted, intro, crumbs, children, className }: P
           {muted && (
             <>
               {" "}
-              <span className="text-faint">{muted}</span>
+              <span className="text-ink/55">{muted}</span>
             </>
           )}
         </h1>
-        {intro && <div className="t-lead mt-6 max-w-2xl text-muted">{intro}</div>}
+        {intro && <div className="t-lead mt-6 max-w-2xl text-ink-soft">{intro}</div>}
         {children}
       </div>
     </section>

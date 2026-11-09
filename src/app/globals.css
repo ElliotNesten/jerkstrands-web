@@ -14,20 +14,41 @@
 ------------------------------------------------------------------- */
 
 @theme {
-  --color-ink: #141414;
-  --color-ink-soft: #262626;
-  --color-muted: #707070;
-  --color-faint: #adadad;
-  --color-canvas: #ffffff;
-  --color-canvas-soft: #f3f3f3;
-  --color-field: #f0f0f0;
-  --color-hairline-soft: #f0f0f0;
-  --color-hairline: #e0e0e0;
-  --color-accent: #48725f;
-  --color-accent-soft: #e8efeb;
-  --color-overlay: rgb(115 115 115 / 0.56);
+  /* Bas: varmvit grädde och espresso i stället för vitt och svart */
+  --color-ink: #2b1a10;
+  --color-ink-soft: #3d2a1e;
+  --color-muted: #5e4b3f;
+  --color-faint: #9c8670;
+  --color-canvas: #fff8ef;
+  --color-canvas-soft: #f8ebd8;
+  --color-field: #f3e4ce;
+  --color-hairline-soft: #f1e2cc;
+  --color-hairline: #e6d2b5;
+  /* Handling: skorpfärg (terrakotta) */
+  --color-accent: #b4532a;
+  --color-accent-deep: #8f3d1b;
+  --color-accent-soft: #f6dccb;
+  --color-overlay: rgb(43 26 16 / 0.55);
 
-  --font-sans: var(--font-hanken), -apple-system, "Helvetica Neue", Arial, sans-serif;
+  /* Bageriets färger – plattor och sektionsfärger */
+  --color-butter: #fbe6ae;
+  --color-wheat: #f2ddb8;
+  --color-honey: #f7d79a;
+  --color-apricot: #f9d2b3;
+  --color-peach: #fbdcc6;
+  --color-raspberry: #f7cdd2;
+  --color-berry: #9e2b3a;
+  --color-berry-deep: #7c1f2c;
+  --color-pistachio: #dde8c6;
+  --color-sage: #d9e5dc;
+  --color-green: #48725f;
+  --color-green-deep: #2f5442;
+  --color-vanilla: #f6e8c9;
+  --color-cocoa: #f1d3c8;
+  --color-gold: #c19a45;
+
+  --font-sans: var(--font-figtree), -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-figtree), sans-serif;
 
   --radius-tile: 16px;
   --radius-card: 24px;
@@ -48,6 +69,8 @@
 
 :root {
   color-scheme: light;
+  --gut: 16px;
+  --band-m: 8px;
   --nav-h: 72px;
   --padt: 120px;
   --padb: 80px;
@@ -57,6 +80,17 @@
   :root {
     --padt: 96px;
     --padb: 56px;
+  }
+}
+@media (min-width: 640px) {
+  :root {
+    --gut: 32px;
+    --band-m: 12px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --gut: 48px;
   }
 }
 
@@ -69,15 +103,15 @@ body {
   background: var(--color-canvas);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-weight: 450;
+  font-weight: 420;
   font-size: 16px;
   line-height: 1.38;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--color-ink);
-  color: var(--color-canvas);
+  background: var(--color-honey);
+  color: var(--color-ink);
 }
 
 :focus-visible {
@@ -89,9 +123,12 @@ body {
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  .font-display {
+    font-family: var(--font-display);
     font-weight: 650;
-    letter-spacing: 0;
+    font-stretch: 96%;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
   p {
@@ -107,17 +144,11 @@ body {
   /* En .wrap för hela sidan: samma vänster- och högerkant hela vägen ner. */
   .wrap {
     margin-inline: auto;
-    width: min(100% - 48px, 1280px);
+    width: min(100% - 2 * var(--gut), 1600px);
   }
-  @media (min-width: 640px) and (max-width: 1023px) {
-    .wrap {
-      width: min(100% - 96px, 1280px);
-    }
-  }
-  @media (min-width: 1024px) {
-    .wrap {
-      width: min(100% - 160px, 1280px);
-    }
+  /* Innehållet i ett färgat band linjerar med resten av sidan: bandets marginal räknas bort */
+  .band .wrap {
+    width: min(100% - 2 * (var(--gut) - var(--band-m)), 1600px);
   }
 
   /* En sektion per skärm: rubriken överst, toppjusterad. */
@@ -133,18 +164,21 @@ body {
   /* Typskala (Mobbin): 650 rubriker, 300 ingress, 450 brödtext */
   .t-display {
     font-size: clamp(2.6rem, 6.4vw, 5rem);
-    line-height: 1;
+    line-height: 0.98;
     font-weight: 650;
+    letter-spacing: -0.035em;
   }
   .t-h1 {
     font-size: clamp(2.4rem, 5vw, 3.5rem);
     line-height: 1.02;
     font-weight: 650;
+    letter-spacing: -0.03em;
   }
   .t-h2 {
     font-size: clamp(2rem, 3.6vw, 2.75rem);
-    line-height: 1.1;
+    line-height: 1.06;
     font-weight: 650;
+    letter-spacing: -0.025em;
   }
   .t-h3 {
     font-size: clamp(1.5rem, 2.4vw, 2rem);
@@ -198,33 +232,36 @@ body {
     transform: translateY(0) scale(0.97);
   }
   .btn-primary {
-    background: var(--color-ink);
+    background: var(--color-accent);
     color: var(--color-canvas);
   }
   .btn-primary:hover {
-    background: var(--color-ink-soft);
+    background: var(--color-accent-deep);
   }
   .btn-outline {
-    background: var(--color-canvas);
+    background: transparent;
     color: var(--color-ink);
-    border: 1px solid var(--color-hairline);
+    border: 1.5px solid rgb(43 26 16 / 0.22);
   }
   .btn-outline:hover {
     border-color: var(--color-ink);
   }
   .btn-soft {
-    background: var(--color-canvas-soft);
+    background: rgb(43 26 16 / 0.07);
     color: var(--color-ink);
   }
   .btn-soft:hover {
-    background: var(--color-hairline);
+    background: rgb(43 26 16 / 0.13);
   }
   .btn-inverse {
     background: var(--color-canvas);
     color: var(--color-ink);
   }
+  .btn-inverse:hover {
+    background: var(--color-butter);
+  }
   .btn-inverse-outline {
-    border: 1px solid rgb(255 255 255 / 0.28);
+    border: 1.5px solid rgb(255 248 239 / 0.35);
     color: var(--color-canvas);
   }
   .btn-inverse-outline:hover {
@@ -293,6 +330,9 @@ body {
   .field::placeholder {
     color: var(--color-faint);
   }
+  .field-on-tone {
+    background: var(--color-canvas);
+  }
   .field:focus {
     outline: none;
     border-color: var(--color-ink);
@@ -338,6 +378,12 @@ body {
     color: var(--color-muted);
   }
 
+  /* Färgade sektionsband: platt färg, rundade hörn som sidfoten */
+  .band {
+    border-radius: var(--radius-card);
+    margin-inline: var(--band-m);
+  }
+
   /* Moment: photo-chapters – n skärmar levande, stilla vid reducerad rörelse */
   .chapters {
     height: calc(var(--n, 4) * 100svh);
@@ -359,21 +405,21 @@ body {
 
   /* Moment: word-highlight – ord i halvt bläck tänds när de passerar mitten */
   .wh-word {
-    color: rgb(20 20 20 / 0.28);
+    color: rgb(43 26 16 / 0.6);
     transition: color 0.35s ease;
   }
   .wh-word[data-lit] {
     color: var(--color-ink);
   }
   .wh-word[data-lit][data-accent] {
-    color: var(--color-accent);
+    color: var(--color-berry);
   }
   @media (prefers-reduced-motion: reduce) {
     .wh-word {
       color: var(--color-ink);
     }
     .wh-word[data-accent] {
-      color: var(--color-accent);
+      color: var(--color-berry);
     }
   }
 }

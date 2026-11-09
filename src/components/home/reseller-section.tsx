@@ -37,7 +37,7 @@ const segments = [
 /** Skärm två: återförsäljare – placerad högt upp, direkt efter heron. */
 export function ResellerSection() {
   return (
-    <section id="aterforsaljare" aria-labelledby="aterforsaljare-rubrik" className="screen max-sm:min-h-[200svh]">
+    <section id="aterforsaljare" aria-labelledby="aterforsaljare-rubrik" className="screen band bg-raspberry max-sm:min-h-[200svh]">
       <div className="wrap">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
@@ -49,7 +49,7 @@ export function ResellerSection() {
             href={site.orderPortalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-soft self-start lg:self-auto"
+            className="btn btn-outline self-start lg:self-auto"
           >
             Redan kund? Butiksorder <ArrowUpRight className="size-4" />
           </a>
@@ -59,7 +59,7 @@ export function ResellerSection() {
           {segments.map((s) => (
             <li key={s.title}>
               <Link href={s.href} className="lift group flex h-full flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-canvas-soft md:max-lg:aspect-[3/4]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-canvas md:max-lg:aspect-[3/4] 2xl:aspect-[16/10]">
                   <Image
                     src={s.image}
                     alt={s.alt}

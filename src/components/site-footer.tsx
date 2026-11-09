@@ -15,10 +15,10 @@ export function SiteFooter() {
     <footer id="kontakt-info" className="mt-0 rounded-t-[24px] bg-ink text-canvas">
       <div className="wrap pt-20 pb-10 sm:pt-28">
         {/* Rad 1 – avslutningen */}
-        <div className="grid gap-y-10 border-b border-white/10 pb-16 lg:grid-cols-12 lg:items-end lg:gap-x-6">
+        <div className="grid gap-y-10 border-b border-canvas/15 pb-16 lg:grid-cols-12 lg:items-end lg:gap-x-6">
           <div className="lg:col-span-7">
             <h2 className="t-display">Sälj Jerkstrands i din butik.</h2>
-            <p className="t-lead mt-6 max-w-xl text-white/70">
+            <p className="t-lead mt-6 max-w-xl text-canvas/75">
               Berätta om din butik, ditt café eller ditt hotell. Vi föreslår sortiment och leveransdagar.
             </p>
           </div>
@@ -36,7 +36,7 @@ export function SiteFooter() {
         <div className="grid gap-x-6 gap-y-12 pt-14 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo variant="dark-bg" className="w-[220px]" />
-            <p className="mt-6 max-w-xs text-sm text-white/55">
+            <p className="mt-6 max-w-xs text-sm text-canvas/75">
               Konditori och bageri i Göteborg sedan {site.founded}.
             </p>
           </div>
@@ -61,7 +61,7 @@ export function SiteFooter() {
                 href={site.orderPortalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-white/55 hover:text-white"
+                className="inline-flex items-center gap-1 text-canvas/75 hover:text-canvas"
               >
                 <span className="link-draw">Butiksorder (PCS)</span> <ArrowUpRight className="size-3.5" aria-hidden />
               </a>
@@ -69,8 +69,8 @@ export function SiteFooter() {
           </FooterColumn>
 
           <FooterColumn title="Kontakt" className="lg:col-span-3">
-            <li className="text-white/55">
-              <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <li className="text-canvas/75">
+              <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-canvas">
                 <span className="link-draw">{site.address.street}</span>
                 <br />
                 {site.address.postalCode} {site.address.city}
@@ -83,7 +83,7 @@ export function SiteFooter() {
                 href={site.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/55 hover:text-white"
+                className="inline-flex items-center gap-2 text-canvas/75 hover:text-canvas"
               >
                 <InstagramIcon className="size-4" /> <span className="link-draw">{site.instagramHandle}</span>
               </a>
@@ -91,7 +91,7 @@ export function SiteFooter() {
           </FooterColumn>
         </div>
 
-        <div className="mt-16 flex flex-col justify-between gap-2 text-[0.8125rem] text-white/40 sm:flex-row">
+        <div className="mt-16 flex flex-col justify-between gap-2 text-[0.8125rem] text-canvas/65 sm:flex-row">
           <p>© {site.legalName}</p>
           <p>Allt bakas i vårt bageri på Slakthusgatan i Göteborg.</p>
         </div>
@@ -103,7 +103,7 @@ export function SiteFooter() {
 function FooterColumn({ title, className, children }: { title: string; className?: string; children: React.ReactNode }) {
   return (
     <div className={className}>
-      <h2 className="text-[0.8125rem] font-semibold text-white/40">{title}</h2>
+      <h2 className="text-[0.8125rem] font-semibold text-canvas/65">{title}</h2>
       <ul className="mt-4 space-y-2.5 text-[0.9375rem]">{children}</ul>
     </div>
   );
@@ -114,11 +114,11 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   return (
     <li>
       {external ? (
-        <a href={href} className="text-white/55 hover:text-white">
+        <a href={href} className="text-canvas/75 hover:text-canvas">
           <span className="link-draw">{children}</span>
         </a>
       ) : (
-        <Link href={href} className="text-white/55 hover:text-white">
+        <Link href={href} className="text-canvas/75 hover:text-canvas">
           <span className="link-draw">{children}</span>
         </Link>
       )}

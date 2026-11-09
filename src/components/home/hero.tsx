@@ -9,15 +9,15 @@ import { site } from "@/lib/site";
  */
 export function Hero() {
   return (
-    <section className="flex h-[100svh] min-h-[640px] flex-col pt-[104px] pb-6 sm:pt-[120px]">
+    <section className="band flex h-[100svh] min-h-[640px] flex-col bg-butter pt-[104px] pb-6 sm:pt-[120px]">
       <div className="wrap flex min-h-0 flex-1 flex-col">
         <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-6" data-enter>
           <div className="lg:col-span-7">
-            <p className="mb-4 text-sm font-semibold text-accent">Beställ före kl. {site.orderCutoff}, leverans nästa dag</p>
+            <p className="mb-4 text-sm font-semibold text-accent-deep">Beställ före kl. {site.orderCutoff}, leverans nästa dag</p>
             <h1 className="t-display">Bröd och bakverk till butik, café och hotell.</h1>
           </div>
           <div className="lg:col-span-4 lg:col-start-9">
-            <p className="t-lead text-muted">
+            <p className="t-lead text-ink-soft">
               Vi bakar {products.length} artiklar i eget bageri i Göteborg sedan {site.founded}. Allt levereras märkt med
               EAN, ingredienser och allergener.
             </p>
@@ -39,7 +39,7 @@ export function Hero() {
             fill
             preload
             quality={85}
-            sizes="(min-width: 1440px) 1280px, 92vw"
+            sizes="(min-width: 1700px) 1600px, 94vw"
             className="object-cover object-[50%_58%]"
           />
         </div>

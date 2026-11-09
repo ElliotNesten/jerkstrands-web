@@ -162,7 +162,7 @@ export function LabelQueuePanel() {
           <Tag className="size-3.5" />
         </span>
         Hylletiketter
-        <span className="rounded-full bg-white/15 px-2 py-0.5 text-xs tabular-nums">{items.length}</span>
+        <span className="rounded-full bg-canvas/15 px-2 py-0.5 text-xs tabular-nums">{items.length}</span>
       </button>
     </div>
   );

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AddLabelButton } from "@/components/labels/add-label-button";
-import { formatWeight, tagLabels, type Product } from "@/lib/catalog";
+import { categoryTone, formatWeight, tagLabels, type Product } from "@/lib/catalog";
+import { toneBg } from "@/lib/tones";
 import { cn } from "@/lib/cn";
 
 export type ProductSummary = Pick<
@@ -63,7 +64,7 @@ export function ProductCard({ product, showLabelButton = true, className, sizes 
   const badges = product.tags.filter((t) => t !== "mini");
   return (
     <article className={cn("lift group relative flex flex-col", className)}>
-      <div className="tile relative aspect-[4/3] overflow-hidden">
+      <div className={cn("relative aspect-[4/3] overflow-hidden rounded-[24px]", toneBg[categoryTone(product.categories[0])])}>
         <Image
           src={product.image}
           alt={product.name}

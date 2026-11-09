@@ -93,7 +93,7 @@ export function PhotoChapters({ id, title, muted, lead, chapters, link }: Props)
   const heading = (
     <div className="max-w-3xl">
       <h2 id={`${id}-rubrik`} className="t-h2">
-        {title} {muted && <span className="text-faint">{muted}</span>}
+        {title} {muted && <span className="text-ink/55">{muted}</span>}
       </h2>
       <p className="t-lead mt-4 text-muted">{lead}</p>
     </div>
@@ -114,7 +114,7 @@ export function PhotoChapters({ id, title, muted, lead, chapters, link }: Props)
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             {heading}
             {link && (
-              <Link href={link.href} className="btn btn-soft self-start lg:self-auto">
+              <Link href={link.href} className="btn btn-outline self-start lg:self-auto">
                 {link.label} <ArrowRight className="size-4" />
               </Link>
             )}
@@ -134,7 +134,7 @@ export function PhotoChapters({ id, title, muted, lead, chapters, link }: Props)
                     alt={c.alt}
                     fill
                     loading={i === 0 || near ? "eager" : "lazy"}
-                    sizes="(min-width: 1440px) 1280px, 92vw"
+                    sizes="(min-width: 1700px) 1600px, 94vw"
                     className="object-cover will-change-transform"
                     style={{ objectPosition: c.position ?? "50% 50%", transform: `scale(${1.06 - 0.06 * r})` }}
                   />
@@ -142,13 +142,13 @@ export function PhotoChapters({ id, title, muted, lead, chapters, link }: Props)
               );
             })}
             <div className="absolute bottom-3 left-3 z-20 w-[min(26rem,calc(100%-1.5rem))] rounded-[20px] bg-canvas p-5 sm:bottom-5 sm:left-5 sm:p-6" aria-live="polite">
-              <div className="flex items-center justify-between text-sm font-semibold text-muted">
+              <div className="flex items-center justify-between text-sm font-semibold text-accent">
                 <span>
                   {String(active + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
                 </span>
                 <span className="flex gap-1" aria-hidden>
                   {chapters.map((c, i) => (
-                    <span key={c.image} className={`h-1 w-5 rounded-full transition-colors ${i <= active ? "bg-ink" : "bg-hairline"}`} />
+                    <span key={c.image} className={`h-1 w-5 rounded-full transition-colors ${i <= active ? "bg-accent" : "bg-hairline"}`} />
                   ))}
                 </span>
               </div>

@@ -38,7 +38,7 @@ const work = [
 export default function OmOssPage() {
   return (
     <>
-      <PageHero crumbs={[{ label: "Om oss" }]} title={`I Göteborg sedan ${site.founded}.`} muted="Konditori och bageri på Slakthusgatan." />
+      <PageHero tone="raspberry" crumbs={[{ label: "Om oss" }]} title={`I Göteborg sedan ${site.founded}.`} muted="Konditori och bageri på Slakthusgatan." />
 
       <section className="pb-20 sm:pb-28">
         <div className="wrap grid items-start gap-10 lg:grid-cols-12 lg:gap-6">
@@ -74,7 +74,7 @@ export default function OmOssPage() {
         </div>
       </section>
 
-      <section className="rounded-[24px] bg-canvas-soft py-20 sm:py-28">
+      <section className="band bg-wheat py-20 sm:py-28">
         <div className="wrap">
           <SectionHeading title="Bagare och konditorer under samma tak." />
           <ul className="mt-12 grid gap-6 md:grid-cols-3">

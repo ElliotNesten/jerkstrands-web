@@ -21,6 +21,7 @@ export default function KvalitetPage() {
   return (
     <>
       <PageHero
+        tone="pistachio"
         crumbs={[{ label: "Kvalitet" }]}
         title="Kvalitet från deg till disk."
         muted={`Eget bageri i Göteborg sedan ${site.founded}.`}
@@ -33,11 +34,11 @@ export default function KvalitetPage() {
       />
 
       {qualityDetails.map((d, i) => (
-        <section key={d.title} className={i % 2 === 1 ? "rounded-[24px] bg-canvas-soft py-20 sm:py-28" : "py-20 sm:py-28"}>
+        <section key={d.title} className={i === 1 ? "band bg-raspberry py-20 sm:py-28" : i === 3 ? "band bg-sage py-20 sm:py-28" : "py-20 sm:py-28"}>
           <div className="wrap grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
             <div className="lg:col-span-5">
               <h2 className="t-h2">{d.title}</h2>
-              <p className="t-lead mt-5 text-muted">{d.text}</p>
+              <p className="t-lead mt-5 text-ink-soft">{d.text}</p>
             </div>
             <div className="lg:col-span-6 lg:col-start-7">
               {"contain" in d ? (

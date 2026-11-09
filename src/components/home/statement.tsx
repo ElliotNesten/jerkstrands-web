@@ -47,9 +47,9 @@ export function Statement({ text, accent = [], link }: Props) {
 
   const words = text.split(" ");
   return (
-    <section aria-label="Om Jerkstrands" data-moment="word-highlight" className="screen flex items-start">
+    <section aria-label="Om Jerkstrands" data-moment="word-highlight" className="screen band flex items-start bg-apricot">
       <div className="wrap">
-        <h2 ref={ref} className="max-w-6xl text-[clamp(2.1rem,5.2vw,4.5rem)] leading-[1.06] font-[650]">
+        <h2 ref={ref} className="max-w-7xl text-[clamp(2.1rem,5.2vw,4.5rem)] leading-[1.06] font-[650]">
           {words.map((w, i) => (
             <span key={i}>
               <span className="wh-word" data-accent={accent.includes(w.replace(/[.,]/g, "")) ? "" : undefined}>

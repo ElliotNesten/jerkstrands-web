@@ -18,6 +18,7 @@ export default function SortimentPage() {
   return (
     <>
       <PageHero
+        tone="butter"
         crumbs={[{ label: "Sortiment" }]}
         title="Sortiment."
         muted={`${products.length} artiklar med EAN, ingredienser och allergener.`}
@@ -36,7 +37,7 @@ function CatalogFallback() {
   return (
     <div>
       <div className="h-14 w-full rounded-full bg-field" aria-hidden />
-      <ul className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-3 xl:grid-cols-4">
+      <ul className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-3 xl:grid-cols-4 min-[1800px]:grid-cols-5">
         {items.map((p) => (
           <li key={p.slug}>
             <ProductCard product={p} showLabelButton={false} />

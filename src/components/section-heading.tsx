@@ -22,12 +22,12 @@ export function SectionHeading({ title, muted, intro, tone = "dark", className, 
         {muted && (
           <>
             {" "}
-            <span className={tone === "light" ? "text-white/45" : "text-faint"}>{muted}</span>
+            <span className={tone === "light" ? "text-canvas/65" : "text-ink/55"}>{muted}</span>
           </>
         )}
       </Heading>
       {intro && (
-        <div className={cn("t-lead mt-5 max-w-2xl", tone === "light" ? "text-white/70" : "text-muted")}>{intro}</div>
+        <div className={cn("t-lead mt-5 max-w-2xl", tone === "light" ? "text-canvas/85" : "text-ink-soft")}>{intro}</div>
       )}
     </div>
   );

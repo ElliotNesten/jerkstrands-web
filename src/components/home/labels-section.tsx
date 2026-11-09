@@ -12,7 +12,7 @@ const steps = [
 /** Säljstöd: hylletiketter med pris, EAN och QR-kod. Text till vänster, etiketten till höger. */
 export function LabelsSection() {
   return (
-    <section aria-labelledby="etiketter-rubrik" className="screen">
+    <section aria-labelledby="etiketter-rubrik" className="screen band bg-pistachio">
       <div className="wrap">
         <SectionHeading
           id="etiketter-rubrik"
@@ -22,8 +22,8 @@ export function LabelsSection() {
         <div className="mt-12 grid gap-6 lg:grid-cols-12">
           <ol className="flex flex-col gap-3 lg:col-span-5">
             {steps.map((s, i) => (
-              <li key={s.title} className="flex gap-4 rounded-[16px] bg-canvas-soft p-5">
-                <span className="text-sm font-semibold text-muted">{String(i + 1).padStart(2, "0")}</span>
+              <li key={s.title} className="flex gap-4 rounded-[16px] bg-canvas p-5">
+                <span className="text-sm font-semibold text-green">{String(i + 1).padStart(2, "0")}</span>
                 <div>
                   <h3 className="t-title">{s.title}</h3>
                   <p className="mt-1 text-muted">{s.text}</p>
@@ -34,7 +34,7 @@ export function LabelsSection() {
               Skapa hylletiketter <ArrowRight className="size-4" />
             </Link>
           </ol>
-          <div className="flex items-center rounded-[24px] bg-canvas-soft p-5 sm:p-10 lg:col-span-7">
+          <div className="flex items-center rounded-[24px] bg-canvas p-5 sm:p-10 lg:col-span-7">
             <Image
               src="/images/site/hylletikett-exempel.png"
               alt="Hylletikett för Jordgubbstårta med styckpris 149,90 kr, jämförpris, QR-kod och EAN-streckkod"

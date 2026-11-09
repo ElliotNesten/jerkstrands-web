@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CatalogSearchForm } from "@/components/catalog-search-form";
 import { SectionHeading } from "@/components/section-heading";
 import { categories, categoryCover, productsInCategory, products } from "@/lib/catalog";
+import { toneBg } from "@/lib/tones";
 
 /** Skärm tre: sortimentet som galleri – produkterna står för färgen. */
 export function RangeSection() {
@@ -24,7 +25,7 @@ export function RangeSection() {
           {shop.map((c) => (
             <li key={c.id}>
               <Link href={`/sortiment?kategori=${c.id}`} className="lift group block">
-                <div className="tile relative aspect-[4/5] overflow-hidden sm:aspect-[4/3] lg:aspect-[3/2]">
+                <div className={`relative aspect-[4/5] overflow-hidden rounded-[24px] sm:aspect-[4/3] lg:aspect-[3/2] 2xl:aspect-[2/1] ${toneBg[c.tone]}`}>
                   <Image
                     src={categoryCover(c)}
                     alt=""

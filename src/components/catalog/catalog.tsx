@@ -196,10 +196,10 @@ export function Catalog({ products }: { products: Item[] }) {
           ) : filters.vy === "lista" ? (
             <ProductTable items={results} />
           ) : (
-            <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-3 2xl:grid-cols-4">
+            <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-3 xl:grid-cols-4 min-[1800px]:grid-cols-5">
               {results.map((p) => (
                 <li key={p.slug}>
-                  <ProductCard product={p} sizes="(min-width: 1536px) 18vw, (min-width: 768px) 24vw, 46vw" />
+                  <ProductCard product={p} sizes="(min-width: 1280px) 20vw, (min-width: 768px) 28vw, 46vw" />
                 </li>
               ))}
             </ul>
@@ -290,7 +290,7 @@ function FilterPanel({
                       )}
                     >
                       <span>{c.name}</span>
-                      <span className={cn("text-xs tabular-nums", active ? "text-white/60" : "text-faint")}>{count}</span>
+                      <span className={cn("text-xs tabular-nums", active ? "text-canvas/60" : "text-muted")}>{count}</span>
                     </button>
                   </li>
                 );

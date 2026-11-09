@@ -106,6 +106,7 @@ export default function AterforsaljarePage() {
   return (
     <>
       <PageHero
+        tone="apricot"
         crumbs={[{ label: "För återförsäljare" }]}
         title="För återförsäljare."
         muted="Dagligvaruhandel, caféer, hotell och restauranger får leverans dagen efter beställning."
@@ -121,12 +122,12 @@ export default function AterforsaljarePage() {
       </PageHero>
 
       {segmentsDetail.map((s, i) => (
-        <section key={s.id} id={s.id} className={i === 1 ? "scroll-mt-24 rounded-[24px] bg-canvas-soft py-20 sm:py-28" : "scroll-mt-24 py-20 sm:py-28"}>
+        <section key={s.id} id={s.id} className={i === 1 ? "band scroll-mt-24 bg-raspberry py-20 sm:py-28" : "scroll-mt-24 py-20 sm:py-28"}>
           <div className="wrap grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
             <div className="lg:col-span-5">
               <p className="text-sm font-semibold text-muted">{s.eyebrow}</p>
               <h2 className="t-h2 mt-3">{s.title}</h2>
-              <p className="t-lead mt-5 text-muted">{s.text}</p>
+              <p className="t-lead mt-5 text-ink-soft">{s.text}</p>
               <ul className="mt-6 divide-y divide-hairline border-y border-hairline">
                 {s.bullets.map((b) => (
                   <li key={b} className="py-3">
@@ -166,8 +167,8 @@ export default function AterforsaljarePage() {
           <SectionHeading title="Så blir du återförsäljare." />
           <ol className="mt-12 grid gap-4 md:grid-cols-3 md:gap-6">
             {steps.map((s, i) => (
-              <li key={s.title} className="tile p-7">
-                <span className="text-sm font-semibold text-muted">{String(i + 1).padStart(2, "0")}</span>
+              <li key={s.title} className="rounded-[24px] bg-butter p-7">
+                <span className="text-sm font-semibold text-accent-deep">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="t-h4 mt-6">{s.title}</h3>
                 <p className="mt-2 text-muted">{s.text}</p>
               </li>
@@ -182,7 +183,7 @@ export default function AterforsaljarePage() {
           <ul className="mt-12 grid gap-4 md:grid-cols-3 md:gap-6">
             {downloads.map((d) => (
               <li key={d.href}>
-                <a href={d.href} target="_blank" rel="noopener" className="lift tile group flex h-full flex-col p-7">
+                <a href={d.href} target="_blank" rel="noopener" className="lift group flex h-full flex-col rounded-[24px] bg-peach p-7">
                   <h3 className="t-h4">{d.title}</h3>
                   <p className="mt-2 text-muted">{d.text}</p>
                   <span className="mt-auto flex items-center justify-between pt-8 text-sm">
@@ -225,7 +226,7 @@ export default function AterforsaljarePage() {
               </div>
             </dl>
           </div>
-          <div className="tile p-6 sm:p-8 lg:col-span-7">
+          <div className="rounded-[24px] bg-vanilla p-6 sm:p-8 lg:col-span-7">
             <MailtoForm fields={formFields} subject="Intresseanmälan återförsäljare – {foretag}" submitLabel="Skicka intresseanmälan" />
           </div>
         </div>
