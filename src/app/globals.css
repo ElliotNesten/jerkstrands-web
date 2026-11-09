@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Jerkstrands – designsystem
+   Varmt gräddvitt, espresso-brun text, djupgrönt (förpackningarna)
+   och guld (logotypen).
+------------------------------------------------------------------- */
+
+@theme {
+  --color-cream-50: #fffcf7;
+  --color-cream-100: #faf5ec;
+  --color-cream-200: #f3eadb;
+  --color-cream-300: #e7d9c3;
+  --color-cream-400: #d8c4a5;
+
+  --color-espresso-950: #1d1611;
+  --color-espresso-900: #2a2019;
+  --color-espresso-800: #3d3027;
+  --color-espresso-700: #54453a;
+  --color-espresso-600: #6e5e52;
+  --color-espresso-500: #8a7a6d;
+
+  --color-forest-950: #0e241b;
+  --color-forest-900: #143224;
+  --color-forest-800: #1b4231;
+  --color-forest-700: #24553f;
+  --color-forest-600: #2f6b50;
+  --color-forest-200: #c9dccf;
+  --color-forest-100: #e4eee7;
+  --color-forest-50: #f1f6f2;
+
+  --color-gold-700: #8a6418;
+  --color-gold-600: #a67c26;
+  --color-gold-500: #c19a45;
+  --color-gold-400: #d6b670;
+  --color-gold-300: #e7d19f;
+  --color-gold-100: #f7eed8;
+
+  --color-berry-700: #7f2b22;
+  --color-berry-600: #9b3a2c;
+  --color-berry-100: #f6e3df;
+
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --shadow-soft: 0 1px 2px rgb(42 32 25 / 0.04), 0 8px 24px -12px rgb(42 32 25 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(42 32 25 / 0.05), 0 22px 48px -20px rgb(42 32 25 / 0.35);
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-cream-100);
+  color: var(--color-espresso-900);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01";
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-espresso-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-600);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-serif);
+    font-variation-settings: "SOFT" 60, "WONK" 0;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-site {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 82rem;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-site {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-site {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold-700);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
+  .eyebrow-light {
+    color: var(--color-gold-300);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.8rem 1.4rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--color-forest-800);
+    color: var(--color-cream-50);
+    box-shadow: 0 10px 24px -14px rgb(20 50 36 / 0.9);
+  }
+  .btn-primary:hover {
+    background: var(--color-forest-700);
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-600));
+    color: var(--color-espresso-950);
+    box-shadow: 0 10px 24px -14px rgb(138 100 24 / 0.9);
+  }
+  .btn-gold:hover {
+    background: linear-gradient(135deg, var(--color-gold-300), var(--color-gold-500));
+  }
+  .btn-outline {
+    border: 1px solid var(--color-espresso-900);
+    color: var(--color-espresso-900);
+  }
+  .btn-outline:hover {
+    background: var(--color-espresso-900);
+    color: var(--color-cream-50);
+  }
+  .btn-outline-light {
+    border: 1px solid rgb(255 252 247 / 0.45);
+    color: var(--color-cream-50);
+  }
+  .btn-outline-light:hover {
+    background: var(--color-cream-50);
+    color: var(--color-forest-900);
+  }
+  .btn-ghost {
+    color: var(--color-espresso-900);
+    padding-inline: 0.25rem;
+  }
+  .btn-ghost:hover {
+    color: var(--color-forest-700);
+  }
+  .btn-sm {
+    padding: 0.55rem 0.95rem;
+    font-size: 0.85rem;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.25s ease;
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  .card {
+    background: var(--color-cream-50);
+    border: 1px solid rgb(216 196 165 / 0.45);
+    border-radius: 1.5rem;
+  }
+
+  .paper-texture {
+    background-color: var(--color-cream-100);
+    background-image:
+      radial-gradient(circle at 15% 20%, rgb(255 255 255 / 0.7), transparent 45%),
+      radial-gradient(circle at 85% 0%, rgb(231 209 159 / 0.25), transparent 40%);
+  }
+
+  .product-stage {
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 58%, rgb(255 255 255 / 0.95), transparent 70%),
+      linear-gradient(180deg, var(--color-cream-200), var(--color-cream-100));
+  }
+
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold-500), transparent);
+  }
+
+  .prose-jerk p + p {
+    margin-top: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

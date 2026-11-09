@@ -1,0 +1,1736 @@
+[
+  {
+    "articleNo": "0277",
+    "slug": "budapestbakelse",
+    "name": "Budapestbakelse",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "budapestbakelse.webp",
+    "oldUrl": "https://jerkstrands.se/budapestbakelse"
+  },
+  {
+    "articleNo": "0278",
+    "slug": "mockabakelse",
+    "name": "Mockabakelse",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "mockabakelse.webp",
+    "oldUrl": "https://jerkstrands.se/mockabakelse"
+  },
+  {
+    "articleNo": "0275",
+    "slug": "princessbakelse",
+    "name": "Princessbakelse",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "princessbakelse.webp",
+    "oldUrl": "https://jerkstrands.se/princessbakelse"
+  },
+  {
+    "articleNo": "0276",
+    "slug": "napoleonbakelse",
+    "name": "Napoleonbakelse",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "napoleonbakelse.webp",
+    "oldUrl": "https://jerkstrands.se/napoleonbakelse"
+  },
+  {
+    "articleNo": "0282",
+    "slug": "schwarzwaldbakelse",
+    "name": "Schwarzwaldbakelse",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "schwarzwaldbakelse.webp",
+    "oldUrl": "https://jerkstrands.se/schwarzwaldbakelse"
+  },
+  {
+    "articleNo": "0279",
+    "slug": "punchbakelse",
+    "name": "Punchbakelse",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "punschbakelse.webp",
+    "oldUrl": "https://jerkstrands.se/punschbakelse"
+  },
+  {
+    "articleNo": "0283",
+    "slug": "semla",
+    "name": "Semla",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "semla-v2.webp",
+    "oldUrl": "https://jerkstrands.se/semla"
+  },
+  {
+    "articleNo": "0286",
+    "slug": "vaniljsemla",
+    "name": "Vaniljsemla",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "semla-v2.webp",
+    "oldUrl": "https://jerkstrands.se/vaniljsemla"
+  },
+  {
+    "articleNo": "0280",
+    "slug": "jordgubbsbakelse",
+    "name": "Jordgubbsbakelse",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "jordgubbsbakelse.webp",
+    "oldUrl": "https://jerkstrands.se/jordgubbsbakelse"
+  },
+  {
+    "articleNo": "0265",
+    "slug": "toscana",
+    "name": "Toscana",
+    "categories": [
+      "bakelser",
+      "mjuka-kakor"
+    ],
+    "image": "tosca.webp",
+    "oldUrl": "https://jerkstrands.se/tosca"
+  },
+  {
+    "articleNo": "0203",
+    "slug": "chokladdrom",
+    "name": "Chokladdröm",
+    "categories": [
+      "bakelser"
+    ],
+    "image": "chokladdrom.webp",
+    "oldUrl": "https://jerkstrands.se/chokladdrom"
+  },
+  {
+    "articleNo": "2807",
+    "slug": "lussekattsemla",
+    "name": "Lussekattsemla",
+    "categories": [
+      "bakelser",
+      "jul"
+    ],
+    "image": "lussekattsemla.webp",
+    "oldUrl": "https://jerkstrands.se/lussekattsemla"
+  },
+  {
+    "articleNo": "0318",
+    "slug": "restaurangbrod",
+    "name": "Restaurangbröd",
+    "categories": [
+      "hr-landgang"
+    ],
+    "image": "restaurangbrod.webp",
+    "oldUrl": "https://jerkstrands.se/resturangbrod"
+  },
+  {
+    "articleNo": "0318L",
+    "slug": "restaurangbrod-landgang",
+    "name": "Restaurangbröd Landgång",
+    "categories": [
+      "hr-landgang"
+    ],
+    "image": "landgangar.webp",
+    "oldUrl": "https://jerkstrands.se/resturangbrod-landgang"
+  },
+  {
+    "articleNo": "0322",
+    "slug": "smorgastartbotten-18-cm",
+    "name": "Smörgåstårtbotten 18 cm",
+    "categories": [
+      "hr-landgang"
+    ],
+    "image": "smorgastartbotten-18-cm.webp",
+    "oldUrl": "https://jerkstrands.se/smorgastartbotten-18-cm"
+  },
+  {
+    "articleNo": "0323",
+    "slug": "smorgastartbotten-23-cm",
+    "name": "Smörgåstårtbotten 23 cm",
+    "categories": [
+      "hr-landgang"
+    ],
+    "image": "smorgastartbotten-23-cm.webp",
+    "oldUrl": "https://jerkstrands.se/smorgastartbotten-23-cm"
+  },
+  {
+    "articleNo": "0122l",
+    "slug": "frobrod-landgang",
+    "name": "Fröbröd Landgång",
+    "categories": [
+      "hr-landgang"
+    ],
+    "image": "frobrod-landgang.webp",
+    "oldUrl": "https://jerkstrands.se/frobrod-skivad-landgang"
+  },
+  {
+    "articleNo": "0122s",
+    "slug": "frobrod-toast",
+    "name": "Fröbröd Toast",
+    "categories": [
+      "hr-landgang"
+    ],
+    "image": "frobrod-toast.webp",
+    "oldUrl": "https://jerkstrands.se/frobrod-skivad-toast"
+  },
+  {
+    "articleNo": "0121l",
+    "slug": "dansktragbrod-skivad-landgang",
+    "name": "Danskt rågbröd skivad landgång",
+    "categories": [
+      "hr-landgang"
+    ],
+    "image": "danskt-ragbrod-landgang.webp",
+    "oldUrl": "https://jerkstrands.se/danskt-ragbrod-skivad-landgang"
+  },
+  {
+    "articleNo": "0318S",
+    "slug": "restaurangbrod-toast",
+    "name": "Restaurangbröd Toast",
+    "categories": [
+      "hr-landgang"
+    ],
+    "image": "toast-skivad.webp",
+    "oldUrl": "https://jerkstrands.se/restaurangbrod-toast-skivad"
+  },
+  {
+    "articleNo": "0156",
+    "slug": "wieneratta",
+    "name": "Wieneråtta",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "wieneratta.webp",
+    "oldUrl": "https://jerkstrands.se/wieneratta"
+  },
+  {
+    "articleNo": "0157",
+    "slug": "vaniljspandau",
+    "name": "Vaniljspandau",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "spandauer.webp",
+    "oldUrl": "https://jerkstrands.se/vaniljspandau"
+  },
+  {
+    "articleNo": "0160",
+    "slug": "smorbulle",
+    "name": "Smörbulle",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "smorbulle.webp",
+    "oldUrl": "https://jerkstrands.se/smorbulle"
+  },
+  {
+    "articleNo": "0143",
+    "slug": "karlsknut",
+    "name": "Karlsknut",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "karlsknut.webp",
+    "oldUrl": "https://jerkstrands.se/karlsknut"
+  },
+  {
+    "articleNo": "0161",
+    "slug": "kardemummaknut",
+    "name": "Kardemummaknut",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "kardemummaknut.webp",
+    "oldUrl": "https://jerkstrands.se/kardemummaknut"
+  },
+  {
+    "articleNo": "0163",
+    "slug": "parisare",
+    "name": "Parisare",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "parisare.webp",
+    "oldUrl": "https://jerkstrands.se/parisare"
+  },
+  {
+    "articleNo": "0165",
+    "slug": "kopenhamnare",
+    "name": "Köpenhamnare",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "kopenhamnare-2026.webp",
+    "oldUrl": "https://jerkstrands.se/kopenhamnare"
+  },
+  {
+    "articleNo": "0140",
+    "slug": "slat-bulle",
+    "name": "Slät Bulle",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "slat-bulle.webp",
+    "oldUrl": "https://jerkstrands.se/slata-bullar"
+  },
+  {
+    "articleNo": "0167",
+    "slug": "skolbulle",
+    "name": "Skolbulle",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "skolbulle.webp",
+    "oldUrl": "https://jerkstrands.se/skolbulle"
+  },
+  {
+    "articleNo": "0141",
+    "slug": "kanelknut",
+    "name": "Kanelknut",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "kanelknut.webp",
+    "oldUrl": "https://jerkstrands.se/kanelknut"
+  },
+  {
+    "articleNo": "0142",
+    "slug": "vaniljbulle",
+    "name": "Vaniljbulle",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "vaniljbulle.webp",
+    "oldUrl": "https://jerkstrands.se/vaniljbulle"
+  },
+  {
+    "articleNo": "0159",
+    "slug": "applegiffel",
+    "name": "Äpplegiffel",
+    "categories": [
+      "fikabrod"
+    ],
+    "image": "applegiffel.webp",
+    "oldUrl": "https://jerkstrands.se/giffel-apple"
+  },
+  {
+    "articleNo": "0138",
+    "slug": "lussekatt-saffran",
+    "name": "Lussekatt Saffran",
+    "categories": [
+      "fikabrod",
+      "jul"
+    ],
+    "image": "lussekatt-saffran.webp",
+    "oldUrl": "https://jerkstrands.se/lussekatt-saffran"
+  },
+  {
+    "articleNo": "0169",
+    "slug": "saffranssnacka",
+    "name": "Saffranssnäcka",
+    "categories": [
+      "fikabrod",
+      "jul"
+    ],
+    "image": "saffranssnacka.webp",
+    "oldUrl": "https://jerkstrands.se/saffranssnacka"
+  },
+  {
+    "articleNo": "0281",
+    "slug": "pepparkaksdeg",
+    "name": "Pepparkaksdeg",
+    "categories": [
+      "jul"
+    ],
+    "image": "pepparkaksdeg.webp",
+    "oldUrl": "https://jerkstrands.se/pepparkaksdeg"
+  },
+  {
+    "articleNo": "0168",
+    "slug": "mjuk-pepparkaka",
+    "name": "Mjuk Pepparkaka",
+    "categories": [
+      "jul"
+    ],
+    "image": "mjuk-pepparkaka.webp",
+    "oldUrl": "https://jerkstrands.se/mjukpepparkaka"
+  },
+  {
+    "articleNo": "0152",
+    "slug": "saffransflata",
+    "name": "Saffransfläta",
+    "categories": [
+      "jul",
+      "kransar-langder-flator"
+    ],
+    "image": "saffransflata.webp",
+    "oldUrl": "https://jerkstrands.se/saffransflata"
+  },
+  {
+    "articleNo": "0271",
+    "slug": "saffransmums",
+    "name": "Saffransmums",
+    "categories": [
+      "jul"
+    ],
+    "image": "saffransmums.webp",
+    "oldUrl": "https://jerkstrands.se/saffransmums"
+  },
+  {
+    "articleNo": "0139",
+    "slug": "vetekatt",
+    "name": "Vetekatt",
+    "categories": [
+      "jul"
+    ],
+    "image": "vetekatt.webp",
+    "oldUrl": "https://jerkstrands.se/vetekatt"
+  },
+  {
+    "articleNo": "0133",
+    "slug": "vortbrod-russin",
+    "name": "Vörtbröd Russin",
+    "categories": [
+      "jul"
+    ],
+    "image": "julvort.webp",
+    "oldUrl": "https://jerkstrands.se/julvort"
+  },
+  {
+    "articleNo": "0132",
+    "slug": "vortbrod",
+    "name": "Vörtbröd",
+    "categories": [
+      "jul"
+    ],
+    "image": "vortbrod.webp",
+    "oldUrl": "https://jerkstrands.se/vortbrod"
+  },
+  {
+    "articleNo": "0108",
+    "slug": "vortfralla",
+    "name": "Vörtfralla",
+    "categories": [
+      "jul"
+    ],
+    "image": "vortfralla.webp",
+    "oldUrl": "https://jerkstrands.se/vortfralla"
+  },
+  {
+    "articleNo": "0283m",
+    "slug": "semla-mini",
+    "name": "Semla Mini",
+    "categories": [
+      "hr-kondisbitar"
+    ],
+    "image": "semla-mini.webp",
+    "oldUrl": "https://jerkstrands.se/semla-mini"
+  },
+  {
+    "articleNo": "0286m",
+    "slug": "vaniljsemla-mini",
+    "name": "Vaniljsemla Mini",
+    "categories": [
+      "hr-kondisbitar"
+    ],
+    "image": "vaniljsemla-mini.webp",
+    "oldUrl": "https://jerkstrands.se/vaniljsemla-mini"
+  },
+  {
+    "articleNo": "0298m",
+    "slug": "chokladboll-mini",
+    "name": "Chokladboll Mini",
+    "categories": [
+      "hr-kondisbitar"
+    ],
+    "image": "chokladboll-mini.webp",
+    "oldUrl": "https://jerkstrands.se/chokladboll-mini"
+  },
+  {
+    "articleNo": "0146",
+    "slug": "karlsbaderkrans",
+    "name": "Karlsbaderkrans",
+    "categories": [
+      "kransar-langder-flator"
+    ],
+    "image": "karlsbaderkrans.webp",
+    "oldUrl": "https://jerkstrands.se/karlsbaderkrans"
+  },
+  {
+    "articleNo": "0147",
+    "slug": "kanelkrans",
+    "name": "Kanelkrans",
+    "categories": [
+      "kransar-langder-flator"
+    ],
+    "image": "kanelkrans.webp",
+    "oldUrl": "https://jerkstrands.se/kanelkrans"
+  },
+  {
+    "articleNo": "0149",
+    "slug": "blabar-och-vaniljflata",
+    "name": "Blåbär & Vaniljfläta",
+    "categories": [
+      "kransar-langder-flator",
+      "packat"
+    ],
+    "image": "blabarsflata.webp",
+    "oldUrl": "https://jerkstrands.se/blabarsflata"
+  },
+  {
+    "articleNo": "0154",
+    "slug": "blabar-och-vaniljkrans",
+    "name": "Blåbär & Vaniljkrans",
+    "categories": [
+      "kransar-langder-flator"
+    ],
+    "image": "blabar-vaniljkrans.webp",
+    "oldUrl": "https://jerkstrands.se/blabarskrans"
+  },
+  {
+    "articleNo": "0151",
+    "slug": "kardemummaflata",
+    "name": "Kardemummafläta",
+    "categories": [
+      "kransar-langder-flator",
+      "packat"
+    ],
+    "image": "kardemummaflata.webp",
+    "oldUrl": "https://jerkstrands.se/kardemummaflata"
+  },
+  {
+    "articleNo": "0150",
+    "slug": "kanelflata",
+    "name": "Kanelfläta",
+    "categories": [
+      "kransar-langder-flator",
+      "packat"
+    ],
+    "image": "kanelflata.webp",
+    "oldUrl": "https://jerkstrands.se/kanelflata"
+  },
+  {
+    "articleNo": "0153",
+    "slug": "butterkaka",
+    "name": "Butterkaka",
+    "categories": [
+      "kransar-langder-flator",
+      "packat"
+    ],
+    "image": "butterkaka.webp",
+    "oldUrl": "https://jerkstrands.se/butterkaka"
+  },
+  {
+    "articleNo": "1530",
+    "slug": "butterkaka-1530",
+    "name": "Butterkaka 600 g",
+    "categories": [
+      "kransar-langder-flator"
+    ],
+    "image": "butterkaka.webp",
+    "oldUrl": "https://jerkstrands.se/butterkaka-ts"
+  },
+  {
+    "articleNo": "0144",
+    "slug": "slat-flata",
+    "name": "Slät Fläta",
+    "categories": [
+      "kransar-langder-flator"
+    ],
+    "image": "slat-flata.webp",
+    "oldUrl": "https://jerkstrands.se/slat-flata"
+  },
+  {
+    "articleNo": "0148",
+    "slug": "vaniljflata",
+    "name": "Vaniljfläta",
+    "categories": [
+      "kransar-langder-flator",
+      "packat"
+    ],
+    "image": "vaniljflata.webp",
+    "oldUrl": "https://jerkstrands.se/vaniljflata"
+  },
+  {
+    "articleNo": "0135",
+    "slug": "apple-och-kanellangd",
+    "name": "Äpple och kanellängd",
+    "categories": [
+      "kransar-langder-flator"
+    ],
+    "image": "apple-kanellangd.webp",
+    "oldUrl": "https://jerkstrands.se/apple-och-kanellangd"
+  },
+  {
+    "articleNo": "0122",
+    "slug": "frobrod",
+    "name": "Fröbröd",
+    "categories": [
+      "hr-matbrod",
+      "matbrod",
+      "packat"
+    ],
+    "image": "frobrod-v2.webp",
+    "oldUrl": "https://jerkstrands.se/frobrod"
+  },
+  {
+    "articleNo": "0121",
+    "slug": "danskt-ragbrod",
+    "name": "Danskt Rågbröd",
+    "categories": [
+      "hr-matbrod",
+      "matbrod",
+      "packat"
+    ],
+    "image": "danskt-ragbrod.webp",
+    "oldUrl": "https://jerkstrands.se/danskt-ragbrod"
+  },
+  {
+    "articleNo": "0134",
+    "slug": "levain-pavot",
+    "name": "Levain Pavot",
+    "categories": [
+      "hr-matbrod",
+      "matbrod"
+    ],
+    "image": "levain-pavot.webp",
+    "oldUrl": "https://jerkstrands.se/levain-pavot"
+  },
+  {
+    "articleNo": "0128",
+    "slug": "surdegsbrod-durum",
+    "name": "Surdegsbröd Durum",
+    "categories": [
+      "hr-matbrod",
+      "matbrod"
+    ],
+    "image": "surdegsbrod-durum.webp",
+    "oldUrl": "https://jerkstrands.se/surdegsbrod-durum"
+  },
+  {
+    "articleNo": "0130",
+    "slug": "levain-blanche",
+    "name": "Levain Blanche",
+    "categories": [
+      "hr-matbrod",
+      "matbrod"
+    ],
+    "image": "levain-blanc.webp",
+    "oldUrl": "https://jerkstrands.se/levain-blanc"
+  },
+  {
+    "articleNo": "0125",
+    "slug": "baguette-blanche",
+    "name": "Baguette Blanche",
+    "categories": [
+      "hr-matbrod",
+      "matbrod"
+    ],
+    "image": "baguette-v2.webp",
+    "oldUrl": "https://jerkstrands.se/baguette-blanche"
+  },
+  {
+    "articleNo": "0120L",
+    "slug": "focaccia-langpanna",
+    "name": "Focaccia Långpanna",
+    "categories": [
+      "hr-matbrod",
+      "matbrod"
+    ],
+    "image": "focaccia-bleck.webp",
+    "oldUrl": "https://jerkstrands.se/focaccia-bleck"
+  },
+  {
+    "articleNo": "0114",
+    "slug": "franska",
+    "name": "Franska",
+    "categories": [
+      "hr-matbrod",
+      "matbrod"
+    ],
+    "image": "franska.webp",
+    "oldUrl": "https://jerkstrands.se/franska"
+  },
+  {
+    "articleNo": "0115",
+    "slug": "barkis",
+    "name": "Barkis",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "barkis.webp",
+    "oldUrl": "https://jerkstrands.se/barkis"
+  },
+  {
+    "articleNo": "0131",
+    "slug": "frobatard",
+    "name": "Fröbatard",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "frobatard.webp",
+    "oldUrl": "https://jerkstrands.se/frobatard"
+  },
+  {
+    "articleNo": "1220",
+    "slug": "frobrod-t-och-s",
+    "name": "Fröbröd T&S",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "frobrod.webp",
+    "oldUrl": "https://jerkstrands.se/frobrod-ts"
+  },
+  {
+    "articleNo": "0117",
+    "slug": "grekiska",
+    "name": "Grekiska",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "grekiskt-lantbrod.webp",
+    "oldUrl": "https://jerkstrands.se/grekiskt-lantbrod"
+  },
+  {
+    "articleNo": "0112",
+    "slug": "ragkaka",
+    "name": "Rågkaka",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "ragkaka.webp",
+    "oldUrl": "https://jerkstrands.se/ragkaka"
+  },
+  {
+    "articleNo": "0112p",
+    "slug": "ragkaka-2-pack",
+    "name": "Rågkaka 2-Pack",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "ragkaka-2p.webp",
+    "oldUrl": "https://jerkstrands.se/ragkaka-2-pack"
+  },
+  {
+    "articleNo": "0116",
+    "slug": "snoddas",
+    "name": "Snoddas",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "snoddas.webp",
+    "oldUrl": "https://jerkstrands.se/snoddas"
+  },
+  {
+    "articleNo": "0118",
+    "slug": "valnotsbrod",
+    "name": "Valnötsbröd",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "valnotsbrod.webp",
+    "oldUrl": "https://jerkstrands.se/valnotsbrod"
+  },
+  {
+    "articleNo": "0119",
+    "slug": "vikingbrod",
+    "name": "Vikingbröd",
+    "categories": [
+      "matbrod"
+    ],
+    "image": "vikingbrod.webp",
+    "oldUrl": "https://jerkstrands.se/vikingbrod"
+  },
+  {
+    "articleNo": "0166m",
+    "slug": "karleksmums-bleck",
+    "name": "Kärleksmums Bleck",
+    "categories": [
+      "hr-kakblock"
+    ],
+    "image": "karleksmums-bleck.webp",
+    "oldUrl": "https://jerkstrands.se/karleksmums-bleck"
+  },
+  {
+    "articleNo": "0256m",
+    "slug": "morotskaka-bleck",
+    "name": "Morotskaka Bleck",
+    "categories": [
+      "hr-kakblock"
+    ],
+    "image": "morotskaka-bleck.webp",
+    "oldUrl": "https://jerkstrands.se/morotskaka-bleck"
+  },
+  {
+    "articleNo": "0167m",
+    "slug": "toscakokos-bleck",
+    "name": "Toscakokos Bleck",
+    "categories": [
+      "hr-kakblock"
+    ],
+    "image": "toscacocos-bleck.webp",
+    "oldUrl": "https://jerkstrands.se/toscakokos-bleck"
+  },
+  {
+    "articleNo": "0255m",
+    "slug": "applekaka-bleck",
+    "name": "Äpplekaka Bleck",
+    "categories": [
+      "hr-kakblock"
+    ],
+    "image": "applekaka-bleck.webp",
+    "oldUrl": "https://jerkstrands.se/applekaka-bleck"
+  },
+  {
+    "articleNo": "0166",
+    "slug": "karleksmums",
+    "name": "Kärleksmums",
+    "categories": [
+      "mjuka-kakor"
+    ],
+    "image": "karleksmums.webp",
+    "oldUrl": "https://jerkstrands.se/karleksmums"
+  },
+  {
+    "articleNo": "0250",
+    "slug": "kardemummamums",
+    "name": "Kardemummamums",
+    "categories": [
+      "mjuka-kakor"
+    ],
+    "image": "kardemummamums.webp",
+    "oldUrl": "https://jerkstrands.se/kardemummamums"
+  },
+  {
+    "articleNo": "0255",
+    "slug": "applemums",
+    "name": "Äpplemums",
+    "categories": [
+      "mjuka-kakor"
+    ],
+    "image": "applemums.webp",
+    "oldUrl": "https://jerkstrands.se/applemums"
+  },
+  {
+    "articleNo": "0249",
+    "slug": "blabarsmums",
+    "name": "Blåbärsmums",
+    "categories": [
+      "mjuka-kakor"
+    ],
+    "image": "blabarsmums.webp",
+    "oldUrl": "https://jerkstrands.se/blabarsmums"
+  },
+  {
+    "articleNo": "0170",
+    "slug": "rulltarta-hallon",
+    "name": "Rulltårta Hallon",
+    "categories": [
+      "mjuka-kakor"
+    ],
+    "image": "rulltarta-hallon.webp",
+    "oldUrl": "https://jerkstrands.se/rulltarta-hallon"
+  },
+  {
+    "articleNo": "0262",
+    "slug": "dromtarta",
+    "name": "Drömtårta",
+    "categories": [
+      "mjuka-kakor"
+    ],
+    "image": "dromtarta.webp",
+    "oldUrl": "https://jerkstrands.se/dromtarta"
+  },
+  {
+    "articleNo": "0256",
+    "slug": "morotskaka",
+    "name": "Morotskaka",
+    "categories": [
+      "mjuka-kakor"
+    ],
+    "image": "morotskaka.webp",
+    "oldUrl": "https://jerkstrands.se/morotskaka"
+  },
+  {
+    "articleNo": "0194",
+    "slug": "carrot-muffin",
+    "name": "Carrot Muffin",
+    "categories": [
+      "mjuka-kakor",
+      "hr-muffins-bullar"
+    ],
+    "image": "carrot-muffin.webp",
+    "oldUrl": "https://jerkstrands.se/carrot-muffin"
+  },
+  {
+    "articleNo": "0196",
+    "slug": "choklad-muffin",
+    "name": "Choklad Muffin",
+    "categories": [
+      "mjuka-kakor",
+      "hr-muffins-bullar"
+    ],
+    "image": "chokladmuffins.webp",
+    "oldUrl": "https://jerkstrands.se/choklad-muffins"
+  },
+  {
+    "articleNo": "0198",
+    "slug": "blabarsmuffin",
+    "name": "Blåbärsmuffin",
+    "categories": [
+      "mjuka-kakor",
+      "hr-muffins-bullar"
+    ],
+    "image": "blabarsmuffin.webp",
+    "oldUrl": "https://jerkstrands.se/blabarsmuffins"
+  },
+  {
+    "articleNo": "0161m",
+    "slug": "kardemummaknut-mini",
+    "name": "Kardemummaknut Mini",
+    "categories": [
+      "hr-muffins-bullar"
+    ],
+    "image": "kardemummaknut-mini.webp",
+    "oldUrl": "https://jerkstrands.se/kardemummaknut-mini"
+  },
+  {
+    "articleNo": "0141m",
+    "slug": "kanelknut-mini",
+    "name": "Kanelknut Mini",
+    "categories": [
+      "hr-muffins-bullar"
+    ],
+    "image": "kanelknut-mini.webp",
+    "oldUrl": "https://jerkstrands.se/kanelknut-mini"
+  },
+  {
+    "articleNo": "0142m",
+    "slug": "vaniljbulle-mini",
+    "name": "Vaniljbulle mini",
+    "categories": [
+      "hr-muffins-bullar"
+    ],
+    "image": "vaniljbulle-mini.webp",
+    "oldUrl": "https://jerkstrands.se/vaniljbulle-mini"
+  },
+  {
+    "articleNo": "0167b",
+    "slug": "kokostosca-mini",
+    "name": "Kokostosca Mini",
+    "categories": [
+      "hr-muffins-bullar"
+    ],
+    "image": "kokostosca-mini.webp",
+    "oldUrl": "https://jerkstrands.se/kokostosca-mini"
+  },
+  {
+    "articleNo": "0256b",
+    "slug": "morotskaka-mini",
+    "name": "Morotskaka Mini",
+    "categories": [
+      "hr-muffins-bullar"
+    ],
+    "image": "morotskaka-mini.webp",
+    "oldUrl": "https://jerkstrands.se/morotskaka-mini"
+  },
+  {
+    "articleNo": "0137m",
+    "slug": "pistageknut-mini-t-och-s",
+    "name": "Pistageknut Mini T&S",
+    "categories": [
+      "hr-muffins-bullar"
+    ],
+    "image": "pistageknut-mini.webp",
+    "oldUrl": "https://jerkstrands.se/pistageknut-mini"
+  },
+  {
+    "articleNo": "0098p",
+    "slug": "kallarfranska-8-pack",
+    "name": "Källarfranska 8-pack",
+    "categories": [
+      "packat"
+    ],
+    "image": "kallarfranska-8p.webp",
+    "oldUrl": "https://jerkstrands.se/kallarfranska-8-pack",
+    "section": "matbrod"
+  },
+  {
+    "articleNo": "0102p",
+    "slug": "muslibrack-8-pack",
+    "name": "Müslibräck 8-pack",
+    "categories": [
+      "packat"
+    ],
+    "image": "muslibrack-8p.webp",
+    "oldUrl": "https://jerkstrands.se/muslibrack-8-pack",
+    "section": "matbrod"
+  },
+  {
+    "articleNo": "0101p",
+    "slug": "ragkubb-8-pack",
+    "name": "Rågkubb 8-Pack",
+    "categories": [
+      "packat"
+    ],
+    "image": "ragkubb-8p.webp",
+    "oldUrl": "https://jerkstrands.se/ragkubb-8-pack",
+    "section": "matbrod"
+  },
+  {
+    "articleNo": "0109p",
+    "slug": "vallmobrack-8-pack",
+    "name": "Vallmobräck 8-pack",
+    "categories": [
+      "packat"
+    ],
+    "image": "vallmobrack-8p.webp",
+    "oldUrl": "https://jerkstrands.se/vallmobrack-8-pack",
+    "section": "matbrod"
+  },
+  {
+    "articleNo": "0092",
+    "slug": "tekakor-8-pack",
+    "name": "Tekakor 8-pack",
+    "categories": [
+      "packat"
+    ],
+    "image": "tekakor-8p.webp",
+    "oldUrl": "https://jerkstrands.se/tekakor-8-pack",
+    "section": "matbrod"
+  },
+  {
+    "articleNo": "0093",
+    "slug": "kanelsnacka-4-pack",
+    "name": "Kanelsnäcka 4-pack",
+    "categories": [
+      "packat"
+    ],
+    "image": "kanelsnackor-packad.webp",
+    "oldUrl": "https://jerkstrands.se/kanelsnacka-4p",
+    "section": "kaffebrod"
+  },
+  {
+    "articleNo": "0099m",
+    "slug": "cheesefralla-mini",
+    "name": "Cheesefralla Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "cheesfralla-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/cheesefralla-mini"
+  },
+  {
+    "articleNo": "0089m",
+    "slug": "brioche-mini",
+    "name": "Brioche Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "brioche-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/brioche-mini"
+  },
+  {
+    "articleNo": "0098m",
+    "slug": "kallarfranska-mini",
+    "name": "Källarfranska Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "kallarfranska-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/kallarfranska-mini"
+  },
+  {
+    "articleNo": "0120m",
+    "slug": "focaccia-mini",
+    "name": "Focaccia Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "focaccia-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/focaccia-mini"
+  },
+  {
+    "articleNo": "0122m",
+    "slug": "frofralla-mini",
+    "name": "Fröfralla Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "frofralla-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/frofralla-mini"
+  },
+  {
+    "articleNo": "0020",
+    "slug": "frosur-mini",
+    "name": "Frösur Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "frosur-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/frosur-mini"
+  },
+  {
+    "articleNo": "0090m",
+    "slug": "hamburgerbrod-mini",
+    "name": "Hamburgerbröd Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "hamburgerbrod-2st.webp",
+    "oldUrl": "https://jerkstrands.se/hamburgerbrod-mini"
+  },
+  {
+    "articleNo": "0013",
+    "slug": "vetesur-mini",
+    "name": "Vetesur Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "vetesur-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/vetesur-mini"
+  },
+  {
+    "articleNo": "0018",
+    "slug": "ragsur-mini",
+    "name": "Rågsur Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "ragsur-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/ragsur-mini"
+  },
+  {
+    "articleNo": "0017",
+    "slug": "vetesur-tranbar-mini",
+    "name": "Vetesur Tranbär Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "vetesur-tranbar-v2.webp",
+    "oldUrl": "https://jerkstrands.se/vetesur-tranbar-mini"
+  },
+  {
+    "articleNo": "0070m",
+    "slug": "solrosruta-mini",
+    "name": "Solrosruta Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "solrosruta-50g-o-stor.webp",
+    "oldUrl": "https://jerkstrands.se/solrosruta-mini"
+  },
+  {
+    "articleNo": "0096m",
+    "slug": "vikingfralla-mini",
+    "name": "Vikingfralla Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "vikingfralla-mini.webp",
+    "oldUrl": "https://jerkstrands.se/vikingfralla-mini"
+  },
+  {
+    "articleNo": "0104m",
+    "slug": "tekaka-mini",
+    "name": "Tekaka mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "tekaka-mini.webp",
+    "oldUrl": "https://jerkstrands.se/tekaka-mini"
+  },
+  {
+    "articleNo": "0102m",
+    "slug": "musli-mini",
+    "name": "Müsli Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "muslibrack-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/muslibrack-mini"
+  },
+  {
+    "articleNo": "0106",
+    "slug": "baguette-halv-durum",
+    "name": "Baguette Halv Durum",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "halvbaguette-mini-v2.webp",
+    "oldUrl": "https://jerkstrands.se/baguette-mini-hotell"
+  },
+  {
+    "articleNo": "0082",
+    "slug": "surdegsknacke-tranbar",
+    "name": "Surdegsknäcke Tranbär",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "tranbarsknacke-bitar-v2.webp",
+    "oldUrl": "https://jerkstrands.se/tranbarsknacke-bitar"
+  },
+  {
+    "articleNo": "0041",
+    "slug": "froknacke",
+    "name": "Fröknäcke",
+    "categories": [
+      "hr-frukost",
+      "portionsbrod"
+    ],
+    "image": "froknacke-v2.webp",
+    "oldUrl": "https://jerkstrands.se/froknacke-bitar"
+  },
+  {
+    "articleNo": "0052",
+    "slug": "bagel-plain",
+    "name": "Bagel Plain",
+    "categories": [
+      "hr-frukost",
+      "portionsbrod"
+    ],
+    "image": "bagel-mini.webp",
+    "oldUrl": "https://jerkstrands.se/bagel-plain"
+  },
+  {
+    "articleNo": "0054",
+    "slug": "bagel-sesam",
+    "name": "Bagel Sesam",
+    "categories": [
+      "hr-frukost",
+      "portionsbrod"
+    ],
+    "image": "bagel-sesam-mini.webp",
+    "oldUrl": "https://jerkstrands.se/bagel-sesam"
+  },
+  {
+    "articleNo": "0053",
+    "slug": "bagel-vallmo",
+    "name": "Bagel Vallmo",
+    "categories": [
+      "hr-frukost",
+      "portionsbrod"
+    ],
+    "image": "bagel-vallmo-mini.webp",
+    "oldUrl": "https://jerkstrands.se/bagel-vallmo"
+  },
+  {
+    "articleNo": "0109m",
+    "slug": "vallmobrack-mini",
+    "name": "Vallmobräck Mini",
+    "categories": [
+      "hr-frukost"
+    ],
+    "image": "vallmorundstycke-mini.webp",
+    "oldUrl": "https://jerkstrands.se/rundstycke-vallmo-mini"
+  },
+  {
+    "articleNo": "0089",
+    "slug": "brioche",
+    "name": "Brioche",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "hamburgerbrod.webp",
+    "oldUrl": "https://jerkstrands.se/brioche"
+  },
+  {
+    "articleNo": "0089f",
+    "slug": "brioche-55-gram",
+    "name": "Brioche 55 Gram",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "hamburgerbrod.webp",
+    "oldUrl": "https://jerkstrands.se/brioche-55-gram"
+  },
+  {
+    "articleNo": "0099",
+    "slug": "cheesefralla",
+    "name": "Cheesefralla",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "cheesefralla.webp",
+    "oldUrl": "https://jerkstrands.se/cheesefralla"
+  },
+  {
+    "articleNo": "0087",
+    "slug": "frofralla-stor",
+    "name": "Fröfralla Stor",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "frofralla.webp",
+    "oldUrl": "https://jerkstrands.se/frofralla"
+  },
+  {
+    "articleNo": "0021",
+    "slug": "frosur-stor",
+    "name": "Frösur Stor",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "frosur.webp",
+    "oldUrl": "https://jerkstrands.se/frosur-stor"
+  },
+  {
+    "articleNo": "0090",
+    "slug": "hamburgerbrod",
+    "name": "Hamburgerbröd",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "hamburgerbrod.webp",
+    "oldUrl": "https://jerkstrands.se/hamburgerbrod"
+  },
+  {
+    "articleNo": "0098",
+    "slug": "kallarfranska",
+    "name": "Källarfranska",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "kallarfranska.webp",
+    "oldUrl": "https://jerkstrands.se/kallarfranska"
+  },
+  {
+    "articleNo": "0102",
+    "slug": "muslibrack",
+    "name": "Müslibräck",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "muslibrack.webp",
+    "oldUrl": "https://jerkstrands.se/muslibrack"
+  },
+  {
+    "articleNo": "0101",
+    "slug": "ragkubb",
+    "name": "Rågkubb",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "ragkubb.webp",
+    "oldUrl": "https://jerkstrands.se/ragkubb"
+  },
+  {
+    "articleNo": "0019",
+    "slug": "ragsur-stor",
+    "name": "Rågsur Stor",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "ragsur.webp",
+    "oldUrl": "https://jerkstrands.se/ragsur-stor"
+  },
+  {
+    "articleNo": "0097",
+    "slug": "rundstycke",
+    "name": "Rundstycke",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "rundstycke.webp",
+    "oldUrl": "https://jerkstrands.se/rundstycke"
+  },
+  {
+    "articleNo": "0070",
+    "slug": "solrosruta",
+    "name": "Solrosruta",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "solrosruta.webp",
+    "oldUrl": "https://jerkstrands.se/solrosruta"
+  },
+  {
+    "articleNo": "0104",
+    "slug": "tekaka",
+    "name": "Tekaka",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "tekaka.webp",
+    "oldUrl": "https://jerkstrands.se/tekaka"
+  },
+  {
+    "articleNo": "0105",
+    "slug": "vallmobagel-stor",
+    "name": "Vallmobagel Stor",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "bagel-vallmo-mini.webp",
+    "oldUrl": "https://jerkstrands.se/vallmobagel-stor"
+  },
+  {
+    "articleNo": "0109",
+    "slug": "vallmorundstycke",
+    "name": "Vallmorundstycke",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "vallmorundstycke.webp",
+    "oldUrl": "https://jerkstrands.se/rundstycke-vallmo"
+  },
+  {
+    "articleNo": "0096",
+    "slug": "vikingfralla",
+    "name": "Vikingfralla",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "vikingfralla.webp",
+    "oldUrl": "https://jerkstrands.se/vikingfralla"
+  },
+  {
+    "articleNo": "0016",
+    "slug": "vetesur-sesam-vallmo",
+    "name": "Vetesur Sesam Vallmo",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "vetesur-sesam-vallmo.webp",
+    "oldUrl": "https://jerkstrands.se/vetesur-sesam-vallmo"
+  },
+  {
+    "articleNo": "0015",
+    "slug": "vetesur-sesam",
+    "name": "Vetesur Sesam",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "vetesur-sesam.webp",
+    "oldUrl": "https://jerkstrands.se/vetesur-sesam"
+  },
+  {
+    "articleNo": "0014",
+    "slug": "vetesur-stor",
+    "name": "Vetesur Stor",
+    "categories": [
+      "portionsbrod"
+    ],
+    "image": "vetesur.webp",
+    "oldUrl": "https://jerkstrands.se/vetesur-stor"
+  },
+  {
+    "articleNo": "0173",
+    "slug": "finska-puckar",
+    "name": "Finska Puckar",
+    "categories": [
+      "smakakor"
+    ],
+    "image": "finska-puckar.webp",
+    "oldUrl": "https://jerkstrands.se/finska-puckar"
+  },
+  {
+    "articleNo": "0174",
+    "slug": "bondkakor",
+    "name": "Bondkakor",
+    "categories": [
+      "smakakor"
+    ],
+    "image": "bondkakor.webp",
+    "oldUrl": "https://jerkstrands.se/bondkakor"
+  },
+  {
+    "articleNo": "0175",
+    "slug": "ungherrar",
+    "name": "Ungherrar",
+    "categories": [
+      "smakakor"
+    ],
+    "image": "ungherrar.webp",
+    "oldUrl": "https://jerkstrands.se/ungherrrar"
+  },
+  {
+    "articleNo": "0179",
+    "slug": "kanelkakor",
+    "name": "Kanelkakor",
+    "categories": [
+      "smakakor"
+    ],
+    "image": "kanelkakor.webp",
+    "oldUrl": "https://jerkstrands.se/kanelkakor"
+  },
+  {
+    "articleNo": "0172",
+    "slug": "brysselkex",
+    "name": "Brysselkex",
+    "categories": [
+      "smakakor"
+    ],
+    "image": "brysselkex.webp",
+    "oldUrl": "https://jerkstrands.se/brysselkex"
+  },
+  {
+    "articleNo": "0254a",
+    "slug": "budapestlangd",
+    "name": "Budapestlängd",
+    "categories": [
+      "tartor"
+    ],
+    "image": "budapestlangd.webp",
+    "oldUrl": "https://jerkstrands.se/budapestlangd",
+    "section": "langder",
+    "sizes": [
+      "650g – Artnr – 0254"
+    ]
+  },
+  {
+    "articleNo": "0253a",
+    "slug": "prinsesslangd",
+    "name": "Prinsesslängd",
+    "categories": [
+      "tartor"
+    ],
+    "image": "prinsesslangd.webp",
+    "oldUrl": "https://jerkstrands.se/princesslangd",
+    "section": "langder",
+    "sizes": [
+      "650g – Artnr 0253"
+    ]
+  },
+  {
+    "articleNo": "0252a",
+    "slug": "white-lady-langd",
+    "name": "White Lady Längd",
+    "categories": [
+      "tartor"
+    ],
+    "image": "white-lady-langd.webp",
+    "oldUrl": "https://jerkstrands.se/white-lady-langd",
+    "section": "langder",
+    "sizes": [
+      "660g – Artnr 0252"
+    ]
+  },
+  {
+    "articleNo": "0220",
+    "slug": "blabarstarta",
+    "name": "Blåbärstårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "graddtarta-blabar.webp",
+    "oldUrl": "https://jerkstrands.se/blabarstarta-8-bit",
+    "section": "graddtartor",
+    "sizes": [
+      "8 bitar – 900g – Artnr 0220"
+    ]
+  },
+  {
+    "articleNo": "0240",
+    "slug": "jordgubbstarta",
+    "name": "Jordgubbstårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "graddtarta-jordgubb.webp",
+    "oldUrl": "https://jerkstrands.se/jordgubbstarta-8-bit",
+    "section": "graddtartor",
+    "sizes": [
+      "8 bitar – 700g – Artnr 0240",
+      "12 bitar – 1600g – Artnr 0239",
+      "20 bitar – 2250g – Artnr 0237"
+    ]
+  },
+  {
+    "articleNo": "0216",
+    "slug": "schwarzwaldtarta",
+    "name": "Schwarzwaldtårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "schwarzwaldtarta.webp",
+    "oldUrl": "https://jerkstrands.se/schwarzwald-8-bit",
+    "section": "graddtartor",
+    "sizes": [
+      "8 bitar – 1100g – Artnr 0216",
+      "12 bitar – 1700g – Artnr 0215"
+    ]
+  },
+  {
+    "articleNo": "0257",
+    "slug": "chokladtarta",
+    "name": "Chokladtårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "chokladmoussetarta.webp",
+    "oldUrl": "https://jerkstrands.se/chokladtarta",
+    "section": "moussetartor",
+    "sizes": [
+      "750g – Artnr 0257"
+    ]
+  },
+  {
+    "articleNo": "0258",
+    "slug": "fransk-tarta",
+    "name": "Fransk tårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "fransk-tarta.webp",
+    "oldUrl": "https://jerkstrands.se/fransktarta",
+    "section": "moussetartor",
+    "sizes": [
+      "660g – Artnr 0258"
+    ]
+  },
+  {
+    "articleNo": "0259",
+    "slug": "passionsmousse",
+    "name": "Passionsmousse",
+    "categories": [
+      "tartor"
+    ],
+    "image": "passionsmousse-2026.webp",
+    "oldUrl": "https://jerkstrands.se/passionsmousse",
+    "section": "moussetartor",
+    "sizes": [
+      "740g – Artnr 0259"
+    ]
+  },
+  {
+    "articleNo": "0260",
+    "slug": "hjartformad-princesstarta",
+    "name": "Hjärtformad Princesstårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "hjartformad-prinsesstarta.webp",
+    "oldUrl": "https://jerkstrands.se/hjartformad-princesstarta",
+    "section": "marsipantartor",
+    "sizes": [
+      "800g – Artnr 0260"
+    ]
+  },
+  {
+    "articleNo": "0224",
+    "slug": "princesstarta",
+    "name": "Princesstårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "prinsesstarta.webp",
+    "oldUrl": "https://jerkstrands.se/princesstarta-8-bit",
+    "section": "marsipantartor",
+    "sizes": [
+      "8 bitar – 900g – Artnr 0224",
+      "12 bitar – 1800g – Artnr 0223",
+      "20 bitar – 2900g – Artnr 0221"
+    ]
+  },
+  {
+    "articleNo": "0206",
+    "slug": "studenttarta",
+    "name": "Studenttårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "studenttarta.webp",
+    "oldUrl": "https://jerkstrands.se/studenttarta-12-bit",
+    "section": "marsipantartor",
+    "sizes": [
+      "12 bitar – 1800g – Artnr 0206",
+      "20 bitar – 2900g – Artnr 0205"
+    ]
+  },
+  {
+    "articleNo": "0231",
+    "slug": "white-lady",
+    "name": "White Lady",
+    "categories": [
+      "tartor"
+    ],
+    "image": "white-lady.webp",
+    "oldUrl": "https://jerkstrands.se/white-lady-8-bit",
+    "section": "marsipantartor",
+    "sizes": [
+      "8 bitar – 900g – Artnr 0231",
+      "12 bitar – 1800g – Artnr 0230"
+    ]
+  },
+  {
+    "articleNo": "0228",
+    "slug": "frukttarta",
+    "name": "Frukttårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "frukttarta.webp",
+    "oldUrl": "https://jerkstrands.se/frukttarta-8-bit",
+    "section": "ovriga_tartor",
+    "sizes": [
+      "8 bitar – 1600g – Artnr 0228",
+      "12 bitar – 2850g – Artnr 0227",
+      "20 bitar – 4800g – Artnr 0225"
+    ]
+  },
+  {
+    "articleNo": "0246",
+    "slug": "mockatarta",
+    "name": "Mockatårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "mockatarta.webp",
+    "oldUrl": "https://jerkstrands.se/mockatarta-8-bit",
+    "section": "ovriga_tartor",
+    "sizes": [
+      "8 bitar – 930g – Artnr 0246"
+    ]
+  },
+  {
+    "articleNo": "0233",
+    "slug": "sachertarta",
+    "name": "Sachertårta",
+    "categories": [
+      "tartor"
+    ],
+    "image": "sachertarta.webp",
+    "oldUrl": "https://jerkstrands.se/sacher-8-bit",
+    "section": "ovriga_tartor",
+    "sizes": [
+      "8 bitar – 720g – Artnr 0233"
+    ]
+  },
+  {
+    "articleNo": "0248a",
+    "slug": "jordgubbspaj",
+    "name": "Jordgubbspaj",
+    "categories": [
+      "tartor"
+    ],
+    "image": "jordgubbspaj.webp",
+    "oldUrl": "https://jerkstrands.se/jordgubbspaj-6-bit",
+    "section": "ovriga_tartor",
+    "sizes": [
+      "6 bitar – 770g – Artnr 0248"
+    ]
+  },
+  {
+    "articleNo": "0251",
+    "slug": "wienertosca",
+    "name": "Wienertosca",
+    "categories": [
+      "tartor"
+    ],
+    "image": "wienertosca.webp",
+    "oldUrl": "https://jerkstrands.se/wienertosca",
+    "section": "ovriga_tartor",
+    "sizes": [
+      "1100g – Artnr 0251"
+    ]
+  }
+]
