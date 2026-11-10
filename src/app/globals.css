@@ -18,7 +18,7 @@
   --color-ink: #2b1a10;
   --color-ink-soft: #3d2a1e;
   --color-muted: #5e4b3f;
-  --color-faint: #9c8670;
+  --color-faint: #7d6957;
   --color-canvas: #fff8ef;
   --color-canvas-soft: #f8ebd8;
   --color-field: #f3e4ce;
@@ -227,8 +227,8 @@ body {
   }
   .t-lead {
     font-size: clamp(1.125rem, 1.6vw, 1.25rem);
-    line-height: 1.38;
-    font-weight: 300;
+    line-height: 1.4;
+    font-weight: 400;
   }
   .t-label {
     font-size: 0.8125rem;

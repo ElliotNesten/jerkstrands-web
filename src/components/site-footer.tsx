@@ -92,7 +92,7 @@ export function SiteFooter() {
           </FooterColumn>
         </div>
 
-        <div className="mt-12 flex flex-col justify-between gap-2 text-[0.8125rem] text-canvas/65 sm:flex-row">
+        <div className="mt-12 flex flex-col justify-between gap-2 text-[0.8125rem] text-canvas/75 sm:flex-row">
           <p>© {site.legalName}</p>
           <p>Allt bakas i vårt bageri på Slakthusgatan i Göteborg.</p>
         </div>
@@ -105,7 +105,7 @@ export function SiteFooter() {
 function FooterColumn({ title, className, children }: { title: string; className?: string; children: React.ReactNode }) {
   return (
     <nav aria-label={title} className={className}>
-      <p className="text-[0.8125rem] font-semibold text-canvas/65">{title}</p>
+      <p className="text-[0.8125rem] font-semibold text-canvas/75">{title}</p>
       <ul className="mt-2 text-[0.9375rem] sm:mt-4 sm:space-y-2.5">{children}</ul>
     </nav>
   );

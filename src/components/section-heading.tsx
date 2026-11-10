@@ -22,7 +22,7 @@ export function SectionHeading({ title, muted, intro, tone = "dark", className, 
         {muted && (
           <>
             {" "}
-            <span className={tone === "light" ? "text-canvas/65" : "text-ink/55"}>{muted}</span>
+            <span className={tone === "light" ? "text-canvas/75" : "text-ink/65"}>{muted}</span>
           </>
         )}
       </Heading>

@@ -18,7 +18,7 @@ export function SiteHeader() {
       </a>
       <div className="wrap">
         <div className="relative isolate flex h-14 items-center justify-between gap-4 rounded-full bg-canvas-soft/95 pr-2 pl-5 backdrop-blur-md sm:h-[60px] sm:pl-6 lg:bg-transparent lg:px-0 lg:backdrop-blur-none lg:before:absolute lg:before:inset-y-0 lg:before:-right-2 lg:before:-left-6 lg:before:-z-10 lg:before:rounded-full lg:before:bg-canvas-soft/95 lg:before:backdrop-blur-md">
-          <Logo priority className="w-[118px] sm:w-[136px]" />
+          <Logo priority className="w-[150px] sm:w-[184px]" />
 
           <nav aria-label="Huvudmeny" className="hidden lg:block">
             <Suspense fallback={<NavLinksStatic />}>

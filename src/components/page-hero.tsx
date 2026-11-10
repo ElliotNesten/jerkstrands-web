@@ -59,7 +59,7 @@ export function PageHero({ title, muted, intro, crumbs, children, className, ton
           {muted && (
             <>
               {" "}
-              <span className="text-ink/55">{muted}</span>
+              <span className="text-ink/65">{muted}</span>
             </>
           )}
         </h1>

@@ -8,11 +8,15 @@ interface LogoProps {
   priority?: boolean;
 }
 
-/** Jerkstrands guldlogotyp. "light-bg" har mörk undertext för ljus bakgrund. */
+/**
+ * Jerkstrands logotyp. "light-bg" är en djupare guldton med något kraftigare linjer, så att
+ * skriptet syns i liten storlek på ljus bakgrund (5:1 mot menyraden, originalguldet når 2,4:1).
+ * "dark-bg" är originalguldet, som har god kontrast mot den mörka sidfoten.
+ */
 export function Logo({ variant = "light-bg", className, priority }: LogoProps) {
   const src =
     variant === "light-bg"
-      ? "/brand/jerkstrands-logo-ljus-bakgrund.png"
+      ? "/brand/jerkstrands-logo-djupguld.png"
       : "/brand/jerkstrands-logo-guld.png";
   return (
     <Link href="/" className={cn("inline-block shrink-0", className)} aria-label="Jerkstrands – till startsidan">
@@ -23,7 +27,7 @@ export function Logo({ variant = "light-bg", className, priority }: LogoProps) {
         height={153}
         preload={priority}
         className="h-auto w-full"
-        sizes="240px"
+        sizes="(min-width: 640px) 184px, 150px"
       />
     </Link>
   );
