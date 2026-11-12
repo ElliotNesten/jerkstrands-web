@@ -1,49 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
-import { getProduct } from "@/lib/catalog";
+import { Em, Sparkle } from "@/components/decor";
 import { currentSeason } from "@/lib/season";
 
-/**
- * Säsong på bärröd mark: rubrik, knapp och fyra produkter till vänster,
- * säsongsfotot på höger sida i hela sektionens höjd.
- */
+/** Säsong (Figma 822:522): smörgult klistermärkeskort med text till vänster och säsongsfotot till höger. */
 export function SeasonSection() {
   if (!currentSeason) return null;
-  const featured = currentSeason.productSlugs.map(getProduct).filter((p) => p !== undefined);
+  const s = currentSeason;
   return (
-    <section aria-labelledby="sasong-rubrik" className="screen band flex bg-berry text-canvas sm:max-lg:min-h-[200svh]">
-      <div className="wrap grid gap-10 lg:grid-cols-12 lg:items-stretch lg:gap-6">
-        <div className="flex flex-col lg:col-span-7">
-          <SectionHeading id="sasong-rubrik" tone="light" title={currentSeason.title} intro={currentSeason.muted} />
-          <Link href={currentSeason.href} className="btn btn-inverse-outline mt-8 self-start">
-            {currentSeason.cta} <ArrowRight className="size-4" />
-          </Link>
-          <ul className="mt-10 grid grid-cols-2 gap-4 lg:mt-auto lg:grid-cols-4 lg:gap-6 lg:pt-8">
-            {featured.map((p) => (
-              <li key={p.slug}>
-                <Link href={`/sortiment/${p.slug}`} className="lift group flex h-full flex-col">
-                  <div className="relative aspect-square overflow-hidden rounded-[24px] bg-canvas lg:aspect-[4/5]">
-                    <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 12vw, 44vw" className="zoom-img object-contain p-4" />
-                  </div>
-                  <p className="mt-2.5 font-semibold">{p.name}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] lg:col-span-5 lg:col-start-8 lg:aspect-auto lg:min-h-[420px]">
-          <Image
-            src={currentSeason.image}
-            alt={currentSeason.imageAlt}
-            fill
-            sizes="(min-width: 1024px) 70vw, 130vw"
-            className="object-cover"
-          />
-          <span className="absolute top-4 left-4 inline-flex items-center rounded-full bg-butter px-3 py-1 text-xs font-semibold text-ink">
-            {currentSeason.badge}
-          </span>
+    <section aria-labelledby="sasong-rubrik" className="relative bg-white pt-16 pb-10 lg:pt-[120px] lg:pb-16">
+      <Sparkle className="absolute top-10 left-[5%] size-8 text-leaf" />
+      <Sparkle className="absolute right-[6%] bottom-4 hidden size-6 text-butter sm:block" />
+      <div className="wrap">
+        <div className="sticker flex flex-col overflow-hidden bg-butter lg:flex-row">
+          <div className="flex flex-1 flex-col items-start justify-center gap-6 px-6 py-10 sm:px-10 lg:px-14 lg:py-16">
+            <p className="eyebrow">{s.eyebrow}</p>
+            <h2 id="sasong-rubrik" className="t-h2 max-w-[5.5em]">
+              <Em>{s.title}</Em>
+            </h2>
+            <p className="t-lead max-w-[640px] text-ink-soft">{s.text}</p>
+            <ul className="flex flex-wrap gap-2">
+              {s.highlights.map((h) => (
+                <li key={h.slug}>
+                  <Link href={`/sortiment/${h.slug}`} className="pill bg-cream transition-colors hover:bg-white">
+                    {h.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href={s.href} className="btn btn-primary mt-2">
+              {s.cta} <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </div>
+          <div className="relative aspect-[824/600] lg:aspect-auto lg:min-h-[600px] lg:w-[51%]">
+            <Image src={s.image} alt={s.imageAlt} fill sizes="(min-width: 1700px) 824px, (min-width: 1024px) 50vw, 92vw" className="object-cover" />
+            <div className="absolute top-5 left-5 flex size-24 -rotate-8 flex-col items-center justify-center rounded-full border-2 border-butter bg-forest text-white sm:top-6 sm:left-10 sm:size-[136px]">
+              <span className="text-[0.625rem] font-semibold tracking-[0.16em] text-butter uppercase sm:text-sm">Säsong</span>
+              <span className="font-display text-4xl leading-[1.1] font-semibold tracking-[-0.01em] sm:text-[3.5rem]">{s.stamp}</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

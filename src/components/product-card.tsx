@@ -57,14 +57,14 @@ interface Props {
   sizes?: string;
 }
 
-/** Galleriplatta: produkten på ljusgrå yta, namnet under. Lyfter 2px vid hover. */
+/** Klistermärkeskort: produkten på kategorins ton, namnet under. Lyfter vid hover. */
 export function ProductCard({ product, showLabelButton = true, className, sizes }: Props) {
   const weight = formatWeight(product.weightGrams);
   const sizesCount = product.variants.filter((v) => !v.lactoseFree).length;
   const badges = product.tags.filter((t) => t !== "mini");
   return (
-    <article className={cn("lift group relative flex flex-col", className)}>
-      <div className={cn("relative aspect-[4/3] overflow-hidden rounded-[24px]", toneBg[categoryTone(product.categories[0])])}>
+    <article className={cn("sticker-sm lift group relative flex h-full flex-col rounded-[24px] bg-white p-2", className)}>
+      <div className={cn("relative aspect-[4/3] overflow-hidden rounded-[18px]", toneBg[categoryTone(product.categories[0])])}>
         <Image
           src={product.image}
           alt={product.name}
@@ -73,7 +73,7 @@ export function ProductCard({ product, showLabelButton = true, className, sizes 
           className="zoom-img object-contain p-5 sm:p-7"
         />
         {badges.length > 0 && (
-          <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+          <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
             {badges.map((t) => (
               <span key={t} className={t === "jul" ? "badge-accent" : "badge-overlay"}>
                 {tagLabels[t]}
@@ -82,13 +82,13 @@ export function ProductCard({ product, showLabelButton = true, className, sizes 
           </div>
         )}
       </div>
-      <div className="flex flex-1 flex-col px-1 pt-3">
-        <h3 className="text-[1.0625rem] leading-snug font-semibold">
+      <div className="flex flex-1 flex-col px-2 pt-3 pb-2 sm:px-3">
+        <h3 className="font-display text-[1.375rem] leading-[1.1] font-semibold sm:text-2xl">
           <Link href={`/sortiment/${product.slug}`} className="after:absolute after:inset-0 after:content-['']">
             {product.name}
           </Link>
         </h3>
-        <p className="mt-0.5 text-sm text-muted">
+        <p className="mt-1 text-sm text-muted">
           Art.nr {product.articleNo}
           {weight && <> · {weight}</>}
           {sizesCount > 1 && <> · {sizesCount} storlekar</>}

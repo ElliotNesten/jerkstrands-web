@@ -1,20 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Barlow, Barlow_Condensed, Heebo } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { LabelQueuePanel } from "@/components/labels/label-queue-panel";
 import { site } from "@/lib/site";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+/* Rubriker */
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-barlow-condensed",
   subsets: ["latin"],
-  axes: ["opsz", "wdth"],
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+/* Knappar, meny och etiketter */
+const barlow = Barlow({
+  variable: "--font-barlow",
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  display: "swap",
+});
+
+/* Brödtext */
+const heebo = Heebo({
+  variable: "--font-heebo",
   subsets: ["latin"],
   display: "swap",
 });
@@ -47,7 +58,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fff8ef",
+  themeColor: "#f0e2a6",
 };
 
 const organizationJsonLd = {
@@ -73,7 +84,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="sv" className={`${bricolage.variable} ${figtree.variable} h-full antialiased`}>
+    <html lang="sv" className={`${barlowCondensed.variable} ${barlow.variable} ${heebo.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <script
           type="application/ld+json"

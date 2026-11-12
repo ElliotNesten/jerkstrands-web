@@ -36,11 +36,11 @@ export function LabelQueuePanel() {
       {open && (
         <section
           aria-label="Utskriftskö för hylletiketter"
-          className="flex max-h-[min(36rem,calc(100dvh-7rem))] w-[min(25rem,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-[24px] border border-hairline bg-canvas"
+          className="flex max-h-[min(36rem,calc(100dvh-7rem))] w-[min(25rem,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-[24px] border-[1.5px] border-forest bg-canvas shadow-[var(--shadow-sticker-sm)]"
         >
           <header className="flex items-center justify-between gap-3 px-5 pt-5 pb-3">
             <div>
-              <h2 className="text-xl font-[650]">Utskriftskö.</h2>
+              <h2 className="font-display text-[1.75rem] leading-tight font-semibold">Utskriftskö</h2>
               <p className="text-sm text-muted">Hylletiketter 150 mm. Fyll i styckpris.</p>
             </div>
             <button
@@ -158,7 +158,7 @@ export function LabelQueuePanel() {
         aria-expanded={open}
         className="flex h-12 items-center gap-2 rounded-full bg-ink pr-4 pl-2 text-sm font-semibold text-canvas transition-transform hover:-translate-y-0.5 active:scale-95"
       >
-        <span className="inline-flex size-8 items-center justify-center rounded-full bg-accent">
+        <span className="inline-flex size-8 items-center justify-center rounded-full bg-butter text-forest">
           <Tag className="size-3.5" />
         </span>
         Hylletiketter

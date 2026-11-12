@@ -101,7 +101,7 @@ export const categories: Category[] = [
     segment: "butik",
     description: "Surdegsbröd, rustika limpor och klassiska matbröd.",
     coverSlug: "levain-blanche",
-    tone: "wheat",
+    tone: "cream",
   },
   {
     id: "portionsbrod",
@@ -117,7 +117,7 @@ export const categories: Category[] = [
     segment: "butik",
     description: "Handknutna bullar, wienerbröd och fikaklassiker.",
     coverSlug: "kanelknut",
-    tone: "apricot",
+    tone: "blush",
   },
   {
     id: "kransar-langder-flator",
@@ -125,7 +125,7 @@ export const categories: Category[] = [
     segment: "butik",
     description: "Fyllda flätor och kransar att dela på.",
     coverSlug: "kanelflata",
-    tone: "honey",
+    tone: "butter",
   },
   {
     id: "mjuka-kakor",
@@ -133,7 +133,7 @@ export const categories: Category[] = [
     segment: "butik",
     description: "Mumsbitar, rulltårta, morotskaka och muffins.",
     coverSlug: "morotskaka",
-    tone: "cocoa",
+    tone: "mist",
   },
   {
     id: "tartor",
@@ -141,7 +141,7 @@ export const categories: Category[] = [
     segment: "butik",
     description: "Gräddtårtor, moussetårtor och marsipanklassiker.",
     coverSlug: "princesstarta",
-    tone: "raspberry",
+    tone: "blush",
   },
   {
     id: "bakelser",
@@ -149,7 +149,7 @@ export const categories: Category[] = [
     segment: "butik",
     description: "Konditorns bakelser – från napoleon till semla.",
     coverSlug: "princessbakelse",
-    tone: "pistachio",
+    tone: "mint",
   },
   {
     id: "smakakor",
@@ -157,7 +157,7 @@ export const categories: Category[] = [
     segment: "butik",
     description: "Klassiska kakor i påse – perfekt till kaffet.",
     coverSlug: "finska-puckar",
-    tone: "vanilla",
+    tone: "cream",
   },
   {
     id: "packat",
@@ -165,7 +165,7 @@ export const categories: Category[] = [
     segment: "butik",
     description: "Butiksklara förpackningar med EAN.",
     coverSlug: "kallarfranska-8-pack",
-    tone: "sage",
+    tone: "mint",
   },
   {
     id: "hr-matbrod",
@@ -173,7 +173,7 @@ export const categories: Category[] = [
     segment: "hotell-restaurang",
     description: "Brödkorgens favoriter för frukost och middag.",
     coverSlug: "surdegsbrod-durum",
-    tone: "wheat",
+    tone: "cream",
   },
   {
     id: "hr-landgang",
@@ -181,7 +181,7 @@ export const categories: Category[] = [
     segment: "hotell-restaurang",
     description: "Skivat bröd och bottnar för kalla köket.",
     coverSlug: "restaurangbrod-landgang",
-    tone: "vanilla",
+    tone: "mist",
   },
   {
     id: "hr-frukost",
@@ -197,7 +197,7 @@ export const categories: Category[] = [
     segment: "hotell-restaurang",
     description: "Fikabröd i lagom storlek för buffé och möten.",
     coverSlug: "kanelknut-mini",
-    tone: "apricot",
+    tone: "blush",
   },
   {
     id: "hr-kondisbitar",
@@ -205,7 +205,7 @@ export const categories: Category[] = [
     segment: "hotell-restaurang",
     description: "Små söta bitar till kaffet.",
     coverSlug: "chokladboll-mini",
-    tone: "cocoa",
+    tone: "mint",
   },
   {
     id: "hr-kakblock",
@@ -213,7 +213,7 @@ export const categories: Category[] = [
     segment: "hotell-restaurang",
     description: "Hela bleck att portionera själv.",
     coverSlug: "karleksmums-bleck",
-    tone: "peach",
+    tone: "cream",
   },
   {
     id: "jul",
@@ -221,7 +221,7 @@ export const categories: Category[] = [
     segment: "sasong",
     description: "Lussekatter, saffransfläta, vörtbröd och pepparkaksdeg.",
     coverSlug: "lussekatt-saffran",
-    tone: "raspberry",
+    tone: "butter",
   },
 ];
 
@@ -267,7 +267,7 @@ export function productsInCategory(id: CategoryId) {
 }
 
 export function categoryTone(id: CategoryId | string | undefined): Tone {
-  return (id && byCategory.get(id as CategoryId)?.tone) || "vanilla";
+  return (id && byCategory.get(id as CategoryId)?.tone) || "cream";
 }
 
 export function categoryCover(category: Category) {

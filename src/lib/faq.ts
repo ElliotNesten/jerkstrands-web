@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 const lactoseFree = products.filter((p) => p.tags.includes("laktosfri")).length;
 
-/** Vanliga frågor från återförsäljare – används på startsidan och återförsäljarsidan. */
+/** Vanliga frågor från kunder – används på sidan Bli kund. */
 export const faq = [
   {
     q: "Hur beställer jag som kund?",
@@ -22,7 +22,7 @@ export const faq = [
     a: `Ja, ${lactoseFree} av våra tårtor finns även laktosfria. Filtrera på ”Finns laktosfri” i sortimentet.`,
   },
   {
-    q: "Vad kostar det att bli återförsäljare?",
-    a: "Priser och villkor beror på sortiment och volym. Skicka en intresseanmälan så tar vi fram ett förslag.",
+    q: "Vad kostar det att bli kund?",
+    a: "Priser och villkor beror på sortiment och volym. Skicka en förfrågan så tar vi fram ett förslag.",
   },
 ];

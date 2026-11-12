@@ -5,55 +5,52 @@
 @source not "../../.taste-skill";
 
 /* ------------------------------------------------------------------
-   Jerkstrands – designsystem
-   Visuellt språk: Mobbin-analys (DESIGN.md) – vit galleriyta, nästan svart
-   bläck, en stege av ljusa neutraltoner i stället för skuggor, pillerformade
-   kontroller och 24px kort. Färgen kommer från bilderna på bröd och bakverk.
-   En enda accent: Jerkstrands förpackningsgröna, för kommersiella signaler.
-   Struktur och rörelse: tasteskill (en sektion per skärm, hover-lager, inträde).
+   Jerkstrands – designsystem (Figma "Web Designs", startsidan 822:198)
+   Skogsgrönt bläck på vitt och grädde, smörgult som accent. Rubriker i
+   Barlow Condensed med kursiva, ljusgröna ord; knappar och etiketter i
+   Barlow; brödtext i Heebo. Kort ser ut som klistermärken: grön kant och
+   en hård skugga rakt nedåt. Sektionerna skiljs åt med vågor och gnistor.
 ------------------------------------------------------------------- */
 
 @theme {
-  /* Bas: varmvit grädde och espresso i stället för vitt och svart */
-  --color-ink: #2b1a10;
-  --color-ink-soft: #3d2a1e;
-  --color-muted: #5e4b3f;
-  --color-faint: #7d6957;
-  --color-canvas: #fff8ef;
-  --color-canvas-soft: #f8ebd8;
-  --color-field: #f3e4ce;
-  --color-hairline-soft: #f1e2cc;
-  --color-hairline: #e6d2b5;
-  /* Handling: skorpfärg (terrakotta) */
-  --color-accent: #b4532a;
-  --color-accent-deep: #8f3d1b;
-  --color-accent-soft: #f6dccb;
-  --color-overlay: rgb(43 26 16 / 0.55);
+  /* Palett */
+  --color-forest: #1a5036;
+  --color-leaf: #257850;
+  --color-moss: #5c9a7c;
+  --color-butter: #f0e2a6;
+  --color-cream: #fff6d8;
+  --color-blush: #ece4e1;
+  --color-mint: #e2ede7;
+  --color-mist: #edf1ef;
 
-  /* Bageriets färger – plattor och sektionsfärger */
-  --color-butter: #fbe6ae;
-  --color-wheat: #f2ddb8;
-  --color-honey: #f7d79a;
-  --color-apricot: #f9d2b3;
-  --color-peach: #fbdcc6;
-  --color-raspberry: #f7cdd2;
-  --color-berry: #9e2b3a;
-  --color-berry-deep: #7c1f2c;
-  --color-pistachio: #dde8c6;
-  --color-sage: #d9e5dc;
-  --color-green: #48725f;
-  --color-green-deep: #2f5442;
-  --color-vanilla: #f6e8c9;
-  --color-cocoa: #f1d3c8;
-  --color-gold: #c19a45;
+  /* Roller */
+  --color-ink: #1a5036;
+  --color-ink-soft: rgb(26 80 54 / 0.8);
+  --color-muted: rgb(26 80 54 / 0.65);
+  --color-faint: rgb(26 80 54 / 0.45);
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #fff6d8;
+  --color-field: #ffffff;
+  --color-hairline: rgb(26 80 54 / 0.15);
+  --color-hairline-soft: rgb(26 80 54 / 0.08);
+  --color-accent: #257850;
+  --color-accent-deep: #1a5036;
+  --color-overlay: rgb(26 80 54 / 0.7);
 
-  --font-sans: var(--font-figtree), -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-bricolage), var(--font-figtree), sans-serif;
+  --font-sans: var(--font-heebo), -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-ui: var(--font-barlow), var(--font-heebo), sans-serif;
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
 
   --radius-tile: 16px;
-  --radius-card: 24px;
+  --radius-card: 32px;
+
+  --shadow-sticker: 0 8px 0 0 var(--color-forest);
+  --shadow-sticker-sm: 0 4px 0 0 var(--color-forest);
+  --shadow-float: 0 16px 40px 0 rgb(26 79 54 / 0.14);
+  --shadow-photo: 0 16px 32px 0 rgb(15 51 33 / 0.18);
 
   --animate-enter: enter 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-marquee: marquee 40s linear infinite;
 
   @keyframes enter {
     from {
@@ -65,52 +62,20 @@
       transform: none;
     }
   }
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 :root {
   color-scheme: light;
   --gut: 16px;
-  --band-m: 8px;
-  --nav-h: 72px;
-  --padt: 120px;
-  --padb: 80px;
-
-  /* Tokens som designverktygets moment (public/assets/moments) läser */
-  --nav: 72px;
-  --bg: var(--color-canvas);
-  --surface: var(--color-canvas-soft);
-  --ink: var(--color-ink);
-  --muted: var(--color-muted);
-  --accent: var(--color-berry);
-  --line: var(--color-hairline);
-  --font-text: var(--font-figtree), -apple-system, "Helvetica Neue", Arial, sans-serif;
-  --display-weight: 650;
-  --display-tracking: -0.025em;
-  --t-small: 0.875rem;
-  --t-lead: clamp(1.125rem, 1.6vw, 1.25rem);
-  --t-h3: clamp(1.5rem, 2.4vw, 2rem);
-  --t-h2: clamp(2rem, 3.6vw, 2.75rem);
-  --s-2: 8px;
-  --s-3: 12px;
-  --s-4: 16px;
-  --s-5: 24px;
-  --s-6: 32px;
-  --s-7: 48px;
-  --r-md: 20px;
-  --r-lg: 24px;
-}
-
-@media (max-width: 639px) {
-  :root {
-    --padt: 96px;
-    --padb: 56px;
-  }
 }
 @media (min-width: 640px) {
   :root {
     --gut: 32px;
-    --band-m: 12px;
-    --nav: 84px;
   }
 }
 @media (min-width: 1024px) {
@@ -126,27 +91,35 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 104px;
+  scroll-padding-top: 96px;
 }
 
 body {
   background: var(--color-canvas);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-weight: 420;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 1.38;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--color-honey);
-  color: var(--color-ink);
+  background: var(--color-butter);
+  color: var(--color-forest);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-ink);
+  outline: 2px solid var(--color-leaf);
   outline-offset: 3px;
+}
+
+/* Ikoner (lucide): samma 1,5 px linje oavsett storlek, som i Figma */
+.lucide {
+  stroke-width: 1.5px;
+}
+.lucide * {
+  vector-effect: non-scaling-stroke;
 }
 
 @layer base {
@@ -156,101 +129,141 @@ body {
   h4,
   .font-display {
     font-family: var(--font-display);
-    font-weight: 650;
-    font-stretch: 96%;
-    letter-spacing: -0.02em;
-    text-wrap: balance;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-wrap-style: balance;
+  }
+  /* Kursivt, ljusgrönt ord i rubriker – på mörk mark smörgult */
+  :where(h1, h2, h3, h4, .font-display, .t-display, .t-h1, .t-h2, .t-h3, .t-h4) em {
+    font-style: italic;
+    color: var(--hl, var(--color-leaf));
+  }
+  .on-dark {
+    --hl: var(--color-butter);
   }
   p {
-    text-wrap: pretty;
+    text-wrap-style: pretty;
   }
   strong,
   b {
-    font-weight: 650;
+    font-weight: 600;
+  }
+  button,
+  select {
+    cursor: pointer;
   }
 }
 
 @layer components {
-  /* En .wrap för hela sidan: samma vänster- och högerkant hela vägen ner. */
+  /* En .wrap för hela sidan: 1620 px innehåll, 150 px marginal på en 1920-skärm */
   .wrap {
     margin-inline: auto;
-    width: min(100% - 2 * var(--gut), 1600px);
-  }
-  /* Innehållet i ett färgat band linjerar med resten av sidan: bandets marginal räknas bort */
-  .band .wrap {
-    width: min(100% - 2 * (var(--gut) - var(--band-m)), 1600px);
+    width: min(100% - 2 * var(--gut), 1620px);
   }
 
-  /* En sektion per skärm: rubriken överst, toppjusterad. */
-  .screen {
-    min-height: 100svh;
-    padding-top: var(--padt);
-    padding-bottom: var(--padb);
-  }
-  .screen-2 {
-    min-height: 200svh;
+  .section {
+    padding-block: clamp(4.5rem, 6.25vw, 7.5rem);
   }
 
-  /* Typskala (Mobbin): 650 rubriker, 300 ingress, 450 brödtext */
+  /* Typskala – Figma i 1920 px, skalad nedåt på mindre skärmar */
   .t-display {
-    font-size: clamp(2.6rem, 6.4vw, 5rem);
-    line-height: 0.98;
-    font-weight: 650;
-    letter-spacing: -0.035em;
+    font-family: var(--font-display);
+    font-size: clamp(3.25rem, 6.25vw, 7.5rem);
+    line-height: 0.9;
+    font-weight: 600;
+    letter-spacing: -0.015em;
   }
   .t-h1 {
-    font-size: clamp(2.4rem, 5vw, 3.5rem);
-    line-height: 1.02;
-    font-weight: 650;
-    letter-spacing: -0.03em;
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 5vw, 6rem);
+    line-height: 0.95;
+    font-weight: 600;
+    letter-spacing: -0.015em;
   }
   .t-h2 {
-    font-size: clamp(2rem, 3.6vw, 2.75rem);
-    line-height: 1.06;
-    font-weight: 650;
-    letter-spacing: -0.025em;
+    font-family: var(--font-display);
+    font-size: clamp(2.375rem, 3.34vw, 4rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
   .t-h3 {
-    font-size: clamp(1.5rem, 2.4vw, 2rem);
-    line-height: 1.13;
-    font-weight: 650;
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 2.1vw, 2.5rem);
+    line-height: 1.1;
+    font-weight: 600;
   }
   .t-h4 {
-    font-size: 1.5rem;
-    line-height: 1.25;
-    font-weight: 650;
+    font-family: var(--font-display);
+    font-size: clamp(1.625rem, 1.67vw, 2rem);
+    line-height: 1.1;
+    font-weight: 600;
   }
   .t-title {
-    font-size: 1.25rem;
-    line-height: 1.3;
+    font-family: var(--font-ui);
+    font-size: clamp(1.25rem, 1.25vw, 1.5rem);
+    line-height: 1.25;
     font-weight: 600;
   }
   .t-lead {
-    font-size: clamp(1.125rem, 1.6vw, 1.25rem);
-    line-height: 1.4;
+    font-size: clamp(1.0625rem, 1.05vw, 1.25rem);
+    line-height: 1.6;
     font-weight: 400;
   }
+  .t-body {
+    font-size: clamp(1rem, 0.94vw, 1.125rem);
+    line-height: 1.6;
+  }
   .t-label {
-    font-size: 0.8125rem;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
     line-height: 1.3;
     font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
-  /* Knappar – stadium-piller. De kliver vid hover och trycks vid klick. */
+  /* Överrubrik med kort linje före: "—— VÅRT SORTIMENT" */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--eyebrow, var(--color-leaf));
+    font-size: clamp(0.875rem, 0.84vw, 1rem);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 32px;
+    height: 2px;
+    flex: none;
+    background: currentColor;
+  }
+  .on-dark .eyebrow {
+    --eyebrow: var(--color-butter);
+  }
+
+  /* Knappar – piller med 1,5 px kant i Barlow. Kliver upp vid hover. */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    height: 48px;
-    padding: 0 1.25rem;
+    height: 3.5rem;
+    padding: 0 2rem;
+    border: 1.5px solid transparent;
     border-radius: 9999px;
+    font-family: var(--font-ui);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1;
     white-space: nowrap;
     transition:
       transform 0.18s cubic-bezier(0.2, 0.7, 0.2, 1),
+      box-shadow 0.18s ease,
       background-color 0.18s ease,
       color 0.18s ease,
       border-color 0.18s ease;
@@ -262,57 +275,89 @@ body {
     transform: translateY(0) scale(0.97);
   }
   .btn-primary {
-    background: var(--color-accent);
-    color: var(--color-canvas);
+    background: var(--color-forest);
+    border-color: var(--color-forest);
+    color: #fff;
   }
   .btn-primary:hover {
-    background: var(--color-accent-deep);
+    background: var(--color-leaf);
+    border-color: var(--color-leaf);
   }
   .btn-outline {
-    background: transparent;
-    color: var(--color-ink);
-    border: 1.5px solid rgb(43 26 16 / 0.22);
+    background: #fff;
+    border-color: var(--color-forest);
+    color: var(--color-forest);
   }
   .btn-outline:hover {
-    border-color: var(--color-ink);
+    background: var(--color-cream);
+  }
+  .btn-butter {
+    background: var(--color-butter);
+    border-color: var(--color-butter);
+    color: var(--color-forest);
+  }
+  .btn-butter:hover {
+    background: var(--color-cream);
+    border-color: var(--color-cream);
   }
   .btn-soft {
-    background: rgb(43 26 16 / 0.07);
-    color: var(--color-ink);
+    background: var(--color-cream);
+    color: var(--color-forest);
   }
   .btn-soft:hover {
-    background: rgb(43 26 16 / 0.13);
-  }
-  .btn-inverse {
-    background: var(--color-canvas);
-    color: var(--color-ink);
-  }
-  .btn-inverse:hover {
     background: var(--color-butter);
   }
-  .btn-inverse-outline {
-    border: 1.5px solid rgb(255 248 239 / 0.35);
-    color: var(--color-canvas);
+  /* På grön mark */
+  .btn-light-outline {
+    border-color: var(--color-cream);
+    color: #fff;
   }
-  .btn-inverse-outline:hover {
-    border-color: var(--color-canvas);
+  .btn-light-outline:hover {
+    background: rgb(255 255 255 / 0.08);
+  }
+  .btn-ghost-light {
+    border-width: 1px;
+    border-color: rgb(255 255 255 / 0.3);
+    color: #fff;
+  }
+  .btn-ghost-light:hover {
+    border-color: var(--color-butter);
   }
   .btn-sm {
-    height: 40px;
-    padding: 0 1rem;
-    font-size: 0.9375rem;
+    height: 2.5rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
   }
-  .btn-lg {
-    height: 56px;
-    padding: 0 1.75rem;
-    font-size: 1.0625rem;
+  .btn-md {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
   }
-  /* Telefon: smalare knappar så att två får plats på en rad */
   @media (max-width: 639px) {
     .btn {
-      padding: 0 1rem;
+      height: 3.25rem;
+      padding: 0 1.5rem;
+      font-size: 1rem;
+    }
+    .btn-sm {
+      height: 2.5rem;
+      padding: 0 1.125rem;
       font-size: 0.9375rem;
     }
+  }
+
+  /* Rund ikonknapp (pilen i korten) */
+  .icon-btn {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: var(--color-forest);
+    color: #fff;
+    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   /* Länk med understrykning som ritas fram */
@@ -323,78 +368,175 @@ body {
     background-repeat: no-repeat;
     transition: background-size 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
-  .link-draw:hover {
+  .link-draw:hover,
+  a:hover > .link-draw {
     background-size: 100% 1.5px;
   }
 
-  /* Ytor: fyllnadsskillnad i stället för skuggor */
-  .tile {
-    background: var(--color-canvas-soft);
+  /* Klistermärken: grön kant och hård skugga rakt nedåt */
+  .sticker {
+    border: 1.5px solid var(--color-forest);
     border-radius: var(--radius-card);
+    box-shadow: var(--shadow-sticker);
   }
-  .card-line {
-    background: var(--color-canvas);
-    border: 1px solid var(--color-hairline);
-    border-radius: var(--radius-card);
+  .sticker-sm {
+    border: 1.5px solid var(--color-forest);
+    box-shadow: var(--shadow-sticker-sm);
   }
-
-  /* Länkat kort: lyfter 2px, bilden zoomar 1.03 i sin ram */
+  /* Länkat kort: lyfter och skuggan växer */
   .lift {
-    transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition:
+      transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1),
+      box-shadow 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
   .lift:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+  }
+  .lift.sticker:hover {
+    box-shadow: 0 12px 0 0 var(--color-forest);
+  }
+  .lift.sticker-sm:hover {
+    box-shadow: 0 8px 0 0 var(--color-forest);
   }
   .zoom-img {
     transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
   .lift:hover .zoom-img,
   .zoom-parent:hover .zoom-img {
-    transform: scale(1.03);
+    transform: scale(1.04);
+  }
+  .lift:hover .icon-btn {
+    transform: rotate(45deg);
   }
 
-  /* Formulärfält: fylld, utan ram i vila, ring i bläck vid fokus */
+  /* Ytor */
+  .tile {
+    background: var(--color-cream);
+    border-radius: var(--radius-card);
+  }
+  .card-line {
+    background: #fff;
+    border: 1px solid var(--color-hairline);
+    border-radius: 24px;
+  }
+  /* Glaskort på grön mark */
+  .card-glass {
+    background: rgb(255 255 255 / 0.06);
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 24px;
+  }
+
+  /* Taggar och piller */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.25;
+  }
+  /* Snett, kursivt märke på bilder ("✦ Klassiker") */
+  .tag-tilt {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  /* Formulärfält: vitt med tunn grön kant, 16 px hörn */
   .field {
     width: 100%;
-    background: var(--color-field);
+    background: #fff;
     color: var(--color-ink);
+    border: 1px solid var(--color-hairline);
     border-radius: var(--radius-tile);
-    padding: 0.8rem 1rem;
+    padding: 1rem;
     font-size: 1rem;
-    border: 2px solid transparent;
-    transition: border-color 0.15s ease;
+    line-height: 1.5;
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
   }
   .field::placeholder {
     color: var(--color-faint);
   }
-  .field-on-tone {
-    background: var(--color-canvas);
+  .field:hover {
+    border-color: rgb(26 80 54 / 0.3);
   }
   .field:focus {
     outline: none;
-    border-color: var(--color-ink);
+    border-color: var(--color-forest);
+    box-shadow: 0 0 0 3px rgb(37 120 80 / 0.15);
+  }
+  select.field {
+    appearance: none;
+    padding-right: 3rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231A5036' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+  }
+  select.field:invalid {
+    color: var(--color-faint);
+  }
+  select.field option {
+    color: var(--color-ink);
   }
 
   .badge-overlay {
     display: inline-flex;
     align-items: center;
     border-radius: 9999px;
-    background: var(--color-overlay);
-    color: #fff;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.75rem;
+    background: #fff;
+    color: var(--color-forest);
+    padding: 0.25rem 0.7rem;
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
     font-weight: 600;
-    backdrop-filter: blur(6px);
   }
   .badge-accent {
     display: inline-flex;
     align-items: center;
     border-radius: 9999px;
-    background: var(--color-accent);
-    color: #fff;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.75rem;
+    background: var(--color-forest);
+    color: var(--color-cream);
+    padding: 0.25rem 0.7rem;
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
     font-weight: 600;
+  }
+
+  /* Löpband med produktord */
+  .marquee {
+    display: flex;
+    width: max-content;
+    animation: var(--animate-marquee);
+  }
+  .marquee-wrap:hover .marquee {
+    animation-play-state: paused;
+  }
+
+  /* Prickad linje i sidfoten */
+  .rule-dots {
+    height: 3px;
+    background-image: radial-gradient(circle, rgb(240 226 166 / 0.5) 1.5px, transparent 1.75px);
+    background-size: 13.04px 3px;
+    background-repeat: repeat-x;
+  }
+
+  /* Konturtext ("Jerkstrands" i sidfoten) */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgb(240 226 166 / 0.45);
   }
 
   /* Heroets inträde – en gång vid laddning */
@@ -410,47 +552,13 @@ body {
   [data-enter] > *:nth-child(4) {
     animation-delay: 0.24s;
   }
+  [data-enter] > *:nth-child(5) {
+    animation-delay: 0.32s;
+  }
 
   .muted {
     color: var(--color-muted);
   }
-
-  /* Färgade sektionsband: platt färg, rundade hörn som sidfoten */
-  .band {
-    border-radius: var(--radius-card);
-    margin-inline: var(--band-m);
-  }
-  /* Heroet: sektionen är exakt en skärm, och färgen ligger som ett bakgrundslager med
-     samma luft mot skärmens över- och underkant som mot sidorna (--band-m) – ett kort
-     i första skärmen på alla skärmar. Färgen sätts med --hero-bg. */
-  .band-hero {
-    position: relative;
-    isolation: isolate;
-    min-height: 100svh;
-    padding-top: calc(92px + var(--band-m));
-    padding-bottom: calc(24px + var(--band-m));
-  }
-  .band-hero::before {
-    content: "";
-    position: absolute;
-    inset: var(--band-m);
-    z-index: -1;
-    border-radius: var(--radius-card);
-    background: var(--hero-bg, var(--color-butter));
-  }
-  @media (min-width: 640px) {
-    .band-hero {
-      height: 100svh;
-      min-height: 640px;
-      padding-top: calc(120px + var(--band-m));
-    }
-  }
-}
-
-/* word-highlight: påståendet får hela radbredden (kitets eget tak är 960px) */
-[data-moment="word-highlight"] .mo-wh__text {
-  max-width: 1240px;
-  line-height: 1.06;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -460,5 +568,8 @@ body {
     animation-duration: 0.01ms !important;
     animation-delay: 0ms !important;
     transition-duration: 0.01ms !important;
+  }
+  .marquee {
+    animation: none;
   }
 }

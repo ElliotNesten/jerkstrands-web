@@ -46,35 +46,35 @@ export function LabelForm({ product, variants }: Props) {
   }
 
   return (
-    <div className="rounded-[24px] bg-butter p-6 sm:p-7">
-      <h2 className="t-h4">Hylletikett.</h2>
-      <p className="mt-1 text-sm text-muted">150 mm bred med EAN-streckkod, QR-kod och jämförpris.</p>
+    <div className="sticker bg-butter p-6 sm:p-8">
+      <h2 className="t-h3">Hylletikett</h2>
+      <p className="mt-2 text-ink-soft">150 mm bred med EAN-streckkod, QR-kod och jämförpris.</p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <label className="block text-sm">
-          <span className="font-semibold">Styckpris (kr)</span>
+        <label className="block">
+          <span className="font-medium">Styckpris (kr)</span>
           <input
             inputMode="decimal"
             placeholder="39,90"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="field mt-1.5 h-12 bg-canvas"
+            className="field mt-2 h-12"
           />
-          <span className="mt-1.5 block text-xs text-muted">
+          <span className="mt-1.5 block text-sm text-ink-soft">
             {cmp
               ? `Jämförpris ${cmp.toLocaleString("sv-SE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} kr/kg`
               : "Tomt fält ger en linje att skriva priset på."}
           </span>
         </label>
-        <fieldset className="text-sm">
-          <legend className="font-semibold">Höjd</legend>
-          <div className="mt-1.5 flex rounded-full bg-canvas p-1">
+        <fieldset>
+          <legend className="font-medium">Höjd</legend>
+          <div className="mt-2 flex rounded-full border border-hairline bg-white p-1">
             {(["39", "45"] as LabelSize[]).map((s) => (
               <label
                 key={s}
                 className={cn(
-                  "flex h-10 flex-1 cursor-pointer items-center justify-center rounded-full text-sm font-semibold transition-colors",
-                  size === s ? "bg-ink text-canvas" : "text-muted hover:text-ink",
+                  "font-ui flex h-10 flex-1 cursor-pointer items-center justify-center rounded-full font-semibold transition-colors",
+                  size === s ? "bg-forest text-white" : "text-ink-soft hover:text-forest",
                 )}
               >
                 <input type="radio" name="etikettstorlek" value={s} checked={size === s} onChange={() => setSize(s)} className="sr-only" />
@@ -84,9 +84,9 @@ export function LabelForm({ product, variants }: Props) {
           </div>
         </fieldset>
         {variants.length > 0 && (
-          <label className="block text-sm sm:col-span-2">
-            <span className="font-semibold">Variant</span>
-            <select value={variantNo} onChange={(e) => setVariantNo(e.target.value)} className="field mt-1.5 h-12 bg-canvas">
+          <label className="block sm:col-span-2">
+            <span className="font-medium">Variant</span>
+            <select value={variantNo} onChange={(e) => setVariantNo(e.target.value)} className="field mt-2 h-12 py-0">
               <option value="">Standard, art.nr {product.articleNo}</option>
               {variants
                 .filter((v) => v.articleNo !== product.articleNo)
@@ -117,7 +117,7 @@ export function LabelForm({ product, variants }: Props) {
         </button>
       </div>
       {message && (
-        <p className="mt-3 text-sm font-semibold text-accent-deep" role="status">
+        <p className="mt-3 font-semibold text-forest" role="status">
           {message}
         </p>
       )}

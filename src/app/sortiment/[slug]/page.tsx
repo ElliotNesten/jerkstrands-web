@@ -78,7 +78,7 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <section className="pt-28 pb-16 sm:pt-32">
+      <section className="pt-8 pb-16 lg:pt-12 lg:pb-24">
         <div className="wrap">
           <Breadcrumbs
             crumbs={[
@@ -89,7 +89,7 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
           />
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:gap-6">
             <div className="lg:sticky lg:top-28 lg:col-span-6 lg:self-start">
-              <div className={`relative aspect-square overflow-hidden rounded-[24px] ${toneBg[categoryTone(product.categories[0])]}`}>
+              <div className={`sticker relative aspect-square overflow-hidden ${toneBg[categoryTone(product.categories[0])]}`}>
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -112,19 +112,19 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
 
             <div className="lg:col-span-5 lg:col-start-8">
               {category && (
-                <Link href={`/sortiment?kategori=${category.id}`} className="link-draw text-sm font-semibold text-muted">
-                  {category.name}
+                <Link href={`/sortiment?kategori=${category.id}`} className="eyebrow">
+                  <span className="link-draw">{category.name}</span>
                 </Link>
               )}
-              <h1 className="t-h1 mt-3">{product.name}.</h1>
-              <p className="t-lead mt-3 text-ink-soft">
+              <h1 className="t-h1 mt-4">{product.name}</h1>
+              <p className="t-lead mt-4 text-ink-soft">
                 Art.nr {product.articleNo}
                 {weight && <> · {weight}</>}
               </p>
-              {product.description && <p className="mt-6 text-[1.0625rem] leading-relaxed">{product.description}</p>}
+              {product.description && <p className="t-body mt-6">{product.description}</p>}
 
               {!product.hasProductData && (
-                <p className="mt-6 rounded-[16px] bg-canvas-soft p-4 text-sm">
+                <p className="mt-6 rounded-[16px] border border-hairline bg-cream p-4">
                   Ingredienser och allergener för den här artikeln får du av oss på{" "}
                   <a href={site.phoneHref} className="font-semibold underline">
                     {site.phone}
@@ -133,7 +133,7 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
                 </p>
               )}
 
-              <dl className="mt-8 divide-y divide-hairline-soft border-y border-hairline-soft text-[0.9375rem]">
+              <dl className="mt-8 divide-y divide-hairline border-y border-hairline">
                 <Fact label="Artikelnummer" value={product.articleNo} />
                 <Fact label="Vikt" value={weight ?? "–"} />
                 <div className="flex flex-wrap items-center justify-between gap-3 py-3">
@@ -167,51 +167,51 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
       {product.hasProductData && (
         <section className="pb-20">
           <div className="wrap grid items-start gap-6 lg:grid-cols-12">
-            <div className="rounded-[24px] bg-vanilla p-6 sm:p-8 lg:col-span-7">
-              <h2 className="t-h3">Ingredienser.</h2>
+            <div className="sticker bg-cream p-6 sm:p-10 lg:col-span-7">
+              <h2 className="t-h3">Ingredienser</h2>
               {product.ingredientsShort && (
-                <p className="mt-4 text-[1.0625rem]">
+                <p className="t-body mt-4">
                   <span className="font-semibold">I korthet: </span>
                   {product.ingredientsShort}
                 </p>
               )}
               {product.ingredients && (
                 <>
-                  <h3 className="mt-6 text-[0.8125rem] font-semibold text-muted">Fullständig ingrediensförteckning</h3>
-                  <p className="mt-2 text-[0.9375rem] leading-relaxed">{product.ingredients}</p>
-                  <p className="mt-3 text-xs text-muted">Allergener skrivs med versaler.</p>
+                  <h3 className="t-label mt-8 text-leaf">Fullständig ingrediensförteckning</h3>
+                  <p className="mt-3 leading-relaxed text-ink-soft">{product.ingredients}</p>
+                  <p className="mt-3 text-sm text-muted">Allergener skrivs med versaler.</p>
                 </>
               )}
             </div>
 
             <div className="flex flex-col gap-6 lg:col-span-5">
-              <div className="rounded-[24px] bg-peach p-6 sm:p-8">
-                <h2 className="t-h3">Allergener.</h2>
-                <h3 className="mt-4 text-[0.8125rem] font-semibold text-muted">Innehåller</h3>
+              <div className="sticker bg-blush p-6 sm:p-10">
+                <h2 className="t-h3">Allergener</h2>
+                <h3 className="t-label mt-6 text-leaf">Innehåller</h3>
                 {product.allergens.length ? (
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {product.allergens.map((a) => (
-                      <li key={a} className="rounded-full bg-canvas px-3.5 py-1.5 text-sm font-semibold">
+                      <li key={a} className="font-ui rounded-full bg-white px-4 py-1.5 font-semibold">
                         {allergenLabels[a]}
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="mt-2 text-sm">Inga allergener enligt ingrediensförteckningen.</p>
+                  <p className="mt-2">Inga allergener enligt ingrediensförteckningen.</p>
                 )}
                 {product.traces && (
                   <>
-                    <h3 className="mt-5 text-[0.8125rem] font-semibold text-muted">Kan innehålla spår av</h3>
-                    <p className="mt-2 text-sm first-letter:uppercase">{product.traces}</p>
+                    <h3 className="t-label mt-6 text-leaf">Kan innehålla spår av</h3>
+                    <p className="mt-2 first-letter:uppercase">{product.traces}</p>
                   </>
                 )}
               </div>
 
               {product.nutrition && (
-                <div className="rounded-[24px] bg-sage p-6 sm:p-8">
-                  <h2 className="t-h3">Näringsvärde.</h2>
+                <div className="sticker bg-mint p-6 sm:p-10">
+                  <h2 className="t-h3">Näringsvärde</h2>
                   <p className="mt-1 text-sm text-muted">Per 100 g</p>
-                  <table className="mt-4 w-full text-sm">
+                  <table className="mt-4 w-full">
                     <tbody>
                       <NutritionRow
                         label="Energi"
@@ -237,14 +237,16 @@ async function ProductDetails({ params }: Pick<PageProps<"/sortiment/[slug]">, "
         <section className="pb-24">
           <div className="wrap">
             <div className="flex items-end justify-between gap-4">
-              <h2 className="t-h2">Fler från {category?.name.toLowerCase() ?? "sortimentet"}</h2>
+              <h2 className="t-h2">
+                Fler från <em>{category?.name.toLowerCase() ?? "sortimentet"}</em>
+              </h2>
               {category && (
-                <Link href={`/sortiment?kategori=${category.id}`} className="btn btn-soft hidden sm:inline-flex">
+                <Link href={`/sortiment?kategori=${category.id}`} className="btn btn-outline hidden sm:inline-flex">
                   Se hela kategorin <ArrowRight className="size-4" />
                 </Link>
               )}
             </div>
-            <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-4">
+            <ul className="mt-10 grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-4">
               {related.map((p) => (
                 <li key={p.slug}>
                   <ProductCard product={toSummary(p)} />
@@ -285,10 +287,10 @@ function NutritionRow({ label, value, indent }: { label: string; value: string; 
 function Variants({ product }: { product: Product }) {
   return (
     <div className="mt-8">
-      <h2 className="text-[0.8125rem] font-semibold text-muted">Storlekar och varianter</h2>
-      <div className="mt-3 overflow-hidden rounded-[24px] border border-hairline">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-canvas-soft text-xs text-muted">
+      <h2 className="t-label text-leaf">Storlekar och varianter</h2>
+      <div className="sticker-sm mt-4 overflow-hidden rounded-[24px] bg-white">
+        <table className="w-full text-left text-[0.9375rem]">
+          <thead className="font-ui bg-cream text-[0.8125rem] text-ink-soft">
             <tr>
               <th scope="col" className="px-4 py-2.5 font-semibold">
                 Variant
@@ -306,7 +308,7 @@ function Variants({ product }: { product: Product }) {
           </thead>
           <tbody>
             {product.variants.map((v) => (
-              <tr key={v.articleNo} className="border-t border-hairline-soft">
+              <tr key={v.articleNo} className="border-t border-hairline">
                 <td className="px-4 py-2.5 font-semibold">
                   <span className="block first-letter:uppercase">{v.label}</span>
                   {v.ean && <span className="block text-[0.7rem] font-normal text-muted tabular-nums sm:hidden">EAN {v.ean}</span>}
@@ -325,9 +327,9 @@ function Variants({ product }: { product: Product }) {
 
 function ProductSkeleton() {
   return (
-    <section className="pt-32 pb-16">
+    <section className="pt-12 pb-16">
       <div className="wrap grid gap-10 lg:grid-cols-2">
-        <div className="aspect-square animate-pulse rounded-[24px] bg-canvas-soft" />
+        <div className="aspect-square animate-pulse rounded-[32px] bg-canvas-soft" />
         <div className="space-y-4">
           <div className="h-4 w-32 animate-pulse rounded-full bg-canvas-soft" />
           <div className="h-14 w-3/4 animate-pulse rounded-full bg-canvas-soft" />

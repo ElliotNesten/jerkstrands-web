@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 export function CatalogSearchForm({ className, id = "snabbsok" }: { className?: string; id?: string }) {
   return (
     <form action="/sortiment" method="get" role="search" className={className}>
-      <label htmlFor={id} className="t-label mb-2 block text-ink-soft">
+      <label htmlFor={id} className="mb-2 block font-medium">
         Sök i sortimentet
       </label>
       <div className="relative">
@@ -14,9 +14,9 @@ export function CatalogSearchForm({ className, id = "snabbsok" }: { className?: 
           name="q"
           type="search"
           placeholder="Produkt, artikelnummer eller EAN"
-          className="field h-16 rounded-full pr-28 pl-13"
+          className="field h-16 rounded-full border-[1.5px] border-forest pr-28 pl-13"
         />
-        <button type="submit" className="btn btn-primary absolute top-1/2 right-2 -translate-y-1/2">
+        <button type="submit" className="btn btn-primary btn-md absolute top-1/2 right-2 -translate-y-1/2">
           Sök
         </button>
       </div>

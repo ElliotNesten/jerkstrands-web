@@ -90,7 +90,7 @@ export function Catalog({ products }: { products: Item[] }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Sök produkt, artikelnummer eller EAN"
             autoComplete="off"
-            className="field h-14 rounded-full pr-12 pl-13"
+            className="field h-14 rounded-full border-[1.5px] border-forest pr-12 pl-13"
           />
           {query && (
             <button
@@ -103,7 +103,7 @@ export function Catalog({ products }: { products: Item[] }) {
             </button>
           )}
         </div>
-        <div className="flex overflow-x-auto rounded-full bg-canvas-soft p-1" role="group" aria-label="Kanal">
+        <div className="flex overflow-x-auto rounded-full border border-hairline bg-cream p-1" role="group" aria-label="Kanal">
           {[{ id: null, name: "Alla" }, ...segments].map((s) => (
             <button
               key={s.id ?? "alla"}
@@ -111,8 +111,8 @@ export function Catalog({ products }: { products: Item[] }) {
               aria-pressed={filters.kanal === s.id}
               onClick={() => update({ kanal: s.id, kategori: null })}
               className={cn(
-                "h-12 shrink-0 rounded-full px-5 text-[0.9375rem] font-semibold transition-colors",
-                filters.kanal === s.id ? "bg-canvas text-ink" : "text-muted hover:text-ink",
+                "font-ui h-12 shrink-0 rounded-full px-5 font-semibold transition-colors",
+                filters.kanal === s.id ? "bg-forest text-white" : "text-ink-soft hover:text-forest",
               )}
             >
               {s.name}
@@ -147,18 +147,18 @@ export function Catalog({ products }: { products: Item[] }) {
                 id="sortering"
                 value={filters.sort}
                 onChange={(e) => update({ sort: e.target.value as Filters["sort"] })}
-                className="h-10 rounded-full bg-canvas-soft px-4 text-sm font-semibold focus:outline-2 focus:outline-ink"
+                className="font-ui h-10 rounded-full border border-hairline bg-white px-4 text-[0.9375rem] font-semibold focus:outline-2 focus:outline-leaf"
               >
                 <option value="relevans">{filters.q ? "Bäst träff" : "Namn A–Ö"}</option>
                 <option value="namn">Namn A–Ö</option>
                 <option value="artikelnummer">Artikelnummer</option>
               </select>
-              <div className="flex rounded-full bg-canvas-soft p-1" role="group" aria-label="Visning">
+              <div className="flex rounded-full border border-hairline bg-cream p-1" role="group" aria-label="Visning">
                 <button
                   type="button"
                   aria-pressed={filters.vy === "rutnat"}
                   onClick={() => update({ vy: "rutnat" })}
-                  className={cn("rounded-full p-2", filters.vy === "rutnat" ? "bg-canvas" : "text-muted")}
+                  className={cn("rounded-full p-2", filters.vy === "rutnat" ? "bg-forest text-white" : "text-muted")}
                   aria-label="Visa som rutnät"
                 >
                   <LayoutGrid className="size-4" />
@@ -167,7 +167,7 @@ export function Catalog({ products }: { products: Item[] }) {
                   type="button"
                   aria-pressed={filters.vy === "lista"}
                   onClick={() => update({ vy: "lista" })}
-                  className={cn("rounded-full p-2", filters.vy === "lista" ? "bg-canvas" : "text-muted")}
+                  className={cn("rounded-full p-2", filters.vy === "lista" ? "bg-forest text-white" : "text-muted")}
                   aria-label="Visa som lista"
                 >
                   <List className="size-4" />
@@ -179,8 +179,8 @@ export function Catalog({ products }: { products: Item[] }) {
           <ActiveChips filters={filters} onChange={update} onClearQuery={() => setQuery("")} onClear={clearAll} />
 
           {results.length === 0 ? (
-            <div className="tile mt-8 px-6 py-16">
-              <p className="t-h3">Inga produkter matchar.</p>
+            <div className="sticker mt-8 bg-cream px-6 py-16 sm:px-10">
+              <p className="t-h3">Inga produkter <em>matchar</em></p>
               <p className="mt-2 max-w-md text-muted">
                 Prova ett annat sökord eller färre filter. Saknar du en produkt? Ring oss så hjälper vi dig.
               </p>
@@ -196,7 +196,7 @@ export function Catalog({ products }: { products: Item[] }) {
           ) : filters.vy === "lista" ? (
             <ProductTable items={results} />
           ) : (
-            <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-3 xl:grid-cols-4 min-[1800px]:grid-cols-5">
+            <ul className="mt-6 grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 xl:grid-cols-4 min-[1800px]:grid-cols-5">
               {results.map((p) => (
                 <li key={p.slug}>
                   <ProductCard product={p} sizes="(min-width: 1280px) 20vw, (min-width: 768px) 28vw, 46vw" />
@@ -217,11 +217,11 @@ export function Catalog({ products }: { products: Item[] }) {
         aria-label="Filter"
       >
         <div className="sticky top-0 z-10 flex items-center justify-between bg-canvas px-6 pt-5 pb-3">
-          <span className="t-h4">Filter.</span>
+          <span className="t-h4">Filter</span>
           <button
             type="button"
             onClick={() => setMobileOpen(false)}
-            className="inline-flex size-10 items-center justify-center rounded-full bg-canvas-soft"
+            className="inline-flex size-10 items-center justify-center rounded-full bg-cream"
             aria-label="Stäng filtren"
           >
             <X className="size-5" />
@@ -264,7 +264,7 @@ function FilterPanel({
           type="button"
           onClick={() => onChange({ kategori: null })}
           className={cn(
-            "flex w-full items-center rounded-full px-4 py-2.5 text-left text-[0.9375rem] font-semibold",
+            "font-ui flex w-full items-center rounded-full px-4 py-2.5 text-left font-semibold",
             !filters.kategori ? "bg-ink text-canvas" : "hover:bg-canvas-soft",
           )}
         >
@@ -272,7 +272,7 @@ function FilterPanel({
         </button>
         {groups.map((g) => (
           <div key={g.id} className="mt-5">
-            <p className="px-4 text-[0.8125rem] font-semibold text-muted">{g.name}</p>
+            <p className="t-label px-4 text-leaf">{g.name}</p>
             <ul className="mt-1.5 space-y-0.5">
               {g.cats.map((c) => {
                 const count = counts.get(c.id) ?? 0;
@@ -301,12 +301,12 @@ function FilterPanel({
       </div>
 
       <fieldset>
-        <legend className="px-4 text-[0.8125rem] font-semibold text-muted">Egenskaper</legend>
+        <legend className="t-label px-4 text-leaf">Egenskaper</legend>
         <div className="mt-2 flex flex-wrap gap-2 px-1">
           {FILTER_TAGS.map((t) => (
             <label
               key={t}
-              className="flex h-9 cursor-pointer items-center rounded-full bg-canvas-soft px-3.5 text-sm font-semibold transition-colors has-[:checked]:bg-ink has-[:checked]:text-canvas"
+              className="font-ui flex h-9 cursor-pointer items-center rounded-full border border-hairline bg-white px-3.5 text-[0.9375rem] font-semibold transition-colors hover:border-forest has-[:checked]:border-forest has-[:checked]:bg-forest has-[:checked]:text-white"
             >
               <input
                 type="checkbox"
@@ -321,12 +321,12 @@ function FilterPanel({
       </fieldset>
 
       <fieldset>
-        <legend className="px-4 text-[0.8125rem] font-semibold text-muted">Innehåller inte</legend>
+        <legend className="t-label px-4 text-leaf">Innehåller inte</legend>
         <div className="mt-2 flex flex-wrap gap-2 px-1">
           {filterableAllergens.map((a) => (
             <label
               key={a}
-              className="flex h-9 cursor-pointer items-center rounded-full bg-canvas-soft px-3.5 text-sm font-semibold transition-colors has-[:checked]:bg-ink has-[:checked]:text-canvas"
+              className="font-ui flex h-9 cursor-pointer items-center rounded-full border border-hairline bg-white px-3.5 text-[0.9375rem] font-semibold transition-colors hover:border-forest has-[:checked]:border-forest has-[:checked]:bg-forest has-[:checked]:text-white"
             >
               <input
                 type="checkbox"
@@ -393,7 +393,7 @@ function ActiveChips({
           key={c.key}
           type="button"
           onClick={c.remove}
-          className="inline-flex h-8 items-center gap-1.5 rounded-full bg-ink px-3 text-xs font-semibold text-canvas"
+          className="font-ui inline-flex h-8 items-center gap-1.5 rounded-full bg-forest px-3 text-sm font-semibold text-white"
           aria-label={`Ta bort filtret ${c.label}`}
         >
           {c.label} <X className="size-3" />
@@ -410,10 +410,10 @@ function ActiveChips({
 
 function ProductTable({ items }: { items: Item[] }) {
   return (
-    <div className="mt-6 overflow-hidden rounded-[24px] border border-hairline">
+    <div className="sticker-sm mt-6 overflow-hidden rounded-[24px] bg-white">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[40rem] text-left text-sm">
-          <thead className="bg-canvas-soft text-xs text-muted">
+          <thead className="font-ui bg-cream text-[0.8125rem] text-ink-soft">
             <tr>
               <th scope="col" className="py-3 pr-3 pl-5 font-semibold">
                 Produkt

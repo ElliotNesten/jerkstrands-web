@@ -1,3 +1,5 @@
+import { currentSeason } from "@/lib/season";
+
 /** Företagsuppgifter – ändra här så uppdateras hela webbplatsen. */
 export const site = {
   name: "Jerkstrands Konditori & Bageri",
@@ -29,10 +31,14 @@ export const site = {
   },
 } as const;
 
-export const mainNav = [
+/** Dit alla "Bli kund"-knappar leder */
+export const customerHref = "/aterforsaljare";
+
+/** Huvudmenyn. Säsongslänken visas bara när en säsongskampanj är aktiv (src/lib/season.ts). */
+export const mainNav: { href: string; label: string }[] = [
+  { href: "/", label: "Start" },
   { href: "/sortiment", label: "Sortiment" },
-  { href: "/aterforsaljare", label: "För återförsäljare" },
-  { href: "/kvalitet", label: "Kvalitet" },
+  ...(currentSeason ? [{ href: currentSeason.href, label: currentSeason.badge }] : []),
   { href: "/om-oss", label: "Om oss" },
   { href: "/kontakt", label: "Kontakt" },
-] as const;
+];

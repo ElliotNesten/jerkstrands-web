@@ -18,12 +18,16 @@ export default function SortimentPage() {
   return (
     <>
       <PageHero
-        tone="butter"
         crumbs={[{ label: "Sortiment" }]}
-        title="Sortiment."
-        muted={`${products.length} artiklar med EAN, ingredienser och allergener.`}
+        eyebrow="Vårt sortiment"
+        title={
+          <>
+            Hela <em>sortimentet</em>
+          </>
+        }
+        intro={`${products.length} artiklar från bageriet, konditoriet och vår foodservice – med EAN, ingredienser och allergener. Sök, filtrera och skriv ut hylletiketter.`}
       />
-      <section className="wrap pb-24">
+      <section className="wrap pt-6 pb-24 lg:pt-10">
         <Suspense fallback={<CatalogFallback />}>
           <Catalog products={items} />
         </Suspense>
@@ -36,8 +40,8 @@ export default function SortimentPage() {
 function CatalogFallback() {
   return (
     <div>
-      <div className="h-14 w-full rounded-full bg-field" aria-hidden />
-      <ul className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 md:grid-cols-3 xl:grid-cols-4 min-[1800px]:grid-cols-5">
+      <div className="h-14 w-full rounded-full border-[1.5px] border-forest bg-white" aria-hidden />
+      <ul className="mt-16 grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 xl:grid-cols-4 min-[1800px]:grid-cols-5">
         {items.map((p) => (
           <li key={p.slug}>
             <ProductCard product={p} showLabelButton={false} />

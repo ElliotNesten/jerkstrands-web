@@ -8,10 +8,10 @@ senare byggas ut med inloggning och beställning direkt på sidan.
 
 | Sida | Beskrivning |
 | --- | --- |
-| `/` | Startsida: hero, **återförsäljare på skärm två**, sortimentet med sök, kvalitet som fotokapitel, säsong (jul), om oss, hylletiketter, frågor |
+| `/` | Startsida enligt Figma: hero, vi bakar för, sortiment (bageri, konditori, foodservice), för företag, säsong (jul), om oss, tre steg och formuläret Bli kund |
 | `/sortiment` | Produktkatalog med sök (namn, artikelnummer, EAN), filter (kanal, kategori, egenskaper, allergener), rutnät/lista och delbara filterlänkar |
 | `/sortiment/[produkt]` | Produktsida: bild, säljtext, art.nr, EAN-streckkod, varianter, ingredienser, allergener, näringsvärde och **hylletikett** |
-| `/aterforsaljare` | För butik, café och hotell/restaurang, säljstöd, material (PDF), intresseanmälan och vanliga frågor |
+| `/aterforsaljare` | **Bli kund**: för butik, café och hotell/restaurang, hylletiketter, material (PDF), förfrågan och vanliga frågor. Alla Bli kund-knappar leder hit |
 | `/kvalitet` | Kvalitetslöften och fördjupning (hantverk, surdeg, råvaror, märkning) |
 | `/om-oss`, `/kontakt` | Historia, värderingar och kontaktuppgifter med formulär |
 
@@ -30,26 +30,10 @@ Listan finns i `data/source/omdirigeringar.json`.
 
 ## Design
 
-- **Visuellt språk:** [`DESIGN.md`](DESIGN.md) – Mobbin-analysen från
-  [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) / getdesign.md: vit galleriyta,
-  nästan svart bläck, ljusgrå toner i stället för skuggor, pillerformade kontroller, 24 px kort och tunga
-  rubriker (Hanken Grotesk 650/450/300). Accentfärgen är Jerkstrands förpackningsgröna `#48725F`.
-- **Struktur och arbetssätt:** [Taste Skill](https://github.com/Leonxlnx/taste-skill) – hero ensam på
-  första skärmen, en sektion per skärm, foton som bär sidan, hover-lager och två "moments"
-  (`photo-chapters` och `word-highlight`). Copy och layout kontrolleras med skillens skript.
-
-Installera Taste Skill för Claude Code (läggs i `.claude/skills/`, ignoreras av git):
-
-```bash
-bash scripts/install-design-skills.sh
-```
-
-Kör kontrollerna mot en körande sajt (`npm run build && npm run start`):
-
-```bash
-node .claude/skills/design-taste-frontend/scripts/copy-lint.mjs sida.html --kind product
-CHROME_PATH=/sökväg/till/chrome node .claude/skills/design-taste-frontend/assets/layout/check.mjs --url http://localhost:3000/ --profile /tmp/taste-check
-```
+Designen kommer från Figma-filen **Web Designs** (startsidan, nod `822:198`) och beskrivs i
+[`DESIGN.md`](DESIGN.md): skogsgrönt och grädde, smörgult som accent, rubriker i Barlow Condensed med
+kursiva ord, kort som klistermärken med grön kant och hård skugga, vågor och gnistor mellan sektionerna.
+Tokens och klasser finns i `src/app/globals.css`, dekoren i `src/components/decor.tsx`.
 
 ## Kom igång
 
@@ -78,7 +62,7 @@ Allergener läses ut automatiskt från ingrediensförteckningen (ord skrivna med
 ## Ändra texter och uppgifter
 
 - Kontaktuppgifter, orderportal, beställningstid och PDF:er: `src/lib/site.ts`
-- Säsongskampanj på startsidan: `src/lib/season.ts` (sätt till `null` för att dölja)
+- Säsongskampanj på startsidan och i menyn: `src/lib/season.ts` (sätt till `null` för att dölja)
 - Kategorier: `src/lib/catalog.ts`
 - Kvalitetstexter: `src/lib/quality.ts`
 - Färger och typografi: `src/app/globals.css` (följer `DESIGN.md`)
